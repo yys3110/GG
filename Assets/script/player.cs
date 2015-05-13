@@ -171,7 +171,7 @@ public class player : MonoBehaviour {
 	{
 		if(character_select == true)
 		{
-			if(GUI.RepeatButton(new Rect(100,100,20,20),"취소 후 다른캐릭터 선택"))
+			if(GUI.RepeatButton(new Rect(100,100,100,50),"취소 후 다른캐릭터 선택"))
 			{
 				character_select = false;
 				hexagon.move_end = true;

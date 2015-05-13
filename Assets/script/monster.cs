@@ -115,16 +115,6 @@ public class monster : MonoBehaviour {
 
 
 
-	void OnGUI()
-	{
-		if(GUI.Button(new Rect(50,50,100,50),"monter turn"))
-		{
-			play_system.turn = 1;
-			pattern_bool = true;
-			guide_make = true;
-			move_count = move_range;
-		}
-	}
 
 	void move_(){
 
