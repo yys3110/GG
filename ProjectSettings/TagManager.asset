@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - hexagon
+  - guide_group
+  - player
+  - hex_collider
+  - guide_collider
+  - monster
+  - ui_attack
+  - ui_move
+  - ui_wait
+  - ui_cancel
+  - dice_collider_wall
+  - ui_camera
+  - '------down is error------'
+  - dice
+  - move
+  - no
+  - use
+  - attack_cancel
+  - attack
+  - moving
+  - use_cancel
+  - move_cancel
+  - attack_skill
+  - yse
+  - stay
+  - basic attack
+  - cancel
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - collider
+  - dice
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
