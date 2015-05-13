@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class test : MonoBehaviour {
-
+	//
 	public bool sw = false;
 
 	// Use this for initialization
