@@ -13,7 +13,7 @@ public class test : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-
+        456
 		hexagon_group.random_map_start = sw;
 	
 	}
