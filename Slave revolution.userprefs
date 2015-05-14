@@ -1,16 +1,20 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\skill_system.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\player.cs">
     <Files>
-      <File FileName="Assets\script\skill_system.cs" Line="15" Column="2" />
-      <File FileName="Assets\script\monster.cs" Line="116" Column="2" />
-      <File FileName="Assets\script\dice.cs" Line="75" Column="7" />
-      <File FileName="Assets\script\player.cs" Line="180" Column="4" />
-      <File FileName="Assets\script\stage_select.cs" Line="16" Column="7" />
+      <File FileName="Assets\script\SKILL\Authority.cs" Line="32" Column="1" />
+      <File FileName="Assets\script\skill_system.cs" Line="7" Column="25" />
+      <File FileName="Assets\script\monster.cs" Line="193" Column="15" />
+      <File FileName="Assets\script\dice.cs" Line="1" Column="1" />
+      <File FileName="Assets\script\player.cs" Line="91" Column="5" />
+      <File FileName="Assets\script\play_system.cs" Line="29" Column="69" />
+      <File FileName="Assets\script\ui_field_system.cs" Line="42" Column="42" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="D:\UNITY\UNITY\Slave revolution\Assets\script\player.cs" line="56" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

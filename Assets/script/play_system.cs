@@ -10,6 +10,7 @@ public class play_system : MonoBehaviour {
 	public static int monster_num =0;  // 몬스터 진행상황
 	public static int player_unit_num; // 플레이어 유닛이 몇마리 남아있는지를 확인
 	public static int monster_unit_num; // 몬스터 유닛이 몇마리 남아있는지를 확인
+	public static int game_turn =0; //이번판의 게임의 총 턴 횟수, 플레이어 턴마다 +1 을 한다 ;
 	//임시 테스트 
 	public int player_nums;
 	public int player_nums_max;
@@ -85,6 +86,7 @@ public class play_system : MonoBehaviour {
 				text_.text = "PLAYER TURN !";
 				one_bool = false;
 				player.unit_active_bool = true;
+				game_turn ++;
 			}
 		}
 
