@@ -1,0 +1,15 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\dongeun\water_wave.cs">
+    <Files>
+      <File FileName="Assets\script\skill_system.cs" Line="11" Column="9" />
+      <File FileName="Assets\script\SKILL\Authority.cs" Line="10" Column="2" />
+      <File FileName="Assets\script\monster.cs" Line="100" Column="36" />
+      <File FileName="Assets\dongeun\water_wave.cs" Line="22" Column="42" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

@@ -1,11 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 //유수 스킬
-public class skill1 : MonoBehaviour {
+public class water_wave : MonoBehaviour {
+	public int damage;
+
 	public GameObject camera_object;
 	public Camera mainCam;
 	public float rotateY;
 	public GameObject range;
+	public int turn_cooltime;
+	public bool skill_on = false;
+	public bool one_bool=true;
 	// Use this for initialization
 	void Start () {
 		camera_object = GameObject.FindWithTag("MainCamera");
@@ -15,6 +20,7 @@ public class skill1 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		// 액티브스킬
 		Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
 		RaycastHit hit;
 		if(Physics.Raycast(ray,out hit,Mathf.Infinity)){
@@ -33,14 +39,28 @@ public class skill1 : MonoBehaviour {
 				   (rotateY >= 267 && rotateY <= 271) ||
 				   (rotateY >= 325 && rotateY <= 328))
 				{
-					Debug.Log(rotateY);
-				range.active = true;
+					skill_on = true;
+					range.active = true;
 					hexagon.move_end = false;
+
 				}
-				else{
-					hexagon.move_end = true;
-				}
+					else{
+						skill_on = false;
+						hexagon.move_end = true;
+						//one_bool = true;
+					}
 			}
 		}
+		if(Input.GetKeyDown(KeyCode.Mouse0)&&one_bool == true && skill_on == true)
+		{
+			range.active = false;
+			hexagon.move_end = true;
+			one_bool = false;
+		}
+		// 액티브스킬 끝
+		// 페시브 스킬
+
+		// 페시브 스킬 끝
+
 	}
 }
