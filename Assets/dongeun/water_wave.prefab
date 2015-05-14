@@ -29,7 +29,7 @@ GameObject:
   - 23: {fileID: 2388926}
   - 114: {fileID: 11453464}
   m_Layer: 0
-  m_Name: range
+  m_Name: wave_range
   m_TagString: hex_collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

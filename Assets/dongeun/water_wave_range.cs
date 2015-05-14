@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class water_wave_1 : MonoBehaviour {
+public class water_wave_range : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
