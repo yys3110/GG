@@ -108,12 +108,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d216f392b9d4ea44a05ca435a2c1cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 5
   camera_object: {fileID: 0}
   mainCam: {fileID: 0}
   rotateY: 0
   range: {fileID: 148706}
-  turn_cooltime: 0
+  turn_cooltime: 3
   skill_on: 0
   one_bool: 1
 --- !u!1001 &100100000

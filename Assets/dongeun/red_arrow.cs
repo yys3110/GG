@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+//적시 스킬
 public class red_arrow : MonoBehaviour {
 	public int damage;
 	
