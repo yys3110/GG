@@ -22,12 +22,13 @@ public class player : MonoBehaviour {
 	public static bool player_click = true; // 플레이어 캐릭터 클릭
 	public bool range_collider = false; // enemy 범위에 속해 있는가를 판별
 	public static bool unit_active_bool = false; // 유닛 활성화 컨트롤
-	public int active_num; // 0 : 중립, 1 : move, 2: attack, 3: wait, 4: cancel 할 행동을 정함 << UI_SYSTEM 연동
+	public int active_num; // 0 : 중립, 1 : move, 2: attack, 3:skill ,4: wait, 5: cancel 할 행동을 정함 << UI_SYSTEM 연동
 	public GameObject attack_ui; // 임시
 	public GameObject field_UI; // 필드 ui 게임 오브젝트;
 	bool one_monster_click = true;
 	public GameObject monster_unit; // 클릭 한 몬스터의 정보가 입력;
 	bool one_die_check = true;
+	bool one_skill_bool = true;
 	// 카메라
 	Vector3 camera_default_pos = new Vector3(31,70,-155);
 	bool camera_move_bool = false;
@@ -38,11 +39,11 @@ public class player : MonoBehaviour {
 	public bool ______________;
 	public int code_number;
 	public int hp_,damage,miss,attack_range,move_range;
-	public bool skill;
-	public int skill_number;
+	public GameObject skill;
 	public int character_class;
 	public int dice_code_number =0; // 0 : 4면체 , 1 : 6면 , 2 : 8면 ,3 : 10면 , 4 : 12면체 , 5 : 20면체 (명중굴림)
 	public bool die_bool = false;
+	public int turn_colltime =0;
 	// Use this for initialization
 	void Start () {
 		play_system.player_unit_num ++;
@@ -62,6 +63,9 @@ public class player : MonoBehaviour {
 			}
 			if(active_num == 2){
 				attack_();
+			}
+			if(active_num == 3){
+				skill_();
 			}
 			if(active_num == 3){
 				wait_();
@@ -280,6 +284,7 @@ public class player : MonoBehaviour {
 				play_system.dice_active_num ++;
 			}
 			if(monster_unit.GetComponent<monster>().miss >= damage){ // 여기서의 damage 는 명중굴림 수
+				turn_colltime ++;
 				chance_turn = false;
 				player_click = true;
 				one_monster_click = true;
@@ -300,6 +305,7 @@ public class player : MonoBehaviour {
 			GameObject ui_des = Instantiate(attack_ui,new Vector3(monster_unit.transform.position.x,20,
 			monster_unit.transform.position.z),attack_ui.transform.rotation) as GameObject;
 			monster_unit.GetComponent<monster>().hp_ -= damage;
+			turn_colltime ++;
 			Destroy(ui_des,0.5f);
 			chance_turn = false;
 			player_click = true;
@@ -314,6 +320,13 @@ public class player : MonoBehaviour {
 			field_UI.GetComponent<ui_field_system>().ui_cancel_bool = true;
 		}
 	}
+	void skill_(){
+		if(one_skill_bool == true){
+			//Instantiate(skill,transform.position,skill.transform.rotation);
+			Debug.Log("player_skill");
+			one_skill_bool = false;
+		}
+	}
 	void wait_(){
 		chance_turn = false;
 		player_click = true;
@@ -321,7 +334,9 @@ public class player : MonoBehaviour {
 		active_num = 0;
 		camera_move_bool = true;
 		camera_num = 2;
+		turn_colltime ++;
 		play_system.player_num ++;
+
 		//field_UI.SendMessage("reset_bool","1");
 		field_UI.GetComponent<ui_field_system>().ui_move_bool = true;
 		field_UI.GetComponent<ui_field_system>().ui_cancel_bool = true;

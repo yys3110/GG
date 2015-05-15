@@ -51,7 +51,7 @@ public class ui_field_system : MonoBehaviour {
 					transform.gameObject.active = false;
 				}
 			}
-			if(hit.collider.gameObject.tag == "ui_wait"){
+			if(hit.collider.gameObject.tag == "ui_skill" && ui_move_bool == true){
 				over_mouse_g = hit.collider.gameObject;
 				over_mouse_g.GetComponent<Renderer>().material.color = new Color(1,1,1,0.5f);
 				if(Input.GetKeyDown(KeyCode.Mouse0)){
@@ -59,11 +59,19 @@ public class ui_field_system : MonoBehaviour {
 					transform.gameObject.active = false;
 				}
 			}
-			if(hit.collider.gameObject.tag == "ui_cancel" && ui_cancel_bool == true){
+			if(hit.collider.gameObject.tag == "ui_wait"){
 				over_mouse_g = hit.collider.gameObject;
 				over_mouse_g.GetComponent<Renderer>().material.color = new Color(1,1,1,0.5f);
 				if(Input.GetKeyDown(KeyCode.Mouse0)){
 					unit_info.GetComponent<player>().active_num = 4;
+					transform.gameObject.active = false;
+				}
+			}
+			if(hit.collider.gameObject.tag == "ui_cancel" && ui_cancel_bool == true){
+				over_mouse_g = hit.collider.gameObject;
+				over_mouse_g.GetComponent<Renderer>().material.color = new Color(1,1,1,0.5f);
+				if(Input.GetKeyDown(KeyCode.Mouse0)){
+					unit_info.GetComponent<player>().active_num = 5;
 					transform.gameObject.active = false;
 				}
 			}
