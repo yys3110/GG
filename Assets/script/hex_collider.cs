@@ -15,6 +15,10 @@ public class hex_collider : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if(range_>=7)
+		{
+			range_ = 6;
+		}
 
 		if(transform.localScale.x <= range_collection[range_])
 		{

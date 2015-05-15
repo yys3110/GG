@@ -51,7 +51,7 @@ public class ui_field_system : MonoBehaviour {
 					transform.gameObject.active = false;
 				}
 			}
-			if(hit.collider.gameObject.tag == "ui_skill" && ui_move_bool == true){
+			if(hit.collider.gameObject.tag == "ui_skill"){
 				over_mouse_g = hit.collider.gameObject;
 				over_mouse_g.GetComponent<Renderer>().material.color = new Color(1,1,1,0.5f);
 				if(Input.GetKeyDown(KeyCode.Mouse0)){

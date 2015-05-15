@@ -67,10 +67,10 @@ public class player : MonoBehaviour {
 			if(active_num == 3){
 				skill_();
 			}
-			if(active_num == 3){
+			if(active_num == 4){
 				wait_();
 			}
-			if(active_num == 4){
+			if(active_num == 5){
 				cancel_();
 			}
 		}
@@ -261,6 +261,7 @@ public class player : MonoBehaviour {
 		}
 		if(move_bool == false){
 			pos_num =0;	
+			move_range = 4;
 		}
 	}
 	void attack_(){
@@ -323,9 +324,13 @@ public class player : MonoBehaviour {
 	void skill_(){
 		if(one_skill_bool == true){
 			//Instantiate(skill,transform.position,skill.transform.rotation);
+			GameObject child = Instantiate (skill, transform.position,skill.transform.rotation) as GameObject;
+			child.transform.parent = transform.transform;
 			Debug.Log("player_skill");
+			wait_();
 			one_skill_bool = false;
 		}
+
 	}
 	void wait_(){
 		chance_turn = false;
