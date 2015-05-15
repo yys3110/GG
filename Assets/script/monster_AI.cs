@@ -23,7 +23,7 @@ public class monster_AI : MonoBehaviour {
 				if(AI_random <=Search_melee_AI[level,0])
 				{
 					if(mon_info.active_count == 0){
-						mon_info.collider.GetComponent<hex_collider>().range_ = hex_collider.range_collection[mon_info.move_range];
+						mon_info.collider.GetComponent<hex_collider>().range_ = mon_info.move_range;
 						mon_info.collider_range_();
 						mon_info.pattern_num = 1;
 					}
@@ -58,7 +58,7 @@ public class monster_AI : MonoBehaviour {
 				if(AI_random <=Battle_melee_AI[level,0])
 				{
 					if(mon_info.active_count == 0){
-						mon_info.collider.GetComponent<hex_collider>().range_ = hex_collider.range_collection[mon_info.move_range];
+						mon_info.collider.GetComponent<hex_collider>().range_ = mon_info.move_range;
 						mon_info.collider_range_();
 						mon_info.pattern_num = 1;
 					}

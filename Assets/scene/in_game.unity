@@ -9283,7 +9283,7 @@ MonoBehaviour:
   miss: 5
   attack_range: 0
   move_range: 4
-  skill: {fileID: 172112, guid: a7f6e40083adcf94a9a4febb2ce78d16, type: 2}
+  skill: {fileID: 154144, guid: c4acfdd8d7e1830489a58c23db61876f, type: 2}
   character_class: 0
   dice_code_number: 0
   die_bool: 0

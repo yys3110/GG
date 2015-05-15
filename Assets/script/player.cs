@@ -159,13 +159,13 @@ public class player : MonoBehaviour {
 
 		if(active_num == 1){
 			hexagon.move_end = false;
-			collider.GetComponent<hex_collider>().range_ = 6.9f;
+			collider.GetComponent<hex_collider>().range_ = move_range;
 			Instantiate(collider,new Vector3 (transform.position.x,0,transform.position.z),collider.transform.rotation);// 거리 범위 생성
 			unit_active_bool = false; // 플레이어 턴 에서 플레이어 유닛을 클릭 하면 unit_active_bool 이 false 가 되어 활성화 bool 은 꺼진다
 		}
 		if(active_num == 2){
 			hexagon.move_end = false;
-			collider.GetComponent<hex_collider>().range_ = 2f;
+			collider.GetComponent<hex_collider>().range_ = attack_range;
 			Instantiate(collider, new Vector3(transform.position.x,0,transform.position.z),collider.transform.rotation);
 			unit_active_bool = false;
 		}
