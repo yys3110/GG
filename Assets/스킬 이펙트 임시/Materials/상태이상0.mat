@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: "\uBA54\uD0C0\uC720\uC988 \uC655\uAD6D \uAD81\uBCD1"
+  m_Name: "\uC0C1\uD0DC\uC774\uC0C10"
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _ALPHABLEND_ON
   m_LightmapFlags: 5
@@ -18,7 +18,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 23131cb543a0fd04898c853251956c9e, type: 3}
+          m_Texture: {fileID: 2800000, guid: 00ccd37e2c6deff4d8f873f428079a35, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -138,7 +138,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 0, g: 1, b: .875862122, a: 1}
+        second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _EmissionColorUI

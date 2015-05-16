@@ -28,7 +28,10 @@ public class player : MonoBehaviour {
 	bool one_monster_click = true;
 	public GameObject monster_unit; // 클릭 한 몬스터의 정보가 입력;
 	bool one_die_check = true;
+	//스킬 관련 
 	bool one_skill_bool = true;
+	public static bool skill_cast = false;
+	GameObject child;
 	// 카메라
 	Vector3 camera_default_pos = new Vector3(31,70,-155);
 	bool camera_move_bool = false;
@@ -39,6 +42,7 @@ public class player : MonoBehaviour {
 	public bool ______________;
 	public int code_number;
 	public int hp_,damage,miss,attack_range,move_range;
+	public bool skill_now = true; // true 시 즉시시전 false 시 스킬 시전을 위한 행동;
 	public GameObject skill;
 	public int character_class;
 	public int dice_code_number =0; // 0 : 4면체 , 1 : 6면 , 2 : 8면 ,3 : 10면 , 4 : 12면체 , 5 : 20면체 (명중굴림)
@@ -74,7 +78,13 @@ public class player : MonoBehaviour {
 				cancel_();
 			}
 		}
-	
+		if(skill_cast == true){
+			Ray ray = new Ray (transform.position,-transform.up);
+			RaycastHit hit;
+			if(Physics.Raycast(ray ,out hit ,10f)&& hit.collider.gameObject.tag == "hexagon" && die_bool == false){
+				range_collider = hit.collider.gameObject.GetComponent<hexagon>().range_collider;
+			}
+		}
 		if(play_system.turn == 2){
 			Ray ray = new Ray (transform.position,-transform.up);
 			RaycastHit hit;
@@ -180,6 +190,10 @@ public class player : MonoBehaviour {
 				character_select = false;
 				hexagon.move_end = true;
 				player_click = true;
+				one_skill_bool = true;
+				active_num = 0;
+				if(child != null)
+					Destroy(child);
 			}
 		}
 	}
@@ -323,21 +337,29 @@ public class player : MonoBehaviour {
 	}
 	void skill_(){
 		if(one_skill_bool == true){
-			//Instantiate(skill,transform.position,skill.transform.rotation);
-			GameObject child = Instantiate (skill, transform.position,skill.transform.rotation) as GameObject;
+			child = Instantiate (skill, transform.position,skill.transform.rotation) as GameObject;
 			child.transform.parent = transform.transform;
 			Debug.Log("player_skill");
-			wait_();
 			one_skill_bool = false;
+			if(skill_now == true){
+				wait_();
+			}
 		}
-
+		if(skill_now == false){
+			if(one_skill_bool == true){
+				child = Instantiate (skill, transform.position,skill.transform.rotation) as GameObject;
+				child.transform.parent = transform.transform;
+				one_skill_bool =false;
+			}
+		}
 	}
-	void wait_(){
+	public void wait_(){
 		chance_turn = false;
 		player_click = true;
 		unit_active_bool = false;
 		active_num = 0;
 		camera_move_bool = true;
+		one_skill_bool = true;
 		camera_num = 2;
 		turn_colltime ++;
 		play_system.player_num ++;

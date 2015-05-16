@@ -1,20 +1,18 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\player.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\SKILL\Authority\Authority_buff.cs">
     <Files>
-      <File FileName="Assets\script\SKILL\Authority.cs" Line="32" Column="1" />
-      <File FileName="Assets\script\skill_system.cs" Line="7" Column="25" />
-      <File FileName="Assets\script\monster.cs" Line="193" Column="15" />
+      <File FileName="Slave revolution.sln" Line="40" Column="1" />
+      <File FileName="Assets\script\player.cs" Line="337" Column="12" />
+      <File FileName="Assets\script\monster.cs" Line="174" Column="47" />
       <File FileName="Assets\script\dice.cs" Line="1" Column="1" />
-      <File FileName="Assets\script\player.cs" Line="91" Column="5" />
-      <File FileName="Assets\script\play_system.cs" Line="29" Column="69" />
-      <File FileName="Assets\script\ui_field_system.cs" Line="42" Column="42" />
+      <File FileName="Assets\script\play_system.cs" Line="123" Column="4" />
+      <File FileName="Assets\script\ui_field_system.cs" Line="1" Column="1" />
+      <File FileName="Assets\script\SKILL\Authority\Authority_buff.cs" Line="34" Column="27" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="D:\UNITY\UNITY\Slave revolution\Assets\script\player.cs" line="56" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

@@ -123,9 +123,9 @@ public class play_system : MonoBehaviour {
 		}
 		if(dice_active_num == 2){
 			if(turn == 1)
-				selected_unit.GetComponent<player>().damage = play_dice_num;
+				selected_unit.GetComponent<player>().damage += play_dice_num;
 			if(turn == 2)
-				selected_unit.GetComponent<monster>().damage = play_dice_num;
+				selected_unit.GetComponent<monster>().damage += play_dice_num;
 			monster_one_dice_bool = true;
 			dice_system.active = false;
 			hexagon.move_end = true;
@@ -133,9 +133,9 @@ public class play_system : MonoBehaviour {
 		}
 		if(dice_active_num == 5){
 			if(turn == 1)
-			selected_unit.GetComponent<player>().damage = play_dice_num;
+			selected_unit.GetComponent<player>().damage += play_dice_num;
 			if(turn == 2)
-			selected_unit.GetComponent<monster>().damage = play_dice_num;
+			selected_unit.GetComponent<monster>().damage += play_dice_num;
 			dice_system.active = false;
 			monster_one_dice_bool = true;
 			dice_active_num = 6;
