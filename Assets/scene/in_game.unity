@@ -2139,52 +2139,6 @@ MonoBehaviour:
   mouse_over_bool: 0
   range_collider: 0
   hexagon_unit_bool: 0
---- !u!1001 &142844149
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 435134, guid: 65b098788aaefd446aeb70f5faf4df4b, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 3.16914892
-      objectReference: {fileID: 0}
-    - target: {fileID: 435134, guid: 65b098788aaefd446aeb70f5faf4df4b, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -1.29138565
-      objectReference: {fileID: 0}
-    - target: {fileID: 435134, guid: 65b098788aaefd446aeb70f5faf4df4b, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -90.3115082
-      objectReference: {fileID: 0}
-    - target: {fileID: 435134, guid: 65b098788aaefd446aeb70f5faf4df4b, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 435134, guid: 65b098788aaefd446aeb70f5faf4df4b, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 435134, guid: 65b098788aaefd446aeb70f5faf4df4b, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 435134, guid: 65b098788aaefd446aeb70f5faf4df4b, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 435134, guid: 65b098788aaefd446aeb70f5faf4df4b, type: 2}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 11479334, guid: 65b098788aaefd446aeb70f5faf4df4b, type: 2}
-      propertyPath: Dice_system
-      value: 
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 65b098788aaefd446aeb70f5faf4df4b, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &143309043
 GameObject:
   m_ObjectHideFlags: 0
@@ -2826,13 +2780,13 @@ MonoBehaviour:
   move_speed: 50
   range_collider: 0
   Damage_display: {fileID: 120830, guid: 961a8b5e16ceb4248a2d5d1a07576957, type: 2}
-  skill: {fileID: 1434433838}
+  skill: {fileID: 0}
   add_damage: 0
   ______________: 0
   monster_number: 0
   code_number: 0
   hp_max: 5
-  hp_: 5
+  hp_: 1
   damage: 5
   miss: 5
   attack_range: 1
@@ -24077,7 +24031,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1110064768
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24145,13 +24099,13 @@ MonoBehaviour:
   Damage_display: {fileID: 120830, guid: 961a8b5e16ceb4248a2d5d1a07576957, type: 2}
   ______________: 0
   code_number: 0
-  hp_: 100
+  hp_: 90
   damage: 0
   miss: 5
   attack_range: 1
   move_range: 4
   skill_now: 0
-  skill: {fileID: 139804, guid: 65a869cade1ac744db5bc170419695c6, type: 2}
+  skill: {fileID: 0}
   character_class: 0
   dice_code_number: 0
   die_bool: 0
@@ -30160,10 +30114,6 @@ MonoBehaviour:
   mouse_over_bool: 0
   range_collider: 0
   hexagon_unit_bool: 0
---- !u!1 &1434433838 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 170556, guid: 65b098788aaefd446aeb70f5faf4df4b, type: 2}
-  m_PrefabInternal: {fileID: 142844149}
 --- !u!1 &1435891046
 GameObject:
   m_ObjectHideFlags: 0
@@ -43424,6 +43374,10 @@ Prefab:
     - target: {fileID: 11467322, guid: 29467527edf5c84499fdf2f831102601, type: 2}
       propertyPath: debuff_AttackRange
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 139804, guid: 29467527edf5c84499fdf2f831102601, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 29467527edf5c84499fdf2f831102601, type: 2}
