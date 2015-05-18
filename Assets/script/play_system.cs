@@ -149,4 +149,10 @@ public class play_system : MonoBehaviour {
 		}
 
 	}
+	public void dice_systemOn(){
+		dice_system.SetActive(true);
+	}
+	public void dice_systemOff(){
+		dice_system.SetActive(false);
+	}
 }

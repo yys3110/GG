@@ -17,20 +17,7 @@ TagManager:
   - dice_collider_wall
   - ui_camera
   - ui_skill
-  - '------down is error------'
-  - no
-  - use
-  - attack_cancel
-  - attack
-  - moving
-  - use_cancel
-  - move_cancel
-  - attack_skill
-  - yse
-  - stay
-  - basic attack
-  - cancel
-  - New Tag
+  - Dice_System
   layers:
   - Default
   - TransparentFX

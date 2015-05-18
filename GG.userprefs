@@ -1,11 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\dongeun\rapid.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\dongeun\mon-Strong health\StrongHealth_active.cs">
     <Files>
-      <File FileName="Assets\script\player.cs" Line="353" Column="1" />
-      <File FileName="Assets\script\hex_collider.cs" Line="15" Column="2" />
-      <File FileName="Assets\dongeun\red_arrow.cs" Line="23" Column="11" />
-      <File FileName="Assets\dongeun\rapid.cs" Line="8" Column="40" />
+      <File FileName="Assets\script\player.cs" Line="48" Column="68" />
+      <File FileName="Assets\script\hex_collider.cs" Line="1" Column="1" />
+      <File FileName="Assets\dongeun\red_arrow.cs" Line="1" Column="1" />
+      <File FileName="Assets\dongeun\rapid.cs" Line="1" Column="1" />
+      <File FileName="Assets\script\SKILL\Authority\Authority_설명서.cs" Line="1" Column="1" />
+      <File FileName="Assets\script\SKILL\Authority\Authority_buff.cs" Line="1" Column="1" />
+      <File FileName="Assets\dongeun\mon-Strong health\StrongHealth_active.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

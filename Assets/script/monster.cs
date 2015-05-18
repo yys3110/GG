@@ -19,6 +19,10 @@ public class monster : MonoBehaviour {
 	public bool range_collider = false;
 	//오브젝트 관련
 	public GameObject Damage_display;
+	//스킬 관련
+	public GameObject skill;
+	public int add_damage;
+	static public int skill_active =0;
 	//몬스터 정보//
 	public bool ______________;
 	public int monster_number; // 몇번째로 움직이는가를 판단;
@@ -154,7 +158,7 @@ public class monster : MonoBehaviour {
 			pattern_bool = true;
 		}
 	}
-	void attack_(){
+	public void attack_(){
 		play_system.active_dice_bool = true;
 		play_system.selected_unit = transform.gameObject;
 		if(play_system.dice_active_num == 3){
