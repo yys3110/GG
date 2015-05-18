@@ -305,7 +305,7 @@ public class player : MonoBehaviour {
 			GameObject ui_des = Instantiate(attack_ui,new Vector3(monster_unit.transform.position.x,20,
 			monster_unit.transform.position.z),attack_ui.transform.rotation) as GameObject;
 			monster_unit.GetComponent<monster>().hp_ -= damage + add_damage;
-			Damage_display.GetComponent<damage>().damage_dis = damage + add_damage;
+			Damage_display.GetComponent<damage_dis>().damage = damage + add_damage;
 			Instantiate(Damage_display,monster_unit.transform.position,Damage_display.transform.rotation);
 			Destroy(ui_des,0.5f);
 			one_monster_click = true;

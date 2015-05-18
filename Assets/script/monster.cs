@@ -174,7 +174,7 @@ public class monster : MonoBehaviour {
 			GameObject ui_object = Instantiate(attack_ui,new Vector3(target.transform.position.x,20,
 			                                                         target.transform.position.z),attack_ui.transform.rotation) as GameObject;
 			target.GetComponent<player>().hp_ -= damage;
-			Damage_display.GetComponent<damage>().damage_dis = damage;
+			Damage_display.GetComponent<damage_dis>().damage = damage;
 			Instantiate(Damage_display,target.transform.position,Damage_display.transform.rotation);
 			Destroy(ui_object,0.5f);
 			pattern_num = 4;
