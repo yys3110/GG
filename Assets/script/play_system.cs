@@ -18,6 +18,7 @@ public class play_system : MonoBehaviour {
 	public int monster_nums_max;
 	public int player_units;
 	public int monster_units;
+	public bool temp_active_dice_bool = false;
 
 	public int turns;
 	//
@@ -54,6 +55,7 @@ public class play_system : MonoBehaviour {
 		monster_nums_max = monster_max_num;
 		player_units = player_unit_num;
 		monster_units = monster_unit_num;
+		temp_active_dice_bool = active_dice_bool;
 		if(player_num >= player_max_num && !(player_unit_num ==0))
 		{
 			turn = 2;
@@ -100,7 +102,7 @@ public class play_system : MonoBehaviour {
 			}
 		}
 
-		if(active_dice_bool == true){
+		if(active_dice_bool == true && GameObject.FindWithTag("dice") == null){
 			dice_();
 		}
 	}

@@ -18,22 +18,22 @@ public class monster_AI : MonoBehaviour {
 			Debug.Log ("AI_search  "+mon_info);
 			int level = mon_info.monster_level;
 			int AI_random = Random.Range(0,101);
-			Debug.Log(AI_random);
+			Debug.Log(AI_random +"  " + mon_info.transform.name);
 			if(mon_info.monster_class == 0){
 				if(AI_random <=Search_melee_AI[level,0])
 				{
 					if(mon_info.active_count == 0){
-						mon_info.collider.GetComponent<hex_collider>().range_ = mon_info.move_range;
-						mon_info.collider_range_();
+						//mon_info.collider.GetComponent<hex_collider>().range_ = mon_info.move_range;
+						//mon_info.collider_range_();
 						mon_info.pattern_num = 1;
 					}
 						
 					if(mon_info.active_count == 1){
 						//AI_random = Random.Range(Search_melee_AI[level,0]+1,101);
 						mon_info.pattern_num = 3;
-						Debug.Log(AI_random);
+						Debug.Log(AI_random+"  " + mon_info.transform.name);
 					}
-
+					AI_bool = false;
 				}
 				if(AI_random > Search_melee_AI[level,0] && AI_random <= Search_melee_AI[level,0]+Search_melee_AI[level,1]){
 					mon_info.pattern_num = 3;
@@ -53,20 +53,21 @@ public class monster_AI : MonoBehaviour {
 			Debug.Log ("AI_battle  "+mon_info);
 			int level = mon_info.monster_level;
 			int AI_random = Random.Range(0,101);
-			Debug.Log(AI_random);
+			Debug.Log(AI_random+"  " + mon_info.transform.name);
 			if(mon_info.monster_class == 0){
 				if(AI_random <=Battle_melee_AI[level,0])
 				{
 					if(mon_info.active_count == 0){
-						mon_info.collider.GetComponent<hex_collider>().range_ = mon_info.move_range;
-						mon_info.collider_range_();
+						//mon_info.collider.GetComponent<hex_collider>().range_ = mon_info.move_range;
+						//mon_info.collider_range_();
 						mon_info.pattern_num = 1;
 					}
 					if(mon_info.active_count ==1){
 						//AI_random = Random.Range(Battle_melee_AI[level,0]+1,101);
 						mon_info.pattern_num = 2;
-						Debug.Log(AI_random);
+						Debug.Log(AI_random +"  " + mon_info.transform.name);
 					}
+					AI_bool = false;
 				}
 				if(AI_random > Battle_melee_AI[level,0] && AI_random <= Battle_melee_AI[level,0]+Battle_melee_AI[level,1]){
 					mon_info.pattern_num = 2;

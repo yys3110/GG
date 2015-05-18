@@ -32,6 +32,7 @@ public class player : MonoBehaviour {
 	bool one_skill_bool = true;
 	public static bool skill_cast = false;
 	GameObject child;
+	public bool temp_skill_bool = false;
 	// 추가 데미지 관련
 	public int add_damage = 0;
 	// 카메라
@@ -244,6 +245,7 @@ public class player : MonoBehaviour {
 			float distance_guide = Vector3.Distance (transform.position, new Vector3 (move_guide_pos[pos_num].x,5,move_guide_pos[pos_num].z));
 			if(distance_guide !=0){
 				transform.localPosition = Vector3.MoveTowards (transform.position , new Vector3 (move_guide_pos[pos_num].x,5,move_guide_pos[pos_num].z) , Time.deltaTime * speed);
+				Screen.lockCursor = true;
 			}
 			if(distance_guide <=0){
 				//transform.position = new Vector3 (transform.position.x,10,transform.position.z);
@@ -267,6 +269,7 @@ public class player : MonoBehaviour {
 			}
 		}
 		if(move_bool == false){
+			Screen.lockCursor = false;
 			pos_num =0;	
 			//move_range = 4;  // move range 초기화 
 		}

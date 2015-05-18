@@ -7,6 +7,7 @@ public class dice : MonoBehaviour {
 	public int dice_num;
 	public int collider_num;
 	public Vector3 velocity_dice;
+	public float velocityd;
 	public bool camera_move_bool = false;
 	public GameObject dice_camera;
 	public float del;
@@ -25,7 +26,9 @@ public class dice : MonoBehaviour {
 			del += Time.deltaTime;
 			dice_num = (dice_number+1) - collider_num;
 			velocity_dice = this.GetComponent<Rigidbody>().velocity;
-			if((velocity_dice.x ==0 && velocity_dice.y ==0 && velocity_dice.z ==0)|| del>=5){
+			velocityd = this.GetComponent<Rigidbody>().velocity.magnitude;
+			//if((velocity_dice.x ==0 && velocity_dice.y ==0 && velocity_dice.z ==0)|| del>=5){
+				if(velocityd <= 0.0f){
 				play_system.play_dice_num = dice_num;
 
 				if(play_system.turn == 1){
@@ -47,6 +50,7 @@ public class dice : MonoBehaviour {
 						go_rect = new Rect (0,0,0,0);
 						skill_caster.transform.parent.GetComponent<monster>().add_damage = dice_num;
 						monster.skill_active++;
+						skill_On = false;
 						Destroy(gameObject);
 					}
 
@@ -71,6 +75,7 @@ public class dice : MonoBehaviour {
 
 		if(play_system.turn == 2 && play_system.monster_one_dice_bool == true){
 			OnMouseDown();
+			if(skill_On == false)
 			play_system.monster_one_dice_bool = false;
 			Debug.Log("monster dice roll");
 		}

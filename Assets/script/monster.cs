@@ -21,14 +21,16 @@ public class monster : MonoBehaviour {
 	public GameObject Damage_display;
 	//스킬 관련
 	public GameObject skill;
+	public float skill_range;
+	public bool now_skill = false;
 	public int add_damage;
 	static public int skill_active =0;
+	public bool one_skill_bool = true;
 	//몬스터 정보//
 	public bool ______________;
 	public int monster_number; // 몇번째로 움직이는가를 판단;
 	public int code_number;
 	public int hp_max,hp_,damage,miss,attack_range,move_range;
-	public int [] skill_number = new int[1]; // 0:없음, 1: 공격, 2: 버프
 	public int monster_class; // 0 : 근접 , 1: 원거리 , 2: 능력
 	public int monster_level =0; 
 	public int pattern_num =0; //number 0 = 중립 ,1 = 이동 , 2 = 공격  (패턴 넘버, 움직일지 공격할지를 정함)
@@ -51,7 +53,7 @@ public class monster : MonoBehaviour {
 		if(play_system.turn == 2 && play_system.monster_num == monster_number && die_bool == true){// 죽은 몬스터
 			play_system.monster_num ++;
 		}
-		if(play_system.turn == 2 && play_system.monster_num == monster_number && die_bool == false){ //패턴 판단 
+		if(play_system.turn == 2 && play_system.monster_num == monster_number && die_bool == false && GameObject.FindWithTag("dice") == null){ //패턴 판단 
 			target = play_system.monster_target[0].transform.gameObject;
 			target_distance = Vector3.Distance (transform.position , target.transform.position);
 			if(pattern_bool == true){
@@ -74,7 +76,7 @@ public class monster : MonoBehaviour {
 
 			}
 			if(pattern_bool == false){
-				if(hex_collider.collider_complete == true)
+				//if(hex_collider.collider_complete == true)
 					if(pattern_num == 1)
 						move_();
 				
@@ -127,6 +129,9 @@ public class monster : MonoBehaviour {
 	void move_(){
 
 		if(one_turn == true){
+			collider.GetComponent<hex_collider>().range_ = move_range;
+			collider_range_();
+			pattern_num = 1;
 			guide_make = true;
 			move_count = move_range;
 			one_turn = false;
@@ -138,7 +143,7 @@ public class monster : MonoBehaviour {
 			Instantiate(guide,transform.position,guide.transform.rotation);
 			guide_make = false;
 		}
-		if(move_bool == true){
+		if(move_bool == true && hex_collider.collider_complete == true){
 			transform.localPosition = Vector3.MoveTowards(transform.position, move_pos, Time.deltaTime * move_speed);
 			float distance = Vector3.Distance(transform.position, move_pos);
 			hexagon.move_end = true;
@@ -187,18 +192,42 @@ public class monster : MonoBehaviour {
 		}
 
 	}
-	void skill_(){
-		Debug.Log ("Skill " +transform.name);
-		if(skill_number[0] == 0){
-			Debug.Log("NO SKILL " +transform.name);
-			pattern_num = 4;
+	void skill_(){/*
+		if(target_distance > skill_range){
+			Debug.Log("skill range no " + transform.name);
+			if(active_count >=1)
+				wait_();
+			if(active_count <=0){
+				pattern_num = 1;
+				collider.GetComponent<hex_collider>().range_ = move_range;
+				collider_range_();
+			}
+				
+		
 		}
-		else{
-			GameObject ui_object = Instantiate(attack_ui,new Vector3(target.transform.position.x,20,
-			target.transform.position.z),attack_ui.transform.rotation) as GameObject;
-			Destroy(ui_object,0.5f);
+		if(target_distance <= skill_range){
+			if(one_skill_bool == true){
+				Debug.Log("skill cast " + transform.name);
+				GameObject child = Instantiate(skill,transform.position,transform.rotation) as GameObject;
+				child.transform.parent = transform;
+				one_skill_bool = false;
+			}
+			
+			if(now_skill == true){
+				pattern_num = 4;
+				Debug.Log ("Skill " +transform.name);
+			}
+		}*/
+
+		Debug.Log("임시 skill ");
+		if(active_count ==0){
+			collider_range_();
+			pattern_num = 1;
 		}
-		pattern_num = 4;
+		else
+			wait_();
+
+		//wait_();
 	}
 	void wait_(){
 		play_system.dice_active_num = 0;
@@ -208,6 +237,7 @@ public class monster : MonoBehaviour {
 		active_count =0;
 		pattern_num = 0;
 		pattern_bool = true;
+		one_skill_bool = true;
 		Debug.Log ("wait " +transform.name);
 
 	}

@@ -683,6 +683,8 @@ MonoBehaviour:
   camera_move_bool: 0
   dice_camera: {fileID: 0}
   del: 0
+  skill_On: 0
+  skill_caster: {fileID: 0}
 --- !u!114 &11483636
 MonoBehaviour:
   m_ObjectHideFlags: 1
