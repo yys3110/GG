@@ -1,11 +1,19 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\dongeun\rapid.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\dongeun\mon-Holy Spirit\HolySpirit_active.cs">
     <Files>
-      <File FileName="Assets\script\player.cs" Line="353" Column="1" />
-      <File FileName="Assets\script\hex_collider.cs" Line="15" Column="2" />
-      <File FileName="Assets\dongeun\red_arrow.cs" Line="23" Column="11" />
-      <File FileName="Assets\dongeun\rapid.cs" Line="8" Column="40" />
+      <File FileName="Assets\script\player.cs" Line="256" Column="41" />
+      <File FileName="Assets\script\hex_collider.cs" Line="1" Column="1" />
+      <File FileName="Assets\dongeun\red_arrow.cs" Line="38" Column="46" />
+      <File FileName="Assets\dongeun\rapid.cs" Line="13" Column="3" />
+      <File FileName="Assets\script\SKILL\Authority\Authority_설명서.cs" Line="9" Column="5" />
+      <File FileName="Assets\script\SKILL\Authority\Authority_buff.cs" Line="38" Column="36" />
+      <File FileName="Assets\dongeun\mon-Strong health\StrongHealth_active.cs" Line="15" Column="2" />
+      <File FileName="Assets\script\dice.cs" Line="1" Column="1" />
+      <File FileName="Assets\script\play_system.cs" Line="136" Column="53" />
+      <File FileName="Assets\script\dice_collider.cs" Line="1" Column="1" />
+      <File FileName="Assets\script\monster.cs" Line="42" Column="5" />
+      <File FileName="Assets\dongeun\mon-Holy Spirit\HolySpirit_active.cs" Line="20" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

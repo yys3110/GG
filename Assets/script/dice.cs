@@ -10,6 +10,9 @@ public class dice : MonoBehaviour {
 	public bool camera_move_bool = false;
 	public GameObject dice_camera;
 	public float del;
+	//스킬 관련
+	public bool skill_On = false;
+	public GameObject skill_caster;
 	Rect go_rect;
 	// Use this for initialization
 	void Start () {
@@ -29,12 +32,24 @@ public class dice : MonoBehaviour {
 					camera_move_bool = true;
 				}
 				if(play_system.turn == 2){
-					dice_camera = GameObject.FindWithTag ("ui_camera");
-					dice_camera.transform.localPosition = new Vector3(0,8.92f,-9.18f);
-					transform.localPosition = new Vector3(0.06001282f,1,-4.0f);
-					go_rect = new Rect (0,0,0,0);
-					play_system.dice_active_num ++;
-					Destroy(gameObject);
+					if(skill_On == false){
+						dice_camera = GameObject.FindWithTag ("ui_camera");
+						dice_camera.transform.localPosition = new Vector3(0,8.92f,-9.18f);
+						transform.localPosition = new Vector3(0.06001282f,1,-4.0f);
+						go_rect = new Rect (0,0,0,0);
+						play_system.dice_active_num ++;
+						Destroy(gameObject);
+					}
+					if(skill_On == true){
+						dice_camera = GameObject.FindWithTag ("ui_camera");
+						dice_camera.transform.localPosition = new Vector3(0,8.92f,-9.18f);
+						transform.localPosition = new Vector3(0.06001282f,1,-4.0f);
+						go_rect = new Rect (0,0,0,0);
+						skill_caster.transform.parent.GetComponent<monster>().add_damage = dice_num;
+						monster.skill_active++;
+						Destroy(gameObject);
+					}
+
 				}
 				del =0;
 				dice_roll = false;
