@@ -5,7 +5,9 @@ public class Authority_buff : MonoBehaviour {
 	public float range_collider;
 	public GameObject effect;
 	// 사거리 내의 적 공격력, 사거리, 기동력 -1
-	// Use this for initialization
+	public int debuff_damage = 1;
+	public int debuff_AttackRange = 1;
+	public int debuff_MoveRange = 1;
 	void Start () {
 	
 	}
@@ -23,9 +25,9 @@ public class Authority_buff : MonoBehaviour {
 	void OnTriggerEnter(Collider coll){
 		if(coll.gameObject.tag == "monster"){
 			monster m = coll.GetComponent<monster>();
-			m.damage = m.damage -1;
-			m.attack_range = m.attack_range -1;
-			m.move_range = m.move_range -1;
+			m.damage = m.damage - debuff_damage;
+			m.attack_range = m.attack_range -debuff_AttackRange;
+			m.move_range = m.move_range - debuff_MoveRange;
 			GameObject monster = coll.gameObject;
 			GameObject child = Instantiate(effect,monster.transform.position,effect.transform.rotation) as GameObject;
 			child.transform.parent = monster.transform;
@@ -37,9 +39,9 @@ public class Authority_buff : MonoBehaviour {
 		if(coll.gameObject.tag == "monster"){
 			Debug.Log("monster collider exit ");
 			monster m = coll.GetComponent<monster>();
-			m.damage = m.damage +1;
-			m.attack_range = m.attack_range +1;
-			m.move_range = m.move_range +1;
+			m.damage = m.damage +debuff_damage;
+			m.attack_range = m.attack_range +debuff_AttackRange;
+			m.move_range = m.move_range +debuff_MoveRange;
 			Debug.Log("end buff");
 			GameObject monster = coll.gameObject;
 			monster.GetComponentInChildren<Status_ailment_effect>().live = false;

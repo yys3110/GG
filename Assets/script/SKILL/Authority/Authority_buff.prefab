@@ -57,6 +57,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range_collider: 0
+  effect: {fileID: 0}
+  debuff_damage: 1
+  debuff_AttackRange: 1
+  debuff_MoveRange: 1
 --- !u!135 &13532848
 SphereCollider:
   m_ObjectHideFlags: 1

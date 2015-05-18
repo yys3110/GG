@@ -17,6 +17,8 @@ public class monster : MonoBehaviour {
 
 	public float move_speed;
 	public bool range_collider = false;
+	//오브젝트 관련
+	public GameObject Damage_display;
 	//몬스터 정보//
 	public bool ______________;
 	public int monster_number; // 몇번째로 움직이는가를 판단;
@@ -172,6 +174,8 @@ public class monster : MonoBehaviour {
 			GameObject ui_object = Instantiate(attack_ui,new Vector3(target.transform.position.x,20,
 			                                                         target.transform.position.z),attack_ui.transform.rotation) as GameObject;
 			target.GetComponent<player>().hp_ -= damage;
+			Damage_display.GetComponent<damage>().damage_dis = damage;
+			Instantiate(Damage_display,target.transform.position,Damage_display.transform.rotation);
 			Destroy(ui_object,0.5f);
 			pattern_num = 4;
 		}

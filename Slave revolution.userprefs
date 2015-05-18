@@ -1,14 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\SKILL\Authority\Authority_buff.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\player.cs">
     <Files>
-      <File FileName="Slave revolution.sln" Line="40" Column="1" />
-      <File FileName="Assets\script\player.cs" Line="337" Column="12" />
-      <File FileName="Assets\script\monster.cs" Line="174" Column="47" />
+      <File FileName="Assets\script\monster.cs" Line="177" Column="62" />
       <File FileName="Assets\script\dice.cs" Line="1" Column="1" />
-      <File FileName="Assets\script\play_system.cs" Line="123" Column="4" />
-      <File FileName="Assets\script\ui_field_system.cs" Line="1" Column="1" />
-      <File FileName="Assets\script\SKILL\Authority\Authority_buff.cs" Line="34" Column="27" />
+      <File FileName="Assets\script\player.cs" Line="258" Column="43" />
+      <File FileName="Assets\script\stage_select.cs" Line="1" Column="1" />
+      <File FileName="Assets\script\SKILL\Authority\Authority_active.cs" Line="1" Column="1" />
+      <File FileName="Assets\script\play_system.cs" Line="1" Column="1" />
+      <File FileName="Assets\Damage_display\damage.cs" Line="1" Column="1" />
+      <File FileName="Assets\script\SKILL\Authority\Authority_buff.cs" Line="15" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

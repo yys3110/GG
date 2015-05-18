@@ -209,7 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guide: {fileID: 181408}
   guide_cube: {fileID: 143834, guid: 477bce6104bb68047870c15ea3f7bcbc, type: 2}
-  mouse_distance: {x: 35, y: 0, z: -67.5}
+  mouse_distance: {x: -40, y: 0, z: -60}
   hex_collider:
   - {fileID: 181410}
   - {fileID: 181412}

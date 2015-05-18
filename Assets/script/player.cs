@@ -28,16 +28,19 @@ public class player : MonoBehaviour {
 	bool one_monster_click = true;
 	public GameObject monster_unit; // 클릭 한 몬스터의 정보가 입력;
 	bool one_die_check = true;
-	//스킬 관련 
+	//스킬 관련
 	bool one_skill_bool = true;
 	public static bool skill_cast = false;
 	GameObject child;
+	// 추가 데미지 관련
+	public int add_damage = 0;
 	// 카메라
 	Vector3 camera_default_pos = new Vector3(31,70,-155);
 	bool camera_move_bool = false;
 	int camera_num =0; // 카메라의 구도;
-	// 캐릭터 능력 
+	// 오브젝트 관련
 	public float speed = 10;
+	public GameObject Damage_display;
 	//캐릭터 정보//
 	public bool ______________;
 	public int code_number;
@@ -59,7 +62,6 @@ public class player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(die_bool == true){
-
 		}
 		if(play_system.turn == 1 && character_select == true && die_bool == false){
 			if(active_num == 1){
@@ -108,7 +110,6 @@ public class player : MonoBehaviour {
 		if(unit_active_bool == true){
 			chance_turn = true;
 		}
-
 		if(camera_move_bool == true){
 			if(camera_num == 1){
 				Camera.main.transform.position = Vector3.MoveTowards(Camera.main.transform.position, 
@@ -140,7 +141,6 @@ public class player : MonoBehaviour {
 			play_system.monster_target.Remove(gameObject);
 			die_bool = true;
 		}
-
 		if(play_system.turn == 1 && die_bool == true){
 			if(one_die_check == true){
 				play_system.player_num ++;
@@ -148,8 +148,6 @@ public class player : MonoBehaviour {
 			}
 		}
 	}
-
-
 	void OnMouseDown()
 	{
 		if(play_system.turn ==1 && chance_turn == true && player_click == true)
@@ -166,7 +164,6 @@ public class player : MonoBehaviour {
 		}
 	}
 	void OnField_ui(){
-
 		if(active_num == 1){
 			hexagon.move_end = false;
 			collider.GetComponent<hex_collider>().range_ = move_range;
@@ -179,13 +176,12 @@ public class player : MonoBehaviour {
 			Instantiate(collider, new Vector3(transform.position.x,0,transform.position.z),collider.transform.rotation);
 			unit_active_bool = false;
 		}
-		
 	}
 	void OnGUI()
 	{
 		if(character_select == true)
 		{
-			if(GUI.RepeatButton(new Rect(100,100,100,50),"취소 후 다른캐릭터 선택"))
+			if(GUI.RepeatButton(new Rect(10,10,100,50),"취소 후 다른캐릭터 선택"))
 			{
 				character_select = false;
 				hexagon.move_end = true;
@@ -197,9 +193,7 @@ public class player : MonoBehaviour {
 			}
 		}
 	}
-
 	void move_(){
-
 		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 		RaycastHit hit;
 			
@@ -271,11 +265,10 @@ public class player : MonoBehaviour {
 				}
 				pos_num ++;
 			}
-				
 		}
 		if(move_bool == false){
 			pos_num =0;	
-			move_range = 4;
+			//move_range = 4;  // move range 초기화 
 		}
 	}
 	void attack_(){
@@ -299,40 +292,28 @@ public class player : MonoBehaviour {
 				play_system.dice_active_num ++;
 			}
 			if(monster_unit.GetComponent<monster>().miss >= damage){ // 여기서의 damage 는 명중굴림 수
-				turn_colltime ++;
-				chance_turn = false;
-				player_click = true;
 				one_monster_click = true;
 				hexagon.move_end = true;
-				active_num = 0;
-				camera_move_bool = true; // 카메라 움직임
-				camera_num = 2; // 카메라 움직임
-				play_system.player_num ++;
 				play_system.dice_active_num =0; // 초기화
 				play_system.active_dice_bool = false;
 				field_UI.GetComponent<ui_field_system>().ui_move_bool = true;
 				field_UI.GetComponent<ui_field_system>().ui_cancel_bool = true;
+				wait_();
 			}
-
-
 		}
 		if(play_system.dice_active_num == 6){
 			GameObject ui_des = Instantiate(attack_ui,new Vector3(monster_unit.transform.position.x,20,
 			monster_unit.transform.position.z),attack_ui.transform.rotation) as GameObject;
-			monster_unit.GetComponent<monster>().hp_ -= damage;
-			turn_colltime ++;
+			monster_unit.GetComponent<monster>().hp_ -= damage + add_damage;
+			Damage_display.GetComponent<damage>().damage_dis = damage + add_damage;
+			Instantiate(Damage_display,monster_unit.transform.position,Damage_display.transform.rotation);
 			Destroy(ui_des,0.5f);
-			chance_turn = false;
-			player_click = true;
 			one_monster_click = true;
 			hexagon.move_end = true;
-			active_num = 0;
-			camera_move_bool = true; // 카메라 움직임
-			camera_num = 2; // 카메라 움직임
-			play_system.player_num ++;
 			play_system.dice_active_num =0; // 초기화
 			field_UI.GetComponent<ui_field_system>().ui_move_bool = true;
 			field_UI.GetComponent<ui_field_system>().ui_cancel_bool = true;
+			wait_();
 		}
 	}
 	void skill_(){
@@ -358,10 +339,11 @@ public class player : MonoBehaviour {
 		player_click = true;
 		unit_active_bool = false;
 		active_num = 0;
-		camera_move_bool = true;
+		camera_move_bool = true;// 카메라 움직임
 		one_skill_bool = true;
 		camera_num = 2;
 		turn_colltime ++;
+		damage = 0;
 		play_system.player_num ++;
 
 		//field_UI.SendMessage("reset_bool","1");
