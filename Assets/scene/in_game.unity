@@ -2780,12 +2780,16 @@ MonoBehaviour:
   move_speed: 50
   range_collider: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   Damage_display: {fileID: 108890, guid: 961a8b5e16ceb4248a2d5d1a07576957, type: 2}
 =======
   Damage_display: {fileID: 120830, guid: 961a8b5e16ceb4248a2d5d1a07576957, type: 2}
   skill: {fileID: 0}
   add_damage: 0
 >>>>>>> 190eac58e51ca3e2128baf876b2afcdaf0da8824
+=======
+  Damage_display: {fileID: 120830, guid: 961a8b5e16ceb4248a2d5d1a07576957, type: 2}
+>>>>>>> parent of bba1174... 스플릿 작업
   ______________: 0
   monster_number: 0
   code_number: 0
@@ -16096,9 +16100,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 742684783}
-  m_Text: 'PLAYER TURN
-
-'
+  m_Text: PLAYER TURN
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -24102,7 +24104,7 @@ MonoBehaviour:
   monster_unit: {fileID: 0}
   add_damage: 0
   speed: 100
-  Damage_display: {fileID: 108890, guid: 961a8b5e16ceb4248a2d5d1a07576957, type: 2}
+  Damage_display: {fileID: 120830, guid: 961a8b5e16ceb4248a2d5d1a07576957, type: 2}
   ______________: 0
   code_number: 0
   hp_: 90
