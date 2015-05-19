@@ -10,8 +10,8 @@ public class rage_buff : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(gameObject.GetComponent<monster>){
+		//if(gameObject.GetComponent<monster>){
 
-		}
+		//}
 	}
 }
