@@ -2943,12 +2943,24 @@ MonoBehaviour:
   pattern_bool: 1
   move_speed: 50
   range_collider: 0
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> master
   Damage_display: {fileID: 108890, guid: 961a8b5e16ceb4248a2d5d1a07576957, type: 2}
   skill: {fileID: 170556, guid: 65b098788aaefd446aeb70f5faf4df4b, type: 2}
   skill_range: 10
   now_skill: 0
   add_damage: 0
+<<<<<<< HEAD
   one_skill_bool: 1
+=======
+>>>>>>> 190eac58e51ca3e2128baf876b2afcdaf0da8824
+=======
+  Damage_display: {fileID: 120830, guid: 961a8b5e16ceb4248a2d5d1a07576957, type: 2}
+>>>>>>> parent of bba1174... 스플릿 작업
+>>>>>>> master
   ______________: 0
   monster_number: 0
   code_number: 0
@@ -25080,7 +25092,7 @@ MonoBehaviour:
   temp_skill_bool: 0
   add_damage: 0
   speed: 100
-  Damage_display: {fileID: 108890, guid: 961a8b5e16ceb4248a2d5d1a07576957, type: 2}
+  Damage_display: {fileID: 120830, guid: 961a8b5e16ceb4248a2d5d1a07576957, type: 2}
   ______________: 0
   code_number: 0
   hp_: 13
