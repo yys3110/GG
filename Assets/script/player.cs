@@ -33,8 +33,9 @@ public class player : MonoBehaviour {
 	public static bool skill_cast = false;
 	GameObject child;
 	public bool temp_skill_bool = false;
-	// 추가 데미지 관련
+	// 추가 데미지 및 방어 관련
 	public int add_damage = 0;
+	public int defense = 0;
 	// 카메라
 	Vector3 camera_default_pos = new Vector3(31,70,-155);
 	bool camera_move_bool = false;
@@ -307,7 +308,7 @@ public class player : MonoBehaviour {
 		if(play_system.dice_active_num == 6){
 			GameObject ui_des = Instantiate(attack_ui,new Vector3(monster_unit.transform.position.x,20,
 			monster_unit.transform.position.z),attack_ui.transform.rotation) as GameObject;
-			monster_unit.GetComponent<monster>().hp_ -= damage + add_damage;
+			monster_unit.GetComponent<monster>().hp_ -= monster_unit.GetComponent<monster>().defense - damage + add_damage;
 			Damage_display.GetComponent<damage>().damage_dis = damage + add_damage;
 			Instantiate(Damage_display,monster_unit.transform.position,Damage_display.transform.rotation);
 			Destroy(ui_des,0.5f);

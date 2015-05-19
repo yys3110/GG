@@ -23,9 +23,12 @@ public class monster : MonoBehaviour {
 	public GameObject skill;
 	public float skill_range;
 	public bool now_skill = false;
-	public int add_damage;
+	//public int add_damage;
 	static public int skill_active =0;
 	public bool one_skill_bool = true;
+	// 추가 데미지 및 방어 관련
+	public int add_damage =0;
+	public int defense = 0;
 	//몬스터 정보//
 	public bool ______________;
 	public int monster_number; // 몇번째로 움직이는가를 판단;
@@ -184,7 +187,7 @@ public class monster : MonoBehaviour {
 		if(play_system.dice_active_num == 6){
 			GameObject ui_object = Instantiate(attack_ui,new Vector3(target.transform.position.x,20,
 			                                                         target.transform.position.z),attack_ui.transform.rotation) as GameObject;
-			target.GetComponent<player>().hp_ -= damage;
+			target.GetComponent<player>().hp_ -= target.GetComponent<player>().defense - damage + add_damage;
 			Damage_display.GetComponent<damage>().damage_dis = damage;
 			Instantiate(Damage_display,target.transform.position,Damage_display.transform.rotation);
 			Destroy(ui_object,0.5f);
