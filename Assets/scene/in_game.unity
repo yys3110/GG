@@ -2784,8 +2784,9 @@ MonoBehaviour:
   skill: {fileID: 170556, guid: 65b098788aaefd446aeb70f5faf4df4b, type: 2}
   skill_range: 10
   now_skill: 0
-  add_damage: 0
   one_skill_bool: 1
+  add_damage: 0
+  defense: 0
   ______________: 0
   monster_number: 0
   code_number: 0
@@ -24110,6 +24111,7 @@ MonoBehaviour:
   monster_unit: {fileID: 0}
   temp_skill_bool: 0
   add_damage: 0
+  defense: 0
   speed: 100
   Damage_display: {fileID: 108890, guid: 961a8b5e16ceb4248a2d5d1a07576957, type: 2}
   ______________: 0
