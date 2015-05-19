@@ -10,6 +10,6 @@ public class StrongHealth_buff : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		transform.GetComponent<monster>().defense = 1;
 	}
 }
