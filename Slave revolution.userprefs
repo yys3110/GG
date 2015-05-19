@@ -1,9 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\player.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Damage_display\damage_dis.cs">
     <Files>
-      <File FileName="Assets\script\player.cs" Line="311" Column="1" />
-      <File FileName="Assets\script\play_system.cs" Line="37" Column="61" />
+      <File FileName="Assets\script\player.cs" Line="314" Column="29" />
+      <File FileName="Assets\script\monster.cs" Line="187" Column="48" />
+      <File FileName="Assets\Damage_display\damage_dis.cs" Line="11" Column="2" />
+      <File FileName="Assets\script\play_system.cs" Line="130" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
