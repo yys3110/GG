@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class StrongHealth_buff : MonoBehaviour {
-
+public class rage_buff : MonoBehaviour {
+	public int buff = 0;
 	// Use this for initialization
 	void Start () {
 	
@@ -10,6 +10,8 @@ public class StrongHealth_buff : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.GetComponent<monster>().defense = 1;
+		if(gameObject.GetComponent<monster>){
+
+		}
 	}
 }
