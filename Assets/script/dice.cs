@@ -40,7 +40,6 @@ public class dice : MonoBehaviour {
 						dice_camera.transform.localPosition = new Vector3(0,8.92f,-9.18f);
 						transform.localPosition = new Vector3(0.06001282f,1,-4.0f);
 						go_rect = new Rect (0,0,0,0);
-						play_system.dice_active_num ++;
 						Destroy(gameObject);
 					}
 					if(skill_On == true){
@@ -97,7 +96,6 @@ public class dice : MonoBehaviour {
 			if(GUI.RepeatButton(go_rect,"GO")){
 				dice_camera.transform.localPosition = new Vector3(0,8.92f,-9.18f);
 				transform.localPosition = new Vector3(0.06001282f,1,-4.0f);
-				play_system.dice_active_num ++;
 				go_rect = new Rect (0,0,0,0);
 				Destroy(gameObject);
 			}
