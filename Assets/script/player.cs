@@ -33,9 +33,8 @@ public class player : MonoBehaviour {
 	public static bool skill_cast = false;
 	GameObject child;
 	public bool temp_skill_bool = false;
-	// 추가 데미지 및 방어 관련
+	// 추가 데미지 관련
 	public int add_damage = 0;
-	public int defense = 0;
 	// 카메라
 	Vector3 camera_default_pos = new Vector3(31,70,-155);
 	bool camera_move_bool = false;
@@ -276,13 +275,49 @@ public class player : MonoBehaviour {
 		}
 	}
 	void attack_(){
-		play_system.one_dice_bool = true;
-		Camera.main.GetComponent<play_system>().dice_(dice_code_number);
-		active_num = 4;
-			//monster_unit.GetComponent<monster>().hp_ -= monster_unit.GetComponent<monster>().defense - damage + add_damage;
-			//Damage_display.GetComponent<damage>().damage_dis = damage + add_damage;
-		//play_system.dice
-			
+		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+		RaycastHit hit;
+
+		if(Physics.Raycast(ray, out hit , Mathf.Infinity) && hit.collider.gameObject.tag == "monster"){
+			if(hit.collider.GetComponent<monster>().range_collider == true){
+				if(Input.GetKeyDown(KeyCode.Mouse0) && one_monster_click == true){
+					monster_unit = hit.collider.gameObject;
+					play_system.one_dice_bool = true;
+					play_system.active_dice_bool = true;
+					play_system.dice_active_num ++;
+					one_monster_click = false;
+				}
+			}
+		}
+		if(play_system.dice_active_num == 3){
+			if(monster_unit.GetComponent<monster>().miss < damage){ // damage는 명중굴림,실패 시
+				play_system.one_dice_bool = true;
+				play_system.dice_active_num ++;
+			}
+			if(monster_unit.GetComponent<monster>().miss >= damage){ // 여기서의 damage 는 명중굴림 수
+				one_monster_click = true;
+				hexagon.move_end = true;
+				play_system.dice_active_num =0; // 초기화
+				play_system.active_dice_bool = false;
+				field_UI.GetComponent<ui_field_system>().ui_move_bool = true;
+				field_UI.GetComponent<ui_field_system>().ui_cancel_bool = true;
+				wait_();
+			}
+		}
+		if(play_system.dice_active_num == 6){
+			GameObject ui_des = Instantiate(attack_ui,new Vector3(monster_unit.transform.position.x,20,
+			monster_unit.transform.position.z),attack_ui.transform.rotation) as GameObject;
+			monster_unit.GetComponent<monster>().hp_ -= damage + add_damage;
+			Damage_display.GetComponent<damage>().damage_dis = damage + add_damage;
+			Instantiate(Damage_display,monster_unit.transform.position,Damage_display.transform.rotation);
+			Destroy(ui_des,0.5f);
+			one_monster_click = true;
+			hexagon.move_end = true;
+			play_system.dice_active_num =0; // 초기화
+			field_UI.GetComponent<ui_field_system>().ui_move_bool = true;
+			field_UI.GetComponent<ui_field_system>().ui_cancel_bool = true;
+			wait_();
+		}
 	}
 	void skill_(){
 		if(one_skill_bool == true){

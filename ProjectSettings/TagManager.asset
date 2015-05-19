@@ -18,8 +18,6 @@ TagManager:
   - ui_camera
   - ui_skill
   - Dice_System
-  - dice
-  - collider
   layers:
   - Default
   - TransparentFX

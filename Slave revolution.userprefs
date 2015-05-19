@@ -1,11 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\play_system.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\player.cs">
     <Files>
-      <File FileName="Assets\script\play_system.cs" Line="112" Column="32" />
-      <File FileName="Assets\script\dice.cs" Line="98" Column="64" />
-      <File FileName="Assets\script\monster.cs" Line="208" Column="27" />
-      <File FileName="Assets\script\player.cs" Line="286" Column="26" />
+      <File FileName="Assets\script\player.cs" Line="311" Column="1" />
+      <File FileName="Assets\script\play_system.cs" Line="37" Column="61" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
