@@ -2773,7 +2773,7 @@ MonoBehaviour:
   guide_make: 0
   move_bool: 0
   guide: {fileID: 181408, guid: f04ab6a5222afa54182f02c9a8d49d64, type: 2}
-  collider: {fileID: 172112, guid: a7f6e40083adcf94a9a4febb2ce78d16, type: 2}
+  collider: {fileID: 116050, guid: 9e754ebe46054b04a8f07a0bfa269262, type: 2}
   move_pos: {x: 0, y: 0, z: 0}
   move_count: 0
   active_count: 0
@@ -24102,7 +24102,7 @@ MonoBehaviour:
   pos_num: 0
   mouse_distance: {x: 0, y: 0, z: 0}
   guide_num: 0
-  collider: {fileID: 172112, guid: a7f6e40083adcf94a9a4febb2ce78d16, type: 2}
+  collider: {fileID: 116050, guid: 9e754ebe46054b04a8f07a0bfa269262, type: 2}
   character_select: 0
   chance_turn: 1
   range_collider: 0

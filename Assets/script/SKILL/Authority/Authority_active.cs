@@ -14,8 +14,7 @@ public class Authority_active : MonoBehaviour {
 	void Start () {
 		player.skill_cast = true;
 		hexagon.move_end = false;
-		collider.GetComponent<hex_collider>().range_ = range_collider;
-		hex_collider.collider_complete = false;
+		collider.GetComponent<range_collider>().range_ = range_collider;
 		coll = Instantiate(collider,new Vector3(transform.parent.position.x,0,transform.parent.position.z),collider.transform.rotation) as GameObject;
 		maincamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
 

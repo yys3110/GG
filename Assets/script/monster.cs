@@ -60,7 +60,6 @@ public class monster : MonoBehaviour {
 			target = play_system.monster_target[0].transform.gameObject;
 			target_distance = Vector3.Distance (transform.position , target.transform.position);
 			if(pattern_bool == true){
-				hex_collider.collider_complete = false;
 				hexagon.move_end = false;
 				monster_AI.AI_bool = true;
 				if(target_distance <= attack_range*10){
@@ -79,7 +78,7 @@ public class monster : MonoBehaviour {
 
 			}
 			if(pattern_bool == false){
-				//if(hex_collider.collider_complete == true)
+
 					if(pattern_num == 1)
 						move_();
 				
@@ -132,7 +131,7 @@ public class monster : MonoBehaviour {
 	void move_(){
 
 		if(one_turn == true){
-			collider.GetComponent<hex_collider>().range_ = move_range;
+			collider.GetComponent<range_collider>().range_ = move_range;
 			collider_range_();
 			pattern_num = 1;
 			guide_make = true;
@@ -146,7 +145,7 @@ public class monster : MonoBehaviour {
 			Instantiate(guide,transform.position,guide.transform.rotation);
 			guide_make = false;
 		}
-		if(move_bool == true && hex_collider.collider_complete == true){
+		if(move_bool == true){
 			transform.localPosition = Vector3.MoveTowards(transform.position, move_pos, Time.deltaTime * move_speed);
 			float distance = Vector3.Distance(transform.position, move_pos);
 			hexagon.move_end = true;
