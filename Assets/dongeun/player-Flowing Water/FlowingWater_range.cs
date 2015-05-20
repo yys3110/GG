@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-
-public class water_wave_range : MonoBehaviour {
+// 유수 범위
+public class FlowingWater_range : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -14,12 +14,12 @@ public class water_wave_range : MonoBehaviour {
 	}
 
 	void OnTriggerStay (Collider coll){
-		water_wave wave = transform.parent.GetComponent<water_wave>();
+		FlowingWater wave = transform.parent.GetComponent<FlowingWater>();
 		if(coll.gameObject.tag == "monster")
 		{
 			//water_wave wave = transform.parent.GetComponent<water_wave>();
 			if(wave.one_bool == false){
-			coll.GetComponent<monster>().hp_ -= transform.parent.GetComponent<water_wave>().damage;
+				coll.GetComponent<monster>().hp_ -= transform.parent.GetComponent<FlowingWater>().damage;
 			Destroy(transform.parent.gameObject);
 			}
 		}

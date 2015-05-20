@@ -2758,7 +2758,7 @@ Transform:
   m_Children:
   - {fileID: 315283649}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!114 &160481460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24117,7 +24117,7 @@ MonoBehaviour:
   Damage_display: {fileID: 108890, guid: 961a8b5e16ceb4248a2d5d1a07576957, type: 2}
   ______________: 0
   code_number: 0
-  hp_: 13
+  hp_: 12
   damage: 0
   miss: 5
   attack_range: 1
@@ -24149,7 +24149,7 @@ Transform:
   - {fileID: 2085002291}
   - {fileID: 1185472217}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!1 &1112857622
 GameObject:
   m_ObjectHideFlags: 0
