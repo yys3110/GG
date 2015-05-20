@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 415568}
   - 114: {fileID: 11417160}
   m_Layer: 0
-  m_Name: water_wave
+  m_Name: FlowingWater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ GameObject:
   - 23: {fileID: 2388926}
   - 114: {fileID: 11453464}
   m_Layer: 0
-  m_Name: wave_range
+  m_Name: Water_range
   m_TagString: hex_collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

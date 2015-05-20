@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 //유수 스킬
-public class water_wave : MonoBehaviour {
+public class FlowingWater : MonoBehaviour {
 	public int damage;
 
 	public GameObject camera_object;
