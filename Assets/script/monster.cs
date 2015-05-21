@@ -13,7 +13,7 @@ public class monster : MonoBehaviour {
 	public bool pattern_bool = true; // 패턴 인식 시작
 	public static bool one_turn = false; //패턴 인식 후 시작되는 턴
 	//패턴인식
-	GameObject target; // 플레이어 유닛
+	public GameObject target; // 플레이어 유닛
 
 	public float move_speed;
 	public bool range_collider = false;

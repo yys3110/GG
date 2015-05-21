@@ -23,7 +23,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 170556}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.16914892, y: -1.29138565, z: -90.3115082}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -40,13 +40,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dice_:
-  - {fileID: 132416, guid: 0cb94a87389be1c479eca781cff69ec6, type: 2}
-  - {fileID: 134304, guid: 54d7144e9102d1248a340ef678bfdf0c, type: 2}
-  - {fileID: 131436, guid: af344341e6c839f4a91f2f59b3046fcf, type: 2}
-  - {fileID: 144668, guid: 8deef3a3849c632499aa5fd21d41b494, type: 2}
-  - {fileID: 171694, guid: 744a1189a48073d49bb708d6e90ba242, type: 2}
+  - {fileID: 132416, guid: 8ce4554b6c242ee44ac099a710a87464, type: 2}
+  - {fileID: 134304, guid: 40bbd2badf620b548ae10441395becdb, type: 2}
+  - {fileID: 131436, guid: 81eed02819ee11745abaf08ea1f1d2c7, type: 2}
+  - {fileID: 144668, guid: bfba622b971216041aba7b5355300b27, type: 2}
+  - {fileID: 171694, guid: 9da5f6e4d05ad9643afe1612c297735c, type: 2}
   dice_num: 0
-  active_num: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

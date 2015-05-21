@@ -1,25 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\dongeun\mon-Continuous Fire\ContinuousFire_buff.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\play_system.cs">
     <Files>
-      <File FileName="Assets\script\play_system.cs" Line="59" Column="27" />
-      <File FileName="Assets\dongeun\player-rage\rage_active.cs" Line="1" Column="1" />
-      <File FileName="Assets\script\monster.cs" Line="19" Column="37" />
-      <File FileName="Assets\dongeun\mon-Strong health\StrongHealth_buff.cs" Line="1" Column="1" />
-      <File FileName="Assets\script\player.cs" Line="1" Column="1" />
-      <File FileName="Assets\dongeun\player-rage\rage_buff.cs" Line="1" Column="1" />
-      <File FileName="Assets\dongeun\player-Iron wall\Ironwall.cs" Line="1" Column="1" />
-      <File FileName="Assets\dongeun\mon-Hawk Eyes\HawkEyes_active.cs" Line="1" Column="1" />
-      <File FileName="Assets\script\SKILL\Authority\Authority_buff.cs" Line="1" Column="1" />
-      <File FileName="Assets\script\hex_collider.cs" Line="1" Column="1" />
-      <File FileName="Assets\dongeun\mon-Holy Ghost\HolyGhost_active.cs" Line="19" Column="18" />
-      <File FileName="Assets\script\SKILL\Authority\Authority_active.cs" Line="1" Column="1" />
-      <File FileName="Assets\script\hexagon.cs" Line="1" Column="1" />
-      <File FileName="Assets\dongeun\mon-Hawk Eyes\HawkEyes_buff.cs" Line="1" Column="1" />
-      <File FileName="Assets\dongeun\mon-Mountaineer\Mountaineer_active.cs" Line="27" Column="4" />
-      <File FileName="Assets\dongeun\player-Flowing Water\FlowingWater.cs" Line="12" Column="31" />
-      <File FileName="Assets\dongeun\player-Flowing Water\FlowingWater_range.cs" Line="16" Column="37" />
-      <File FileName="Assets\dongeun\mon-Continuous Fire\ContinuousFire_buff.cs" Line="17" Column="60" />
+      <File FileName="Assets\dongeun\mon-Explosion Body\ExplosionBody_active.cs" Line="16" Column="2" />
+      <File FileName="Assets\script\play_system.cs" Line="130" Column="1" />
+      <File FileName="Assets\script\monster.cs" Line="39" Column="24" />
+      <File FileName="Assets\dongeun\mon-Explosion Body\ExplosionBody_buff.cs" Line="32" Column="29" />
+      <File FileName="Assets\script\monster_AI.cs" Line="17" Column="20" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
