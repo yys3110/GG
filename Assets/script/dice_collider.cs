@@ -22,6 +22,8 @@ public class dice_collider : MonoBehaviour {
 			transform.parent.GetComponent<dice>().collider_num = collider_num;
 		}
 
+
+
 	}
 
 

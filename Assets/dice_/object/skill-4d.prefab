@@ -8,9 +8,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 488804}
-  - 114: {fileID: 11426414}
   - 54: {fileID: 5402490}
   - 135: {fileID: 13559156}
+  - 114: {fileID: 11409530}
   m_Layer: 9
   m_Name: 1
   m_TagString: Untagged
@@ -26,9 +26,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 458092}
-  - 114: {fileID: 11490768}
   - 54: {fileID: 5465572}
   - 135: {fileID: 13545556}
+  - 114: {fileID: 11427762}
   m_Layer: 9
   m_Name: 2
   m_TagString: Untagged
@@ -44,9 +44,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 420680}
-  - 114: {fileID: 11485010}
   - 54: {fileID: 5452372}
   - 135: {fileID: 13547882}
+  - 114: {fileID: 11412792}
   m_Layer: 9
   m_Name: 3
   m_TagString: Untagged
@@ -62,9 +62,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 404346}
-  - 114: {fileID: 11409168}
   - 54: {fileID: 5455978}
   - 135: {fileID: 13563068}
+  - 114: {fileID: 11410132}
   m_Layer: 9
   m_Name: 4
   m_TagString: Untagged
@@ -82,12 +82,11 @@ GameObject:
   - 4: {fileID: 491022}
   - 33: {fileID: 3385684}
   - 23: {fileID: 2330954}
-  - 95: {fileID: 9537080}
   - 54: {fileID: 5436094}
   - 64: {fileID: 6444544}
-  - 114: {fileID: 11404372}
+  - 114: {fileID: 11470042}
   m_Layer: 9
-  m_Name: 4d
+  m_Name: skill-4d
   m_TagString: dice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,7 +166,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 7b1909e39e072b14eae77d78b1b9d72a, type: 2}
+  - {fileID: 2100000, guid: 04126dc611d9e62498d354e6a54c2ac1, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -275,24 +274,55 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: 080cbcc1a13187d4a9fd22e8961bdd97, type: 3}
---- !u!95 &9537080
-Animator:
-  serializedVersion: 3
+--- !u!114 &11409530
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 132416}
+  m_GameObject: {fileID: 106308}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 080cbcc1a13187d4a9fd22e8961bdd97, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11404372
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe61c55d43333d4eb443c7019753a54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collider_num: 1
+--- !u!114 &11410132
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe61c55d43333d4eb443c7019753a54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collider_num: 4
+--- !u!114 &11412792
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 123922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe61c55d43333d4eb443c7019753a54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collider_num: 3
+--- !u!114 &11427762
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe61c55d43333d4eb443c7019753a54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collider_num: 2
+--- !u!114 &11470042
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -300,7 +330,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 132416}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8a3c26cd1bfe0a42ac6478bdb245283, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c8d6aa739134664aafa42e9b2c83a7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dice_roll: 0
@@ -312,54 +342,7 @@ MonoBehaviour:
   camera_move_bool: 0
   dice_camera: {fileID: 0}
   del: 0
---- !u!114 &11409168
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 131420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a69fb7832f554e24abf9aad2075b30e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collider_num: 4
---- !u!114 &11426414
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 106308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a69fb7832f554e24abf9aad2075b30e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collider_num: 1
---- !u!114 &11485010
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 123922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a69fb7832f554e24abf9aad2075b30e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collider_num: 3
---- !u!114 &11490768
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 110498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a69fb7832f554e24abf9aad2075b30e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collider_num: 2
+  skill_caster: {fileID: 0}
 --- !u!135 &13545556
 SphereCollider:
   m_ObjectHideFlags: 1
