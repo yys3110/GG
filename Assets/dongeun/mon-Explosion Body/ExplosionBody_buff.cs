@@ -28,8 +28,7 @@ public class ExplosionBody_buff : MonoBehaviour {
 
 		}
 	}*/
-		monster patern = transform.parent.GetComponent<monster>();
-		if(patern.pattern_num == 2){
+		if(play_system.turn == 2){
 			Debug.Log("들어왔다 꺄~");
 			gameObject.SetActive(true);
 			player_pos = transform.parent.GetComponent<monster>().target.transform.position;

@@ -40,7 +40,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turn_cooltime: 3
-  active_turn: 0
+  active_turn: 2
   HawkEyes_attack_range: 2
 --- !u!1001 &100100000
 Prefab:

@@ -1,12 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\play_system.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\dongeun\mon-Explosion Body\ExplosionBody_buff.cs">
     <Files>
-      <File FileName="Assets\dongeun\mon-Explosion Body\ExplosionBody_active.cs" Line="16" Column="2" />
-      <File FileName="Assets\script\play_system.cs" Line="130" Column="1" />
-      <File FileName="Assets\script\monster.cs" Line="39" Column="24" />
-      <File FileName="Assets\dongeun\mon-Explosion Body\ExplosionBody_buff.cs" Line="32" Column="29" />
-      <File FileName="Assets\script\monster_AI.cs" Line="17" Column="20" />
+      <File FileName="Assets\dongeun\mon-Explosion Body\ExplosionBody_buff.cs" Line="26" Column="1" />
+      <File FileName="Assets\script\play_system.cs" Line="137" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
