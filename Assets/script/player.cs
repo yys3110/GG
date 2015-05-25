@@ -24,7 +24,7 @@ public class player : MonoBehaviour {
 	public static bool unit_active_bool = false; // 유닛 활성화 컨트롤
 	public int active_num; // 0 : 중립, 1 : move, 2: attack, 3:skill ,4: wait, 5: cancel 할 행동을 정함 << UI_SYSTEM 연동
 	public GameObject attack_ui; // 임시
-	public GameObject field_UI; // 필드 ui 게임 오브젝트;
+	public GameObject field_UI;// 필드 ui 게임 오브젝트; 임시로 삭제 
 	bool one_monster_click = true;
 	public GameObject monster_unit; // 클릭 한 몬스터의 정보가 입력;
 	bool one_die_check = true;
@@ -59,6 +59,7 @@ public class player : MonoBehaviour {
 		play_system.player_max_num ++;
 		play_system.monster_target.Add(gameObject);
 		play_system.target_on_bool.Add(gameObject);
+		field_UI = Camera.main.GetComponent<play_system>().UI_field;
 	}
 	
 	// Update is called once per frame

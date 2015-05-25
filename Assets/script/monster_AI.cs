@@ -6,7 +6,7 @@ public class monster_AI : MonoBehaviour {
 	public static int [,] Search_melee_AI = {{70,20,10},{80,15,5},{90,10,0},{70,30,0}};
 	public static int [,] Search_range_AI = {{70,20,10},{80,15,5},{90,10,0},{70,30,0}};
 	public static int [,] Search_Wizard_AI = {{70,20,10},{60,35,5},{90,10,0},{70,30,0}};
-	public static int [,] Battle_melee_AI = {{10,70,20},{5,60,35},{40,30,30},{5,55,50}};
+	public static int [,] Battle_melee_AI = {{70,70,20},{5,60,35},{40,30,30},{5,55,50}};
 	public static int [,] Battle_range_AI = {{10,70,20},{5,65,25},{15,60,25},{5,40,55}};
 	public static int [,] Battle_Wizard_AI = {{10,40,50},{5,20,75},{20,30,50},{5,30,65}};
 	public static GameObject monster_info;
@@ -31,7 +31,7 @@ public class monster_AI : MonoBehaviour {
 					if(mon_info.active_count == 1){
 						//AI_random = Random.Range(Search_melee_AI[level,0]+1,101);
 						mon_info.pattern_num = 3;
-						Debug.Log(AI_random+"  " + mon_info.transform.name);
+						Debug.Log(AI_random+" monster active count is one / name: " + mon_info.transform.name);
 					}
 					AI_bool = false;
 				}
@@ -42,7 +42,6 @@ public class monster_AI : MonoBehaviour {
 					mon_info.pattern_num = 4;
 				}
 			}
-			AI_random = Random.Range(0,101);
 		}
 		AI_bool = false;
 	}
@@ -58,14 +57,13 @@ public class monster_AI : MonoBehaviour {
 				if(AI_random <=Battle_melee_AI[level,0])
 				{
 					if(mon_info.active_count == 0){
-						//mon_info.collider.GetComponent<hex_collider>().range_ = mon_info.move_range;
-						//mon_info.collider_range_();
+						Debug.Log(mon_info.transform.name + "battle AI - "+Battle_melee_AI[level,0]+"  pattern 1 ");
 						mon_info.pattern_num = 1;
 					}
 					if(mon_info.active_count ==1){
 						//AI_random = Random.Range(Battle_melee_AI[level,0]+1,101);
 						mon_info.pattern_num = 2;
-						Debug.Log(AI_random +"  " + mon_info.transform.name);
+						Debug.Log(AI_random +" monster active count is one / name : " + mon_info.transform.name);
 					}
 					AI_bool = false;
 				}
@@ -77,7 +75,6 @@ public class monster_AI : MonoBehaviour {
 					mon_info.pattern_num = 3;
 				}
 			}
-			AI_random = Random.Range(0,101);
 		}
 		AI_bool = false;
 	}

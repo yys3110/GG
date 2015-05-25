@@ -11,10 +11,10 @@ public class monster : MonoBehaviour {
 	public int move_count; // 이동 시 한칸 움직일 때마다 카운터를 샌다
 	public int active_count =0; // 한 패턴 행동 후 카운터를 샌다. 최대 이동 후 한번의 패턴행동 가능
 	public bool pattern_bool = true; // 패턴 인식 시작
-	public static bool one_turn = false; //패턴 인식 후 시작되는 턴
+	public bool one_move_pattern = true; //패턴 인식 후 move 움직임이 true 가 되어 움직일수 있게 해 준다 
+	public bool one_collider_create = true; // 패턴 인식 후 range_collider 를 생성 해주는 bool 이 true 가 된다, attack 패턴에 쓰고있다.
 	//패턴인식
 	public GameObject target; // 플레이어 유닛
-
 	public float move_speed;
 	public bool range_collider = false;
 	//오브젝트 관련
@@ -60,18 +60,21 @@ public class monster : MonoBehaviour {
 			target = play_system.monster_target[0].transform.gameObject;
 			target_distance = Vector3.Distance (transform.position , target.transform.position);
 			if(pattern_bool == true){
+				pattern_num = 0;
+				Debug.Log(transform.name + " START PATTERN-------------------------- " );
 				hexagon.move_end = false;
 				monster_AI.AI_bool = true;
+				one_move_pattern = true;
+				one_collider_create = true;
 				if(target_distance <= attack_range*10){
-
 					monster_AI.monster_info = transform.gameObject;
+					Debug.Log(transform.name + " START PATTERN--AI_Battle " );
 					monster_AI.AI_Battle();
-					play_system.one_dice_bool = true;
-					play_system.dice_active_num ++;
 					pattern_bool = false;
 				}
 				if(target_distance >attack_range *10){ 
 					monster_AI.monster_info = transform.gameObject;
+					Debug.Log(transform.name + " START PATTERN--AI_Search " );
 					monster_AI.AI_Search();
 					pattern_bool = false;
 				}
@@ -79,17 +82,15 @@ public class monster : MonoBehaviour {
 			}
 			if(pattern_bool == false){
 
-					if(pattern_num == 1)
-						move_();
+				if(pattern_num == 1)
+					move_();
 				
 				if(pattern_num == 2){
 					attack_();
 				}
-				
 				if(pattern_num == 3){
 					skill_();
 				}
-				
 				if(pattern_num == 4){
 					wait_();
 				}
@@ -129,14 +130,13 @@ public class monster : MonoBehaviour {
 
 
 	void move_(){
-
-		if(one_turn == true){
+		if(one_move_pattern == true){
 			collider.GetComponent<range_collider>().range_ = move_range;
 			collider_range_();
-			pattern_num = 1;
 			guide_make = true;
 			move_count = move_range;
-			one_turn = false;
+			one_move_pattern = false;
+			Debug.Log ("move / name : " + transform.name);
 		}
 
 		if(guide_make == true){
@@ -157,31 +157,40 @@ public class monster : MonoBehaviour {
 				if(target_distance <= 10){
 					move_count = 0;
 				}
-				Debug.Log ("move " + transform.name);
 				move_bool = false;
 			}
 		}
 
 		if(move_count == 0){
+			pattern_num = 0;
 			active_count ++;
 			pattern_bool = true;
 		}
 	}
 	public void attack_(){
+		if(one_collider_create == true){
+			collider.GetComponent<range_collider>().range_ = attack_range;
+			collider_range_();
+			one_collider_create = false;
+			play_system.one_dice_bool = true;
+			play_system.dice_active_num ++;
+			Debug.Log("attack start / name : " + transform.name);
+		}
 		play_system.active_dice_bool = true;
 		play_system.selected_unit = transform.gameObject;
 		if(play_system.dice_active_num == 3){
 			if(target.GetComponent<player>().miss < damage){ // 여기서의 damage 는 명중굴림 수
 				play_system.one_dice_bool = true;
 				play_system.dice_active_num ++;
+				Debug.Log("attack dice - attack OK / name : " + transform.name);
 			}
 			if(target.GetComponent<player>().miss >= damage){ // 여기서의 damage 는 명중굴림 수
 				play_system.one_dice_bool = true;
 				pattern_num = 4;
 				GameObject dice_s = GameObject.FindWithTag ("dice");
 				Destroy(dice_s);
+				Debug.Log("attack dice - attack NO / name : " + transform.name);
 			}
-			Debug.Log ("attack " +transform.name);
 		}
 		if(play_system.dice_active_num == 6){
 			GameObject ui_object = Instantiate(attack_ui,new Vector3(target.transform.position.x,20,
@@ -191,10 +200,12 @@ public class monster : MonoBehaviour {
 			Instantiate(Damage_display,target.transform.position,Damage_display.transform.rotation);
 			Destroy(ui_object,0.5f);
 			pattern_num = 4;
+			Debug.Log("attack dice - attack - HIT / name : " + transform.name);
 		}
 
 	}
-	void skill_(){/*
+	void skill_(){
+		/*
 		if(target_distance > skill_range){
 			Debug.Log("skill range no " + transform.name);
 			if(active_count >=1)
@@ -221,26 +232,26 @@ public class monster : MonoBehaviour {
 			}
 		}*/
 
-		Debug.Log("임시 skill ");
+		Debug.Log("skill start / name : " + transform.name);
 		if(active_count ==0){
-			collider_range_();
 			pattern_num = 1;
 		}
-		else
+		else{
+			Debug.Log("skill END / name : " + transform.name);
 			wait_();
-
-		//wait_();
+		}
+	
 	}
 	void wait_(){
 		play_system.dice_active_num = 0;
 		hexagon.move_end = true;
 		play_system.monster_num ++;
-		one_turn = true;
+		one_move_pattern = true;
 		active_count =0;
 		pattern_num = 0;
 		pattern_bool = true;
 		one_skill_bool = true;
-		Debug.Log ("wait " +transform.name);
+		Debug.Log("wait / name : " + transform.name);
 
 	}
 	public void collider_range_()

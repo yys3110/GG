@@ -19,7 +19,6 @@ public class play_system : MonoBehaviour {
 	public int player_units;
 	public int monster_units;
 	public bool temp_active_dice_bool = false;
-
 	public int turns;
 	//
 	public TextMesh text_;
@@ -38,7 +37,8 @@ public class play_system : MonoBehaviour {
 	public static List<bool> target_on_bool = new List<bool>();
 	public List<GameObject> mon;
 	public List<bool> mon_bool;
-
+	// UI 시스템 관련 
+	public GameObject UI_field;
 	// Use this for initialization
 	void Start () {
 		turn = 1;
@@ -61,14 +61,14 @@ public class play_system : MonoBehaviour {
 			turn = 2;
 			player_num =0;
 			one_bool = true;
-			Debug.Log(turn +" 턴");
+			Debug.Log(turn +"턴---------------------------------------");
 		}
 		if(monster_num >= monster_max_num && !(monster_unit_num ==0))
 		{
 			turn = 1;
 			monster_num = 0;
 			one_bool = true;
-			Debug.Log(turn +" 턴");
+			Debug.Log(turn +" 턴---------------------------------------");
 		}
 		if(player_unit_num ==0){ // 플레이어 유닛수가 0이면 패배
 			text_.text = "ENEMY VICTORY !!";
@@ -97,7 +97,6 @@ public class play_system : MonoBehaviour {
 			if(one_bool == true)
 			{
 				text_.text = "ENEMY TURN !";
-				monster.one_turn = true;
 				one_bool = false;
 			}
 		}
