@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ContinuousFire_buff : MonoBehaviour {
+public class HolyGhost_passive : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -13,8 +13,9 @@ public class ContinuousFire_buff : MonoBehaviour {
 	
 	}
 	void OnTriggerEnter(Collider coll){
-		if(coll.gameObject.tag == "player"){
-			transform.parent.GetComponent<monster>().add_damage = 1;
+		if(coll.gameObject.tag == "monster"){
+			monster heal = coll.GetComponent<monster>();
+			heal.defense = 1;
 		}
 	}
 }

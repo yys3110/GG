@@ -1,9 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\dongeun\mon-Explosion Body\ExplosionBody_buff.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\dongeun\mon-Sharp Claws\SharpClaws_passive.cs">
     <Files>
-      <File FileName="Assets\dongeun\mon-Explosion Body\ExplosionBody_buff.cs" Line="26" Column="1" />
-      <File FileName="Assets\script\play_system.cs" Line="137" Column="18" />
+      <File FileName="Assets\dongeun\mon-Explosion Body\ExplosionBody_passive.cs" Line="18" Column="39" />
+      <File FileName="Assets\Range_collider\range_collider.cs" Line="55" Column="5" />
+      <File FileName="Assets\script\monster.cs" Line="34" Column="47" />
+      <File FileName="Assets\dongeun\mon-Continuous Fire\ContinuousFire_passive.cs" Line="16" Column="39" />
+      <File FileName="Assets\dongeun\mon-Continuous Fire\ContinuousFire_active.cs" Line="33" Column="4" />
+      <File FileName="Assets\script\play_system.cs" Line="83" Column="3" />
+      <File FileName="Assets\dongeun\mon-Sharp Claws\SharpClaws_passive.cs" Line="23" Column="68" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

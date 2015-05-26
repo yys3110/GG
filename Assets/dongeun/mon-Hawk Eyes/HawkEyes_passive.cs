@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HawkEyes_buff : MonoBehaviour {
+public class HawkEyes_passive : MonoBehaviour {
 	public int buff_miss;
 	// Use this for initialization
 	void Start () {

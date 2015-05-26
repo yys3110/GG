@@ -8,11 +8,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 405556}
-  - 54: {fileID: 5440112}
-  - 135: {fileID: 13505564}
   - 114: {fileID: 11437622}
   m_Layer: 0
-  m_Name: ExplosionBody_buff
+  m_Name: ExplosionBody_passive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,21 +28,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!54 &5440112
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 125466}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!114 &11437622
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -57,18 +40,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player_pos: {x: 0, y: 0, z: 0}
---- !u!135 &13505564
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 125466}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 10
-  m_Center: {x: 0, y: 0, z: 0}
+  one_passive: 0
+  range_collider: {fileID: 116050, guid: 9e754ebe46054b04a8f07a0bfa269262, type: 2}
+  range: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -1,7 +1,7 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 using System.Collections;
-
-public class StrongHealth_buff : MonoBehaviour {
+아직 구현 안함
+public class Ironwall_passive : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -10,6 +10,6 @@ public class StrongHealth_buff : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.GetComponent<monster>().defense = 1;
+	
 	}
-}
+}*/

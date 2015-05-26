@@ -89,6 +89,7 @@ public class play_system : MonoBehaviour {
 				one_bool = false;
 				player.unit_active_bool = true;
 				game_turn ++;
+				Debug.Log (game_turn);
 			}
 		}
 

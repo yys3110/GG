@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class rage_buff : MonoBehaviour {
+public class rage_passive : MonoBehaviour {
 	public int buff = 0; //증가량 표시
 	public int rage_hp = 0;
 	// Use this for initialization

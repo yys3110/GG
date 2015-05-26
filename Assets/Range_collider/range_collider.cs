@@ -5,10 +5,14 @@ public class range_collider : MonoBehaviour {
 	public GameObject collider;
 	public int range_;
 	public float [] rotation_;
-
+	public bool skill_splash_collider = false;
+	public int skill_damage = 0;
 
 	// Use this for initialization
 	void Start () {
+		if(skill_splash_collider == true){
+			Destroy(gameObject,0.1f);
+		}
 
 	}
 	
@@ -29,5 +33,24 @@ public class range_collider : MonoBehaviour {
 		}
 		Destroy(gameObject);
 
+		/*if(skill_splash_collider == true){
+			//Destroy(gameObject);
+			Debug.Log ("들어옴");
+				Destroy(gameObject);
+		}
+		if(skill_splash_collider == false){
+			transform.GetComponent<SphereCollider>().radius = 0;
+			//hexagon.move_end = false;
+			Destroy(gameObject);
+		}*/
 	}
+	/*void OnTriggerEnter(Collider coll){
+		if(coll.gameObject.tag == "player" && coll.GetComponent<player>().range_collider == true){
+			coll.GetComponent<player>().hp_ -= skill_damage;
+			GetComponent<SphereCollider>().enabled = false;
+			hexagon.move_end = true;
+			Debug.Log("skill hit OK --------------------------------");
+			skill_splash_collider = false;
+		}
+	}*/
 }
