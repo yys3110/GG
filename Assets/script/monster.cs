@@ -48,6 +48,7 @@ public class monster : MonoBehaviour {
 		monster_number = play_system.monster_max_num;
 		play_system.monster_unit_num ++;
 		play_system.monster_max_num ++;
+		damage =0;
 	}
 	
 	// Update is called once per frame
