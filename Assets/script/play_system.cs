@@ -33,8 +33,9 @@ public class play_system : MonoBehaviour {
 	public static bool monster_one_dice_bool = true; // dice 의 active 문제로 여기서 운영
 	public GameObject [] dice_object;
 	//
-	public static List<GameObject> monster_target = new List<GameObject>();
+	public static List<GameObject> monster_target = new List<GameObject>();//player 정보 입력되있음
 	public static List<bool> target_on_bool = new List<bool>();
+	public static List<GameObject> monster_info_list = new List<GameObject>();//monster 정보 입력되있음
 	public List<GameObject> mon;
 	public List<bool> mon_bool;
 	// UI 시스템 관련 

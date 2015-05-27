@@ -48,7 +48,9 @@ public class monster : MonoBehaviour {
 		monster_number = play_system.monster_max_num;
 		play_system.monster_unit_num ++;
 		play_system.monster_max_num ++;
+		play_system.monster_info_list.Add(gameObject);
 		damage =0;
+
 	}
 	
 	// Update is called once per frame
@@ -118,6 +120,7 @@ public class monster : MonoBehaviour {
 			if(Physics.Raycast(ray,out hit,Mathf.Infinity)&&hit.collider.gameObject.tag == "hexagon"){
 				hit.collider.gameObject.GetComponent<hexagon>().hexagon_unit_bool = false;
 			}
+			play_system.monster_info_list.Remove(gameObject);
 			die_bool = true;
 		}
 		if(hp_ >= hp_max){
