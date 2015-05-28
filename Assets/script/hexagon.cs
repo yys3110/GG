@@ -10,6 +10,7 @@ public class hexagon : MonoBehaviour {
 	public bool hexagon_unit_bool = false; // hexagon 위에 유닛이 있는가를 판별, 가이드가 판별을 하여 지나갈지 말지를 판단
 	public static bool move_end = false; // move_end 가 true 일 경우 hexagon의 색갈과 정보값 초기화 
 
+
 	//public bool move_ = true;
 
 	// Use this for initialization

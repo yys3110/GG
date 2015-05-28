@@ -1,15 +1,15 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\dice_\object\skill_dice.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\SKILL\mon-Explosion Body\ExplosionBody_active.cs">
     <Files>
-      <File FileName="..\TEST_1\TEST_1.sln" Line="6" Column="7" />
-      <File FileName="Assets\dice_\object\skill_dice.cs" Line="8" Column="26" />
-      <File FileName="Assets\script\dice.cs" Line="1" Column="1" />
-      <File FileName="Assets\script\monster.cs" Line="1" Column="1" />
-      <File FileName="Assets\script\player.cs" Line="1" Column="1" />
-      <File FileName="Assets\script\play_system.cs" Line="1" Column="1" />
-      <File FileName="Assets\script\monster_AI.cs" Line="34" Column="93" />
-      <File FileName="Assets\script\ui_field_system.cs" Line="1" Column="1" />
+      <File FileName="Assets\script\hexagon.cs" Line="11" Column="29" />
+      <File FileName="Assets\script\monster.cs" Line="248" Column="2" />
+      <File FileName="Assets\script\player.cs" Line="349" Column="37" />
+      <File FileName="Assets\Damage_display\damage_dis.cs" Line="19" Column="1" />
+      <File FileName="Assets\SKILL\mon-Explosion Body\ExplosionBody_active.cs" Line="36" Column="1" />
+      <File FileName="Assets\script\monster_AI.cs" Line="14" Column="2" />
+      <File FileName="Assets\script\play_system.cs" Line="28" Column="32" />
+      <File FileName="Assets\script\hex_collider.cs" Line="27" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

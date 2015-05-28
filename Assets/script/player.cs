@@ -36,6 +36,7 @@ public class player : MonoBehaviour {
 	// 추가 데미지 및 방어 관련
 	public int add_damage = 0;
 	public int defense = 0;
+	public bool criticalHit_bool = false;
 	// 카메라
 	Vector3 camera_default_pos = new Vector3(31,70,-155);
 	bool camera_move_bool = false;
@@ -309,9 +310,10 @@ public class player : MonoBehaviour {
 		if(play_system.dice_active_num == 6){
 			GameObject ui_des = Instantiate(attack_ui,new Vector3(monster_unit.transform.position.x,20,
 			monster_unit.transform.position.z),attack_ui.transform.rotation) as GameObject;
-			monster_unit.GetComponent<monster>().hp_ -= monster_unit.GetComponent<monster>().defense - damage + add_damage;
-			Damage_display.GetComponent<damage_dis>().damage = damage + add_damage;
-			Instantiate(Damage_display,monster_unit.transform.position,Damage_display.transform.rotation);
+			if(criticalHit_bool == true)
+				monster_unit.GetComponent<monster>().HP_system(damage*2,criticalHit_bool);
+			if(criticalHit_bool == false)
+				monster_unit.GetComponent<monster>().HP_system(damage,criticalHit_bool);
 			Destroy(ui_des,0.5f);
 			one_monster_click = true;
 			hexagon.move_end = true;
@@ -363,4 +365,19 @@ public class player : MonoBehaviour {
 		camera_move_bool = true;
 		camera_num = 2;
 	}
+	public void HP_system(int damage_number , bool critical){
+		int temp_damage =0;
+		if(defense >= damage_number){
+			temp_damage = 0;
+		}
+		else{
+			temp_damage = damage_number -defense;
+		}
+		hp_ -= temp_damage;
+		Damage_display.GetComponent<damage_dis>().damage = temp_damage;
+		GameObject dis = Instantiate(Damage_display,transform.position,Damage_display.transform.rotation) as GameObject;
+		if(critical == true){
+			dis.transform.localScale += new Vector3(1,1,1);
+		}
+	}	
 }

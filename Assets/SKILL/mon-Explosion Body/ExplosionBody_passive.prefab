@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &405556
 Transform:
   m_ObjectHideFlags: 1
@@ -43,6 +43,11 @@ MonoBehaviour:
   one_passive: 0
   range_collider: {fileID: 116050, guid: 9e754ebe46054b04a8f07a0bfa269262, type: 2}
   range: 1
+  collider_radius: 10
+  effects_ExplosionBody: {fileID: 130796, guid: a6ee3ce1fc87ee3448da6e9f9220539c,
+    type: 2}
+  splash: {fileID: 160890, guid: d049d9e67b4e79942aa38ac5281f73fc, type: 2}
+  splash_damage: .200000003
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

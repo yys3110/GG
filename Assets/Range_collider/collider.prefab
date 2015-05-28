@@ -27,7 +27,7 @@ GameObject:
   - 4: {fileID: 472900}
   - 65: {fileID: 6515174}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Cube_collider
   m_TagString: hex_collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

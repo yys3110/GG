@@ -29,6 +29,7 @@ public class monster : MonoBehaviour {
 	// 추가 데미지 및 방어 관련
 	public int add_damage =0;
 	public int defense = 0;
+	public bool criticalHit_bool = false;
 	//몬스터 정보//
 	public bool ______________;
 	public int monster_number; // 몇번째로 움직이는가를 판단;
@@ -135,8 +136,7 @@ public class monster : MonoBehaviour {
 
 	void move_(){
 		if(one_move_pattern == true){
-			collider.GetComponent<range_collider>().range_ = move_range;
-			collider_range_();
+			collider_range_(move_range);
 			guide_make = true;
 			move_count = move_range;
 			one_move_pattern = false;
@@ -173,8 +173,7 @@ public class monster : MonoBehaviour {
 	}
 	public void attack_(){
 		if(one_collider_create == true){
-			collider.GetComponent<range_collider>().range_ = attack_range;
-			collider_range_();
+			collider_range_(attack_range);
 			one_collider_create = false;
 			play_system.one_dice_bool = true;
 			play_system.dice_active_num ++;
@@ -186,6 +185,9 @@ public class monster : MonoBehaviour {
 			if(target.GetComponent<player>().miss < damage){ // 여기서의 damage 는 명중굴림 수
 				play_system.one_dice_bool = true;
 				play_system.dice_active_num ++;
+				if(damage >= 18){
+					criticalHit_bool = true;
+				}
 				Debug.Log("attack dice - attack OK / name : " + transform.name);
 			}
 			if(target.GetComponent<player>().miss >= damage){ // 여기서의 damage 는 명중굴림 수
@@ -199,9 +201,12 @@ public class monster : MonoBehaviour {
 		if(play_system.dice_active_num == 6){
 			GameObject ui_object = Instantiate(attack_ui,new Vector3(target.transform.position.x,20,
 			                                                         target.transform.position.z),attack_ui.transform.rotation) as GameObject;
-			target.GetComponent<player>().hp_ += target.GetComponent<player>().defense - damage + add_damage;
-			Damage_display.GetComponent<damage_dis>().damage= damage;
-			Instantiate(Damage_display,target.transform.position,Damage_display.transform.rotation);
+			//target.GetComponent<player>().hp_ += target.GetComponent<player>().defense - damage + add_damage;
+			if(criticalHit_bool == true)
+			target.GetComponent<player>().HP_system(damage*2,criticalHit_bool);
+			if(criticalHit_bool == false)
+				target.GetComponent<player>().HP_system(damage,criticalHit_bool);
+			//target.GetComponent<player>().damage_DisPlay(damage+add_damage,false)
 			Destroy(ui_object,0.5f);
 			pattern_num = 4;
 			Debug.Log("attack dice - attack - HIT / name : " + transform.name);
@@ -209,18 +214,14 @@ public class monster : MonoBehaviour {
 
 	}
 	void skill_(){
-		/*
 		if(target_distance > skill_range){
 			Debug.Log("skill range no " + transform.name);
 			if(active_count >=1)
 				wait_();
 			if(active_count <=0){
 				pattern_num = 1;
-				collider.GetComponent<hex_collider>().range_ = move_range;
-				collider_range_();
+				collider_range_(attack_range);
 			}
-				
-		
 		}
 		if(target_distance <= skill_range){
 			if(one_skill_bool == true){
@@ -234,16 +235,16 @@ public class monster : MonoBehaviour {
 				pattern_num = 4;
 				Debug.Log ("Skill " +transform.name);
 			}
-		}*/
+		}
 
-		Debug.Log("skill start / name : " + transform.name);
+		/*Debug.Log("skill start / name : " + transform.name);
 		if(active_count ==0){
 			pattern_num = 1;
 		}
 		else{
 			Debug.Log("skill END / name : " + transform.name);
 			wait_();
-		}
+		}*/
 	
 	}
 	void wait_(){
@@ -255,11 +256,28 @@ public class monster : MonoBehaviour {
 		pattern_num = 0;
 		pattern_bool = true;
 		one_skill_bool = true;
+		criticalHit_bool = false;
 		Debug.Log("wait / name : " + transform.name);
 
 	}
-	public void collider_range_()
+	public void collider_range_(int range)
 	{
+		collider.GetComponent<range_collider>().range_ = range;
 		Instantiate(collider,new Vector3 (transform.position.x,0,transform.position.z),collider.transform.rotation);
 	}
+	public void HP_system(int damage_number , bool critical){
+		int temp_damage =0;
+		if(defense >= damage_number){
+			temp_damage = 0;
+		}
+		else{
+			temp_damage =damage_number - defense;
+		}
+		Damage_display.GetComponent<damage_dis>().damage = damage_number;
+		GameObject dis = Instantiate(Damage_display,transform.position,Damage_display.transform.rotation) as GameObject;
+		dis.GetComponent<damage_dis>().damage = temp_damage;
+		if(critical == true){
+			dis.transform.localScale += new Vector3(1,1,1);
+		}
+	}	
 }
