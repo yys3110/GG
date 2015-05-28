@@ -26,7 +26,7 @@ public class Authority_active : MonoBehaviour {
 		RaycastHit hit;
 		if(Physics.Raycast(ray,out hit , Mathf.Infinity)){
 			if(hit.collider.gameObject.tag == "player"){
-				if(Input.GetKeyDown(KeyCode.Mouse0) && hex_collider.collider_complete == true && hit.collider.GetComponent<player>().range_collider == true){
+				if(Input.GetKeyDown(KeyCode.Mouse0) && hit.collider.GetComponent<player>().range_collider == true){
 					if(hit.collider.GetComponent<player>().chance_turn == false){
 						play_system.player_num --;
 						hit.collider.GetComponent<player>().chance_turn = true;

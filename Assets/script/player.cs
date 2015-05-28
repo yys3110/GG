@@ -351,6 +351,7 @@ public class player : MonoBehaviour {
 		camera_num = 2;
 		turn_colltime ++;
 		damage = 0;
+		hexagon.move_end = true;
 		play_system.player_num ++;
 
 		//field_UI.SendMessage("reset_bool","1");

@@ -10,7 +10,7 @@ public class splash : MonoBehaviour {
 	void Start () {
 		GetComponent<SphereCollider>().radius = radius;
 		Debug.Log(damage);
-		Destroy(gameObject,10.1f);
+		Destroy(gameObject,0.5f);
 	
 	}
 	

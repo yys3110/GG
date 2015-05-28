@@ -16,7 +16,7 @@ public class Mountaineer_active : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(hex_collider.collider_complete == true){
+		if(hex_collider.collider_complete == true){ // 이거 collider_comlete 이제 안씀 
 			gameObject.GetComponent<SphereCollider>().radius += 1;
 		}
 		if(gameObject.GetComponent<SphereCollider>().radius >=30)

@@ -22,7 +22,7 @@ public class ExplosionBody_passive : MonoBehaviour {
 	void Update () {
 		if(play_system.turn == 2){
 
-			if(play_system.dice_active_num == 6){
+			if(play_system.monster_num == transform.parent.GetComponent<monster>().monster_number && play_system.dice_active_num == 6){
 				one_passive = true;
 
 			}

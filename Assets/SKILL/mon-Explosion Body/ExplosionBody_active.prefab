@@ -11,7 +11,7 @@ GameObject:
   - 54: {fileID: 5435154}
   - 135: {fileID: 13529696}
   - 114: {fileID: 11423362}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ExplosionBody_active
   m_TagString: Untagged
   m_Icon: {fileID: 0}

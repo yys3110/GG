@@ -22,6 +22,7 @@ public class monster : MonoBehaviour {
 	//스킬 관련
 	public GameObject skill;
 	public float skill_range;
+	public bool skill_bool = false; // 스킬이 있는가 없는가;
 	public bool now_skill = false;
 	//public int add_damage;
 	static public int skill_active =0;
@@ -214,27 +215,32 @@ public class monster : MonoBehaviour {
 
 	}
 	void skill_(){
-		if(target_distance > skill_range){
-			Debug.Log("skill range no " + transform.name);
-			if(active_count >=1)
-				wait_();
-			if(active_count <=0){
-				pattern_num = 1;
-				collider_range_(attack_range);
+		if(skill_bool == true){
+			if(target_distance > skill_range){
+				Debug.Log("skill range no " + transform.name);
+				if(active_count >=1)
+					wait_();
+				if(active_count <=0){
+					pattern_num = 1;
+					collider_range_(attack_range);
+				}
+			}
+			if(target_distance <= skill_range){
+				if(one_skill_bool == true){
+					Debug.Log("skill cast " + transform.name);
+					GameObject child = Instantiate(skill,transform.position,transform.rotation) as GameObject;
+					child.transform.parent = transform;
+					one_skill_bool = false;
+				}
+				
+				if(now_skill == true){
+					pattern_num = 4;
+					Debug.Log ("Skill " +transform.name);
+				}
 			}
 		}
-		if(target_distance <= skill_range){
-			if(one_skill_bool == true){
-				Debug.Log("skill cast " + transform.name);
-				GameObject child = Instantiate(skill,transform.position,transform.rotation) as GameObject;
-				child.transform.parent = transform;
-				one_skill_bool = false;
-			}
-			
-			if(now_skill == true){
-				pattern_num = 4;
-				Debug.Log ("Skill " +transform.name);
-			}
+		if(skill_bool == false){
+			wait_ ();
 		}
 
 		/*Debug.Log("skill start / name : " + transform.name);
@@ -247,7 +253,7 @@ public class monster : MonoBehaviour {
 		}*/
 	
 	}
-	void wait_(){
+	public void wait_(){
 		play_system.dice_active_num = 0;
 		hexagon.move_end = true;
 		play_system.monster_num ++;
@@ -274,6 +280,7 @@ public class monster : MonoBehaviour {
 			temp_damage =damage_number - defense;
 		}
 		Damage_display.GetComponent<damage_dis>().damage = damage_number;
+		hp_ -= temp_damage;
 		GameObject dis = Instantiate(Damage_display,transform.position,Damage_display.transform.rotation) as GameObject;
 		dis.GetComponent<damage_dis>().damage = temp_damage;
 		if(critical == true){

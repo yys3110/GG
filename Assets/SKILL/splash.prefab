@@ -12,7 +12,7 @@ GameObject:
   - 135: {fileID: 13586266}
   - 54: {fileID: 5446458}
   - 114: {fileID: 11453878}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: splash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
