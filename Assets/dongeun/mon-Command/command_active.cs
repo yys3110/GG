@@ -24,7 +24,7 @@ public class command_active : MonoBehaviour {
 			if(del >= 0.5f){
 				foreach(var tmonster in play_system.monster_info_list)
 				{
-					Debug.Log("안녕??");
+					Debug.Log("나를 따르라!");
 					tmonster.GetComponent<monster>().move_range += 1;
 					tmonster.GetComponent<monster>().attack_range += 1;
 				}

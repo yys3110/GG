@@ -5,7 +5,7 @@ public class command_passive : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		transform.GetComponent<monster>().defense = 1;
+		transform.parent.GetComponent<monster>().defense = 1;
 	}
 	
 	// Update is called once per frame
