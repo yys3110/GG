@@ -6,3 +6,8 @@ static public  skill_cast << 가 true가 되면
 그리고 range_collider 를 체크, range_collider 체크를 해야 하는 스킬이면
 
 첫 start 함수에 player.skill_cast = true 를 해주고  스킬 스크립트 마지막 부분에  player.skill_cast = false 를 꼭 쓰도록 하자
+
+
+play_system.playing_uint;
+
+HP_system(damage,critcal,hit_uint);

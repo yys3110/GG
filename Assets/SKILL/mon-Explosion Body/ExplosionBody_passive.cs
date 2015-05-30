@@ -11,11 +11,12 @@ public class ExplosionBody_passive : MonoBehaviour {
 	public GameObject effects_ExplosionBody;
 	public GameObject splash;
 	public float splash_damage = 0.2f; // 기본값 20%
+	public GameObject caster;
 
 
 	// Use this for initialization
 	void Start () {
-
+		caster = play_system.playing_uint;
 	}
 	
 	// Update is called once per frame
@@ -37,6 +38,7 @@ public class ExplosionBody_passive : MonoBehaviour {
 				damage_temp = 1;
 			splashs.GetComponent<splash>().damage = damage_temp;
 			splashs.GetComponent<splash>().player_number = 2;
+			splashs.GetComponent<splash>().caster = caster;
 			hexagon.move_end = false;
 			Destroy(effects.gameObject,0.5f);
 			one_passive = false;

@@ -6,11 +6,12 @@ public class DarkKindle_active : MonoBehaviour {
 	public GameObject debuff;
 	public int range = 4;
 	public int skill_damage = 10;
-
+	public GameObject caster;
 
 
 	// Use this for initialization
 	void Start () {
+		caster = play_system.playing_uint;
 		hexagon.move_end = false;
 		transform.position = new Vector3(transform.position.x,0,transform.position.z);
 		range_collider.GetComponent<range_collider>().range_ = range;
@@ -24,12 +25,13 @@ public class DarkKindle_active : MonoBehaviour {
 		if(Physics.Raycast(ray, out hit , Mathf.Infinity)){
 			if(hit.collider.gameObject.tag == "monster" && hit.collider.GetComponent<monster>().range_collider == true){
 				if(Input.GetKeyDown(KeyCode.Mouse0)){
-					hit.collider.GetComponent<monster>().HP_system(10,false);
+					hit.collider.GetComponent<monster>().HP_system(10,false,caster);
 					Vector3 hit_pos = hit.collider.transform.position;
 					GameObject mon_child = Instantiate(debuff,hit_pos,transform.rotation) as GameObject;
 					mon_child.transform.parent = hit.collider.transform;
 					mon_child.transform.localScale += new Vector3(0.25f,0.25f,0.25f);
 					transform.parent.GetComponent<player>().wait_();
+					Destroy(gameObject);
 				}
 			}
 		}

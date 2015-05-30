@@ -28,6 +28,7 @@ public class player : MonoBehaviour {
 	bool one_monster_click = true;
 	public GameObject monster_unit; // 클릭 한 몬스터의 정보가 입력;
 	bool one_die_check = true;
+	public GameObject Me_hit_unit;
 	//스킬 관련
 	bool one_skill_bool = true;
 	public static bool skill_cast = false;
@@ -44,10 +45,12 @@ public class player : MonoBehaviour {
 	// 오브젝트 관련
 	public float speed = 10;
 	public GameObject Damage_display;
+	[HideInInspector]
+	public int array_display;
 	//캐릭터 정보//
 	public bool ______________;
 	public int code_number;
-	public int hp_,damage,miss,attack_range,move_range;
+	public int hp_max,hp_,damage,miss,attack_range,move_range;
 	public bool skill_now = true; // true 시 즉시시전 false 시 스킬 시전을 위한 행동;
 	public GameObject skill;
 	public int character_class;
@@ -61,6 +64,7 @@ public class player : MonoBehaviour {
 		play_system.monster_target.Add(gameObject);
 		play_system.target_on_bool.Add(gameObject);
 		field_UI = Camera.main.GetComponent<play_system>().UI_field;
+		hp_ = hp_max;
 	}
 	
 	// Update is called once per frame
@@ -68,6 +72,7 @@ public class player : MonoBehaviour {
 		if(die_bool == true){
 		}
 		if(play_system.turn == 1 && character_select == true && die_bool == false){
+			play_system.playing_uint = transform.gameObject;
 			if(active_num == 1){
 				move_();
 			}
@@ -144,6 +149,9 @@ public class player : MonoBehaviour {
 			play_system.target_on_bool.RemoveAt(play_system.monster_target.IndexOf(gameObject));
 			play_system.monster_target.Remove(gameObject);
 			die_bool = true;
+			if(hp_ >= hp_max){
+				hp_ = hp_max;
+			}
 		}
 		if(play_system.turn == 1 && die_bool == true){
 			if(one_die_check == true){
@@ -206,7 +214,7 @@ public class player : MonoBehaviour {
 			mouse_hit_hex.GetComponent<Renderer>().material.color = new Color(0.5f,0.5f,0.5f,0.5f);
 		}
 		if(Physics.Raycast(ray, out hit , Mathf.Infinity)){
-			if(hit.collider.tag == "hexagon" && hit.collider.GetComponent<hexagon>().range_collider == true){
+			if(hit.collider.tag == "hexagon" && hit.collider.GetComponent<hexagon>().range_collider == true&& hit.collider.GetComponent<hexagon>().hexagon_unit_bool == false){
 				mouse_distance= hit.collider.gameObject.transform.position; //바뀜 
 				mouse_over = true;
 				if(mouse_hit_hex != null){
@@ -310,10 +318,7 @@ public class player : MonoBehaviour {
 		if(play_system.dice_active_num == 6){
 			GameObject ui_des = Instantiate(attack_ui,new Vector3(monster_unit.transform.position.x,20,
 			monster_unit.transform.position.z),attack_ui.transform.rotation) as GameObject;
-			if(criticalHit_bool == true)
-				monster_unit.GetComponent<monster>().HP_system(damage*2,criticalHit_bool);
-			if(criticalHit_bool == false)
-				monster_unit.GetComponent<monster>().HP_system(damage,criticalHit_bool);
+			monster_unit.GetComponent<monster>().HP_system(damage,criticalHit_bool,transform.gameObject);
 			Destroy(ui_des,0.5f);
 			one_monster_click = true;
 			hexagon.move_end = true;
@@ -366,17 +371,25 @@ public class player : MonoBehaviour {
 		camera_move_bool = true;
 		camera_num = 2;
 	}
-	public void HP_system(int damage_number , bool critical){
+	public void HP_system(int damage_number , bool critical, GameObject hit_uint){
 		int temp_damage =0;
+		Me_hit_unit = hit_uint;
 		if(defense >= damage_number){
 			temp_damage = 0;
 		}
 		else{
-			temp_damage = damage_number -defense;
+			if(critical == true)
+				temp_damage = (damage_number*2) - defense;
+			if(critical == false)
+				temp_damage = damage_number - defense;
 		}
 		hp_ -= temp_damage;
-		Damage_display.GetComponent<damage_dis>().damage = temp_damage;
+
 		GameObject dis = Instantiate(Damage_display,transform.position,Damage_display.transform.rotation) as GameObject;
+		dis.GetComponent<damage_dis>().damage = temp_damage;
+		dis.GetComponent<damage_dis>().array_display = array_display;
+		dis.GetComponent<damage_dis>().unit_info = transform.gameObject;
+		array_display ++;
 		if(critical == true){
 			dis.transform.localScale += new Vector3(1,1,1);
 		}

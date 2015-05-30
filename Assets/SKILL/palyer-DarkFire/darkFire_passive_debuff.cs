@@ -8,6 +8,7 @@ public class darkFire_passive_debuff : MonoBehaviour {
 	public bool dot_damage_bool = true;
 	public float distance =0;
 	int count;
+	public GameObject caster;
 	// Use this for initialization
 	void Start () {
 		transform.position = transform.parent.transform.position;
@@ -24,11 +25,11 @@ public class darkFire_passive_debuff : MonoBehaviour {
 			dot_damage_bool = true;
 		}
 		if(dot_damage_bool == true){
-			transform.parent.GetComponent<monster>().HP_system(damage,false);
+			transform.parent.GetComponent<monster>().HP_system(damage,false,caster);
 			dot_damage_bool = false;
 		}
 		distance = Vector3.Distance(transform.position,taget.transform.position);
-		if(distance >= 13){
+		if(distance >= 15){
 			GetComponent<Status_ailment_effect>().live = false;
 		}
 		

@@ -5,6 +5,7 @@ public class splash : MonoBehaviour {
 	public int damage =0;
 	public float radius =0; // 10 : 1칸 , 18 2칸
 	public int player_number = 0; // 0 중립 , 1 플레이어 , 2 몬스터
+	public GameObject caster;
 
 	// Use this for initialization
 	void Start () {
@@ -28,7 +29,7 @@ public class splash : MonoBehaviour {
 		if(player_number == 2){
 			if(coll.gameObject.tag == "player"){
 				Debug.Log("shlash damage hit " + damage);
-				coll.GetComponent<player>().HP_system(damage,false);
+				coll.GetComponent<player>().HP_system(damage,false,caster);
 			}
 		}
 	}

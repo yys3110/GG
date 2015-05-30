@@ -7,9 +7,10 @@ public class damage_dis : MonoBehaviour {
 	public Sprite [] sprite_;
 	public GameObject [] number_object;
 	public bool stop_while = false;
-	static int array_display =0;
+	public int array_display =0;
 	float del =0;
 	bool array_bool = true;
+	public GameObject unit_info;
 
 	// Use this for initialization
 	void Start () {
@@ -48,7 +49,10 @@ public class damage_dis : MonoBehaviour {
 				number_object[i].GetComponent<SpriteRenderer>().color -= new Color(0,0,0,1) * Time.deltaTime;
 			}
 			if(array_bool == true){
-				array_display --;
+				if(unit_info.GetComponent<player>() == true)
+					unit_info.GetComponent<player>().array_display --;
+				if(unit_info.GetComponent<monster>() == true)
+					unit_info.GetComponent<monster>().array_display --;
 				array_bool = false;
 			}
 			Destroy(gameObject,2f);

@@ -102,7 +102,7 @@ Transform:
   m_GameObject: {fileID: 118858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -.5, z: 0}
-  m_LocalScale: {x: .25, y: .100000001, z: .25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 465312}
   m_RootOrder: 2
@@ -231,7 +231,7 @@ MonoBehaviour:
   damage: 1
   range: 10
   one_passive: 1
-  fire_effect: {fileID: 107698, guid: 342af6315d077fa4dbc50cf5f9a8ce4f, type: 2}
+  fire_effect: {fileID: 114652, guid: 917a2c02e36c34c48a6968594feb6876, type: 2}
 --- !u!114 &11460764
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -282,12 +282,13 @@ MonoBehaviour:
   attack_ui: {fileID: 179804, guid: 2450cb70194cae44296eb44ffcd78333, type: 2}
   field_UI: {fileID: 0}
   monster_unit: {fileID: 0}
-  temp_skill_bool: 0
+  temp_skill_bool: 1
   add_damage: 0
   defense: 0
   criticalHit_bool: 0
   speed: 100
   Damage_display: {fileID: 108890, guid: 961a8b5e16ceb4248a2d5d1a07576957, type: 2}
+  array_display: 0
   ______________: 0
   code_number: 0
   hp_: 999
@@ -296,7 +297,7 @@ MonoBehaviour:
   attack_range: 1
   move_range: 4
   skill_now: 0
-  skill: {fileID: 0}
+  skill: {fileID: 107080, guid: 7e3b8f0d69eebaf4d8c6abefbbc1197d, type: 2}
   character_class: 0
   dice_code_number: 0
   die_bool: 0
@@ -311,7 +312,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 10
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:

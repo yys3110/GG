@@ -24,6 +24,7 @@ public class monster : MonoBehaviour {
 	public float skill_range;
 	public bool skill_bool = false; // 스킬이 있는가 없는가;
 	public bool now_skill = false;
+	public GameObject Me_hit_unit;
 	//public int add_damage;
 	static public int skill_active =0;
 	public bool one_skill_bool = true;
@@ -42,8 +43,12 @@ public class monster : MonoBehaviour {
 	public int dice_code_number =0; // 0 : 4면체 , 1 : 6면 , 2 : 8면 ,3 : 10면 , 4 : 12면체 , 5 : 20면체 (명중굴림)
 	public bool die_bool = false; // 살았는지 죽었는지를 판단;
 	////////////////////////
+	[HideInInspector]
+	public int array_display = 0; 
 	public float target_distance; //플레이어와의 거리 
 	public GameObject attack_ui; // 임시
+	
+
 	// Use this for initialization
 	void Start () {
 		//hp_ = hp_max;
@@ -66,6 +71,7 @@ public class monster : MonoBehaviour {
 			target_distance = Vector3.Distance (transform.position , target.transform.position);
 			if(pattern_bool == true){
 				pattern_num = 0;
+				play_system.playing_uint = transform.gameObject;
 				Debug.Log(transform.name + " START PATTERN-------------------------- " );
 				hexagon.move_end = false;
 				monster_AI.AI_bool = true;
@@ -202,12 +208,7 @@ public class monster : MonoBehaviour {
 		if(play_system.dice_active_num == 6){
 			GameObject ui_object = Instantiate(attack_ui,new Vector3(target.transform.position.x,20,
 			                                                         target.transform.position.z),attack_ui.transform.rotation) as GameObject;
-			//target.GetComponent<player>().hp_ += target.GetComponent<player>().defense - damage + add_damage;
-			if(criticalHit_bool == true)
-			target.GetComponent<player>().HP_system(damage*2,criticalHit_bool);
-			if(criticalHit_bool == false)
-				target.GetComponent<player>().HP_system(damage,criticalHit_bool);
-			//target.GetComponent<player>().damage_DisPlay(damage+add_damage,false)
+			target.GetComponent<player>().HP_system(damage,criticalHit_bool,transform.gameObject);
 			Destroy(ui_object,0.5f);
 			pattern_num = 4;
 			Debug.Log("attack dice - attack - HIT / name : " + transform.name);
@@ -271,18 +272,25 @@ public class monster : MonoBehaviour {
 		collider.GetComponent<range_collider>().range_ = range;
 		Instantiate(collider,new Vector3 (transform.position.x,0,transform.position.z),collider.transform.rotation);
 	}
-	public void HP_system(int damage_number , bool critical){
+	public void HP_system(int damage_number , bool critical,GameObject hit_uint){
+		Me_hit_unit = hit_uint;
 		int temp_damage =0;
 		if(defense >= damage_number){
 			temp_damage = 0;
 		}
 		else{
-			temp_damage =damage_number - defense;
+			if(critical == true)
+				temp_damage = (damage_number*2) - defense;
+			if(critical == false)
+				temp_damage = damage_number - defense;
 		}
 		Damage_display.GetComponent<damage_dis>().damage = damage_number;
 		hp_ -= temp_damage;
 		GameObject dis = Instantiate(Damage_display,transform.position,Damage_display.transform.rotation) as GameObject;
 		dis.GetComponent<damage_dis>().damage = temp_damage;
+		dis.GetComponent<damage_dis>().array_display = array_display;
+		dis.GetComponent<damage_dis>().unit_info = transform.gameObject;
+		array_display ++;
 		if(critical == true){
 			dis.transform.localScale += new Vector3(1,1,1);
 		}

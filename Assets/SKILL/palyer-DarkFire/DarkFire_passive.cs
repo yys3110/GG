@@ -6,9 +6,10 @@ public class DarkFire_passive : MonoBehaviour {
 	public float range = 10;
 	public bool one_passive = true;
 	public GameObject fire_effect;
+	public GameObject caster;
 	// Use this for initialization
 	void Start () {
-	
+		caster = play_system.playing_uint;
 	}
 	
 	// Update is called once per frame
@@ -20,6 +21,7 @@ public class DarkFire_passive : MonoBehaviour {
 			GameObject fire = Instantiate(fire_effect,transform.position,fire_effect.transform.rotation) as GameObject;
 			fire.transform.parent = coll.transform;
 			fire.GetComponent<darkFire_passive_debuff>().taget = transform.gameObject;
+			fire.GetComponent<darkFire_passive_debuff>().caster = caster;
 		}
 	}
 	void OnTriggerExit(Collider coll){

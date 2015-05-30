@@ -7,8 +7,10 @@ public class ExplosionBody_active : MonoBehaviour {
 	float del = 0;
 	public GameObject effects;
 	bool one_skill = true;
+	public GameObject caster;
 	// Use this for initialization
 	void Start () {
+		caster = play_system.playing_uint;
 		transform.position = transform.parent.transform.position;
 		GetComponent<SphereCollider>().radius = range;
 	}
@@ -27,7 +29,7 @@ public class ExplosionBody_active : MonoBehaviour {
 	}
 	void OnTriggerEnter(Collider coll){
 		if(coll.gameObject.tag == "player"){
-			coll.GetComponent<player>().HP_system(1,false);
+			coll.GetComponent<player>().HP_system(1,false,caster);
 
 		}
 
