@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GodsBody_passive : MonoBehaviour {
+public class Godsbody_active : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		transform.parent.GetComponent<monster>().defense = 1;
+	
 	}
 	
 	// Update is called once per frame

@@ -1,21 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\dongeun\mon-Divine Sword\divinesword_passive.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\dongeun\mon-Command\command_active.cs">
     <Files>
-      <File FileName="Assets\dongeun\mon-Pirate\pirate_active.cs" Line="12" Column="1" />
-      <File FileName="Assets\dongeun\mon-Strong health\StrongHealth_active.cs" Line="1" Column="1" />
+      <File FileName="Assets\dongeun\mon-Sharp Claws\SharpClaws_passive_debuff.cs" Line="49" Column="4" />
+      <File FileName="Assets\dongeun\mon-Hawk Eyes\hawkeyes_active.cs" Line="14" Column="73" />
+      <File FileName="Assets\dongeun\mon-Hawk Eyes\Hawkeyes_passive.cs" Line="1" Column="1" />
+      <File FileName="Assets\dongeun\mon-Mountaineer\Mountaineer_active.cs" Line="1" Column="1" />
+      <File FileName="Assets\dongeun\mon-Command\command_active.cs" Line="20" Column="19" />
+      <File FileName="Assets\script\monster.cs" Line="219" Column="26" />
       <File FileName="Assets\dongeun\mon-End Magic\endmagic_active.cs" Line="1" Column="1" />
-      <File FileName="Assets\dongeun\mon-Command\command_active.cs" Line="1" Column="1" />
-      <File FileName="Assets\script\play_system.cs" Line="1" Column="1" />
-      <File FileName="Assets\dongeun\mon-God`s Body\Gods Body_active.cs" Line="1" Column="1" />
-      <File FileName="Assets\dongeun\mon-God`s Body\Gods Body_passive.cs" Line="1" Column="1" />
-      <File FileName="Assets\dongeun\mon-Strong health\StrongHealth_passive.cs" Line="1" Column="1" />
-      <File FileName="Assets\dongeun\mon-Command\command_passive.cs" Line="1" Column="1" />
-      <File FileName="Assets\dongeun\mon-Ice Fist\icefist_passive.cs" Line="1" Column="1" />
-      <File FileName="Assets\dongeun\mon-Sharp Claws\SharpClaws_passive.cs" Line="1" Column="1" />
-      <File FileName="Assets\script\hexagon.cs" Line="1" Column="1" />
-      <File FileName="Assets\script\monster.cs" Line="202" Column="100" />
-      <File FileName="Assets\dongeun\mon-Divine Sword\divinesword_passive.cs" Line="16" Column="1" />
+      <File FileName="Assets\dongeun\mon-Sharp Claws\SharpClaws_passive.cs" Line="12" Column="36" />
+      <File FileName="Assets\script\play_system.cs" Line="93" Column="18" />
+      <File FileName="Assets\SKILL\palyer-DarkFire\DarkFire_active_debuff.cs" Line="27" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

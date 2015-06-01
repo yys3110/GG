@@ -12,7 +12,6 @@ public class HolyGhost_active : MonoBehaviour {
 
 		heal_range.GetComponent<range_collider>().range_ = range_collider;
 		Instantiate(heal_range,transform.position,heal_range.transform.rotation);
-		transform.parent.GetComponent<monster>().hp_++;
 
 	}
 
@@ -20,8 +19,9 @@ public class HolyGhost_active : MonoBehaviour {
 	void Update () {
 		transform.GetComponent<SphereCollider>().radius += 0.5F;
 
-		if(transform.GetComponent<SphereCollider>().radius >=30)
+		if(transform.GetComponent<SphereCollider>().radius >=3)
 		{
+			transform.GetComponent<SphereCollider>().radius = 0;
 			Destroy(gameObject);
 			hexagon.move_end = true;
 		}
@@ -29,7 +29,7 @@ public class HolyGhost_active : MonoBehaviour {
 	void OnTriggerEnter(Collider coll){
 		monster heal = coll.GetComponent<monster>();
 
-		if(coll.gameObject.tag == "monster" && coll.gameObject.GetComponent<monster>().range_collider == true){
+		if(coll.gameObject.tag == "monster"&& coll.gameObject.GetComponent<monster>().range_collider == true){
 				heal.hp_ ++;
 		}
 	}

@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class endmagic_active : MonoBehaviour {
+	public int turn_cooltime;
 	public float del;
 	public bool one = true;
 	public int active_damage; // 고정피해
@@ -18,7 +19,7 @@ public class endmagic_active : MonoBehaviour {
 				foreach(var endmagic in play_system.monster_target)
 				{
 					Debug.Log("죽어라!");
-					endmagic.GetComponent<player>().hp_ -= active_damage;
+					endmagic.GetComponent<player>().HP_system(active_damage,false,transform.parent.gameObject);
 				}
 				Destroy(gameObject);
 				one = false;

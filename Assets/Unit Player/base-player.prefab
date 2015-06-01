@@ -221,14 +221,17 @@ MonoBehaviour:
   attack_ui: {fileID: 179804, guid: 2450cb70194cae44296eb44ffcd78333, type: 2}
   field_UI: {fileID: 0}
   monster_unit: {fileID: 0}
+  Me_hit_unit: {fileID: 0}
   temp_skill_bool: 0
   add_damage: 0
   defense: 0
   criticalHit_bool: 0
   speed: 100
   Damage_display: {fileID: 108890, guid: 961a8b5e16ceb4248a2d5d1a07576957, type: 2}
+  array_display: 0
   ______________: 0
   code_number: 0
+  hp_max: 999
   hp_: 999
   damage: 0
   miss: 5

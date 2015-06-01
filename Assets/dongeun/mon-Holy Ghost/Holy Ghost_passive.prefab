@@ -11,7 +11,7 @@ GameObject:
   - 114: {fileID: 11429144}
   - 135: {fileID: 13516858}
   - 54: {fileID: 5431252}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Holy Ghost_passive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,7 +24,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 182738}
-  m_LocalRotation: {x: 0, y: -1, z: 0, w: 1.31134158e-07}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []

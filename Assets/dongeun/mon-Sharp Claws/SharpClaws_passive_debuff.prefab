@@ -1,48 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &132800
+--- !u!1 &143096
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 482182}
-  - 114: {fileID: 11430960}
+  - 4: {fileID: 472566}
+  - 114: {fileID: 11478204}
   m_Layer: 0
-  m_Name: endmagic_active
+  m_Name: SharpClaws_passive_debuff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &482182
+--- !u!4 &472566
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 132800}
+  m_GameObject: {fileID: 143096}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11430960
+--- !u!114 &11478204
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 132800}
+  m_GameObject: {fileID: 143096}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dcd42687be44e243a0906e427dbded5, type: 3}
+  m_Script: {fileID: 11500000, guid: 93a3b56def294ec40b883f013f040eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turn_cooltime: 3
-  del: 0
-  one: 1
-  active_damage: 1
+  passive_turn: 0
+  caster: {fileID: 0}
+  on_skill: 0
+  turn: 0
+  bleeding: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -52,5 +53,5 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 132800}
+  m_RootGameObject: {fileID: 143096}
   m_IsPrefabParent: 1
