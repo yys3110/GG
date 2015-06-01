@@ -15,15 +15,13 @@ public class Mountaineer_active : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		if(hex_collider.collider_complete == true){ // 이거 collider_comlete 이제 안씀 
-			gameObject.GetComponent<SphereCollider>().radius += 1;
-		}
+	void Update () { 
+			gameObject.GetComponent<SphereCollider>().radius += 0.5f;
 		if(gameObject.GetComponent<SphereCollider>().radius >=30)
 		{
-			hex_collider.collider_complete = false;
-			Destroy(gameObject);
 			hexagon.move_end = true;
+			transform.GetComponent<SphereCollider>().radius = 0;
+			Destroy(gameObject);
 		}
 	}
 	void OnTriggerEnter(Collider coll){
