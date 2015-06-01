@@ -18,6 +18,14 @@ TagManager:
   - ui_camera
   - ui_skill
   - Dice_System
+  - UI_right
+  - new
+  - exit
+  - UI_left
+  - dice
+  - option
+  - vs
+  - continue
   layers:
   - Default
   - TransparentFX
