@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 //유수 스킬
-public class FlowingWater : MonoBehaviour {
+public class Flowingwater_actve : MonoBehaviour {
 	public int damage;
-
+	
 	public GameObject camera_object;
 	public Camera mainCam;
 	public float rotateY;
@@ -15,7 +15,7 @@ public class FlowingWater : MonoBehaviour {
 	void Start () {
 		camera_object = GameObject.FindWithTag("MainCamera");
 		mainCam = camera_object.GetComponent<Camera>();
-	
+		
 	}
 	
 	// Update is called once per frame
@@ -30,10 +30,10 @@ public class FlowingWater : MonoBehaviour {
 				transform.LookAt(hit.collider.gameObject.transform.position);
 				transform.rotation = new Quaternion(0,transform.rotation.y,0,transform.rotation.w);
 				//transform.eulerAngles = new Vector3(0,transform.rotation.y,0);
-			range.active = false;
+				range.active = false;
 				rotateY = transform.eulerAngles.y;
 				if((rotateY >= 30 && rotateY <= 34) ||
-				  (rotateY >= 88 && rotateY <= 91) ||
+				   (rotateY >= 88 && rotateY <= 91) ||
 				   (rotateY >= 145 && rotateY <= 148) ||
 				   (rotateY >= 210 && rotateY <= 214) || 
 				   (rotateY >= 267 && rotateY <= 271) ||
@@ -42,13 +42,13 @@ public class FlowingWater : MonoBehaviour {
 					skill_on = true;
 					range.active = true;
 					hexagon.move_end = false;
-
+					
 				}
-					else{
-						skill_on = false;
-						hexagon.move_end = true;
-						
-					}
+				else{
+					skill_on = false;
+					hexagon.move_end = true;
+					
+				}
 			}
 		}
 		if(Input.GetKeyDown(KeyCode.Mouse0)&&one_bool == true && skill_on == true)
@@ -56,11 +56,8 @@ public class FlowingWater : MonoBehaviour {
 			range.active = false;
 			hexagon.move_end = true;
 			one_bool = false;
+			transform.parent.transform.gameObject.GetComponent<player>().wait_(); // 이거없으면 스킬 시전후 멈춤 그래서 시전하면 바로 wait() 실행
 		}
 		// 액티브스킬 끝
-		// 페시브 스킬
-
-		// 페시브 스킬 끝
-
 	}
 }

@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 499052}
   - 114: {fileID: 11479112}
   m_Layer: 0
-  m_Name: rapid
+  m_Name: Promptitude
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
