@@ -2,24 +2,23 @@
 using System.Collections;
 
 public class pirate_active : MonoBehaviour {
-	public GameObject[] dice_;
-	public int dice_num;
 	public int turn_cooltime;
 
 	// Use this for initialization
 	void Start () {
-		Camera.main.GetComponent<play_system>().dice_systemOn();
-		Instantiate(dice_[dice_num],new Vector3(182.4f,0.5f,-2.75f),dice_[dice_num].transform.rotation);
+		play_system.turn = 2;
+		play_system.dice_active_num = 2;
+		transform.parent.gameObject.GetComponent<monster>().dice_code_number = 0;
+		transform.parent.gameObject.GetComponent<monster>().attack_();
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(monster.skill_active == 1)
+		if(play_system.turn == 1)
 		{
-			Camera.main.GetComponent<play_system>().dice_systemOff();
+			transform.parent.gameObject.GetComponent<monster>().dice_code_number = 0;
 			monster.skill_active = 0;
-			//Destroy(gameObject);
 		}
-	
 	}
 }

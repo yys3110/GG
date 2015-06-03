@@ -40,12 +40,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dice_:
-  - {fileID: 132416, guid: 8ce4554b6c242ee44ac099a710a87464, type: 2}
   - {fileID: 134304, guid: 40bbd2badf620b548ae10441395becdb, type: 2}
-  - {fileID: 131436, guid: 81eed02819ee11745abaf08ea1f1d2c7, type: 2}
-  - {fileID: 0}
-  - {fileID: 171694, guid: 9da5f6e4d05ad9643afe1612c297735c, type: 2}
-  dice_num: 1
+  dice_num: 0
   turn_cooltime: 2
 --- !u!1001 &100100000
 Prefab:
