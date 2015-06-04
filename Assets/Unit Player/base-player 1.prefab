@@ -273,14 +273,14 @@ MonoBehaviour:
   array_display: 0
   ______________: 0
   code_number: 0
-  hp_max: 999
-  hp_: 999
+  hp_max: 100
+  hp_: 100
   damage: 0
   miss: 5
   attack_range: 1
   move_range: 4
   skill_now: 1
-  skill: {fileID: 102750, guid: be88c48522556084993c6bb9b66ff06b, type: 2}
+  skill: {fileID: 0}
   character_class: 0
   dice_code_number: 0
   die_bool: 0

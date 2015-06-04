@@ -2,18 +2,15 @@
 using System.Collections;
 
 public class SharpClaws_passive_debuff : MonoBehaviour {
-	public int passive_turn = 0;
 	public GameObject caster;
-	public bool on_skill = false;
-	public bool turn = false;
 	public int bleeding; //출혈 데미지
 	int count = 0;
 	int MAX_count = 0;
-	public int turn_damage = 3;
+	public int passive_turn = 3;
 	// Use this for initialization
 	void Start () {
 		count = play_system.game_turn+1;
-		MAX_count = count + turn_damage;
+		MAX_count = count + passive_turn;
 	}
 	// Update is called once per frame
 	void Update () {

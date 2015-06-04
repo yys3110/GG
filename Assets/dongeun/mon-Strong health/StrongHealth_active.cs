@@ -11,6 +11,7 @@ public class StrongHealth_active : MonoBehaviour {
 	void Start () {
 		Camera.main.GetComponent<play_system>().dice_systemOn();
 		Instantiate(dice_[dice_num],new Vector3(182.4f,0.5f,-2.75f),dice_[dice_num].transform.rotation);
+		play_system.turn = 2;
 	}
 	
 	// Update is called once per frame
@@ -19,7 +20,7 @@ public class StrongHealth_active : MonoBehaviour {
 		{
 			Camera.main.GetComponent<play_system>().dice_systemOff();
 			monster.skill_active = 0;
-			//Destroy(gameObject);
+			Destroy(gameObject);
 		}
 	}
 }
