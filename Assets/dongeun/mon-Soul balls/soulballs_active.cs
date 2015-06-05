@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+//영환 액티브스킬
 public class soulballs_active : MonoBehaviour {
 	public int turn_colltime;
 	public GameObject soulballs_range;

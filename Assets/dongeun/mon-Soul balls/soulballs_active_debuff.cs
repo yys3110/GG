@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+//영환 액티브 디버프
 public class soulballs_active_debuff : MonoBehaviour {
 	public GameObject caster;
 	int count = 0;
