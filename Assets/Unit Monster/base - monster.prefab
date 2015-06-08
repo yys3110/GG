@@ -153,10 +153,11 @@ MonoBehaviour:
   move_speed: 50
   range_collider: 0
   Damage_display: {fileID: 108890, guid: 961a8b5e16ceb4248a2d5d1a07576957, type: 2}
-  skill: {fileID: 170556, guid: 65b098788aaefd446aeb70f5faf4df4b, type: 2}
+  skill: {fileID: 0}
   skill_range: 10
   skill_bool: 0
   now_skill: 0
+  Me_hit_unit: {fileID: 0}
   one_skill_bool: 1
   add_damage: 0
   defense: 0
@@ -175,6 +176,7 @@ MonoBehaviour:
   pattern_num: 0
   dice_code_number: 1
   die_bool: 0
+  array_display: 0
   target_distance: 0
   attack_ui: {fileID: 179804, guid: 2450cb70194cae44296eb44ffcd78333, type: 2}
 --- !u!1001 &100100000

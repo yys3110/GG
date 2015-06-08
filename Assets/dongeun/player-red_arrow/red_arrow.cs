@@ -56,11 +56,8 @@ public class red_arrow : MonoBehaviour {
 			range.active = false;
 			hexagon.move_end = true;
 			one_bool = false;
+			transform.parent.transform.gameObject.GetComponent<player>().wait_(); // 이거없으면 스킬 시전후 멈춤 그래서 시전하면 바로 wait() 실행
 		}
 		// 액티브스킬 끝
-		// 페시브 스킬
-		
-		// 페시브 스킬 끝
-		
 	}
 }

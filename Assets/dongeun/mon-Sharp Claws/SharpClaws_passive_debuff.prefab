@@ -39,11 +39,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93a3b56def294ec40b883f013f040eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passive_turn: 0
   caster: {fileID: 0}
-  on_skill: 0
-  turn: 0
   bleeding: 1
+  passive_turn: 3
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

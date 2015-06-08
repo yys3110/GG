@@ -4,7 +4,6 @@ using System.Collections;
 public class SharpClaws_passive : MonoBehaviour {
 	public GameObject debuff;
 	public GameObject target_unit;
-	public bool on_skill = false;
 	// Use this for initialization
 	void Start () {
 
@@ -14,7 +13,6 @@ public class SharpClaws_passive : MonoBehaviour {
 		target_unit = transform.parent.GetComponent<monster>().target;
 		if(play_system.turn == 2){
 			if(play_system.dice_active_num == 6){
-				on_skill = true;
 				GameObject child = Instantiate(debuff,transform.position,debuff.transform.rotation) as GameObject;
 				child.transform.parent = target_unit.transform;
 				child.GetComponent<SharpClaws_passive_debuff>().caster = transform.parent.transform.gameObject;
