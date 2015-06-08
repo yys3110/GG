@@ -31,5 +31,8 @@ public class DarkFire_active : MonoBehaviour {
 				}
 			}
 		}
+		if(transform.parent.GetComponent<player>().chance_turn == false){
+			Destroy(gameObject);
+		}
 	}
 }

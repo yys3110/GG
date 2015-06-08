@@ -26,6 +26,8 @@ TagManager:
   - option
   - vs
   - continue
+  - waitroom_start
+  - waitroom_exit
   layers:
   - Default
   - TransparentFX

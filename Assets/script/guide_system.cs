@@ -61,6 +61,9 @@ public class guide_system : MonoBehaviour {
 					min_dis = dis_value[i];
 					min_num = i;
 				}
+				if(dis_value[i] <=0){
+					player.GetComponent<player>().guide_complete = true;
+				}
 			}
 			if(min_dis == 0)
 			{
@@ -84,6 +87,7 @@ public class guide_system : MonoBehaviour {
 				guide_ch1.transform.parent = guide_guoup.transform;
 				guide_ch2.transform.parent = guide_guoup.transform;
 				//min_dis =0;
+
 			}
 			one_ray = false;
 			//Destroy(transform.gameObject);

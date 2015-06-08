@@ -16,6 +16,7 @@ public class player : MonoBehaviour {
 	public int pos_num;
 	public Vector3 mouse_distance;
 	public int guide_num;
+	public bool guide_complete = false;
 	public GameObject collider; // 범위
 	public bool character_select = false; // 캐릭터가 클릭이 되는가를 확인 
 	public bool chance_turn = true; // 캐릭터 차례 확인
@@ -56,7 +57,7 @@ public class player : MonoBehaviour {
 	public int character_class;
 	public int dice_code_number =0; // 0 : 4면체 , 1 : 6면 , 2 : 8면 ,3 : 10면 , 4 : 12면체 , 5 : 20면체 (명중굴림)
 	public bool die_bool = false;
-	public int turn_colltime =0;
+	public int turn_cooltime =0;
 	// Use this for initialization
 	void Start () {
 		play_system.player_unit_num ++;
@@ -159,6 +160,7 @@ public class player : MonoBehaviour {
 				one_die_check = false;
 			}
 		}
+
 	}
 	void OnMouseDown()
 	{
@@ -234,7 +236,7 @@ public class player : MonoBehaviour {
 					guide_g.transform.parent = guide_p.transform;
 					one_guide_group = false;
 					}
-					if(Input.GetKeyDown(KeyCode.Mouse0) && move_range-1 >= guide_num){
+					if(Input.GetKeyDown(KeyCode.Mouse0) && move_range-1 >= guide_num && guide_complete == true){
 						move_bool = true;
 					}
 				}
@@ -345,6 +347,7 @@ public class player : MonoBehaviour {
 				one_skill_bool =false;
 			}
 		}
+
 	}
 	public void wait_(){
 		chance_turn = false;
@@ -354,8 +357,8 @@ public class player : MonoBehaviour {
 		camera_move_bool = true;// 카메라 움직임
 		one_skill_bool = true;
 		camera_num = 2;
-		turn_colltime ++;
 		damage = 0;
+		guide_complete = false;
 		hexagon.move_end = true;
 		play_system.player_num ++;
 

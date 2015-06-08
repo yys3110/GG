@@ -97,6 +97,7 @@ GameObject:
   - 4: {fileID: 45601045}
   - 212: {fileID: 45601047}
   - 65: {fileID: 45601046}
+  - 54: {fileID: 45601048}
   m_Layer: 0
   m_Name: CARD drop1
   m_TagString: Untagged
@@ -123,7 +124,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 45601044}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.68000007, y: 5.0999999, z: 0}
@@ -154,6 +155,21 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: af7f78ee4edff61469234dcc797ee590, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!54 &45601048
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 45601044}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &88340063
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,6 +180,7 @@ GameObject:
   - 4: {fileID: 88340064}
   - 212: {fileID: 88340066}
   - 65: {fileID: 88340065}
+  - 54: {fileID: 88340067}
   m_Layer: 0
   m_Name: CARD drop5
   m_TagString: Untagged
@@ -190,7 +207,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 88340063}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.68000007, y: 5.0999999, z: 0}
@@ -221,6 +238,21 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: af7f78ee4edff61469234dcc797ee590, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!54 &88340067
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 88340063}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &226724690
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,6 +263,7 @@ GameObject:
   - 4: {fileID: 226724691}
   - 212: {fileID: 226724693}
   - 65: {fileID: 226724692}
+  - 54: {fileID: 226724694}
   m_Layer: 0
   m_Name: CARD drop2
   m_TagString: Untagged
@@ -257,7 +290,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 226724690}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.68000007, y: 5.0999999, z: 0}
@@ -288,6 +321,21 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: af7f78ee4edff61469234dcc797ee590, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!54 &226724694
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 226724690}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &260633351
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,6 +406,7 @@ GameObject:
   - 4: {fileID: 335479564}
   - 212: {fileID: 335479566}
   - 65: {fileID: 335479565}
+  - 54: {fileID: 335479567}
   m_Layer: 0
   m_Name: CARD drop2
   m_TagString: Untagged
@@ -384,7 +433,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 335479563}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.68000007, y: 5.0999999, z: 0}
@@ -415,6 +464,21 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: af7f78ee4edff61469234dcc797ee590, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!54 &335479567
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 335479563}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &401106355
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,6 +489,7 @@ GameObject:
   - 4: {fileID: 401106356}
   - 212: {fileID: 401106358}
   - 65: {fileID: 401106357}
+  - 54: {fileID: 401106359}
   m_Layer: 0
   m_Name: CARD drop5
   m_TagString: Untagged
@@ -451,7 +516,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 401106355}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.68000007, y: 5.0999999, z: 0}
@@ -482,6 +547,97 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: af7f78ee4edff61469234dcc797ee590, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!54 &401106359
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 401106355}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!1 &664504229
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 664504232}
+  - 23: {fileID: 664504231}
+  - 102: {fileID: 664504230}
+  m_Layer: 0
+  m_Name: FONT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!102 &664504230
+TextMesh:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 664504229}
+  m_Text: 'EXIT
+
+'
+  m_OffsetZ: 0
+  m_CharacterSize: 1
+  m_LineSpacing: 1
+  m_Anchor: 4
+  m_Alignment: 1
+  m_TabSize: 4
+  m_FontSize: 54
+  m_FontStyle: 1
+  m_RichText: 1
+  m_Font: {fileID: 0}
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+--- !u!23 &664504231
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 664504229}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!4 &664504232
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 664504229}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -.289999992, z: -.100000001}
+  m_LocalScale: {x: .0900952369, y: .0900952369, z: .0900952369}
+  m_Children: []
+  m_Father: {fileID: 1247061369}
+  m_RootOrder: 0
 --- !u!1 &693875615
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,6 +648,8 @@ GameObject:
   - 4: {fileID: 693875618}
   - 212: {fileID: 693875617}
   - 65: {fileID: 693875616}
+  - 114: {fileID: 693875619}
+  - 54: {fileID: 693875620}
   m_Layer: 0
   m_Name: CARD drop1
   m_TagString: Untagged
@@ -506,7 +664,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 693875615}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.68000007, y: 5.0999999, z: 0}
@@ -549,6 +707,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1553905726}
   m_RootOrder: 3
+--- !u!114 &693875619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 693875615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1216799589cb47c4dacdaef990554914, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &693875620
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 693875615}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &711758784
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,6 +743,8 @@ GameObject:
   - 4: {fileID: 711758785}
   - 212: {fileID: 711758787}
   - 65: {fileID: 711758786}
+  - 114: {fileID: 711758788}
+  - 54: {fileID: 711758789}
   m_Layer: 0
   m_Name: CARD drop2
   m_TagString: Untagged
@@ -585,7 +771,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 711758784}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.68000007, y: 5.0999999, z: 0}
@@ -616,6 +802,32 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: af7f78ee4edff61469234dcc797ee590, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &711758788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 711758784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1216799589cb47c4dacdaef990554914, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &711758789
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 711758784}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &755891734
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,6 +838,7 @@ GameObject:
   - 4: {fileID: 755891735}
   - 212: {fileID: 755891737}
   - 65: {fileID: 755891736}
+  - 54: {fileID: 755891738}
   m_Layer: 0
   m_Name: CARD drop4
   m_TagString: Untagged
@@ -652,7 +865,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 755891734}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.68000007, y: 5.0999999, z: 0}
@@ -683,6 +896,75 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: af7f78ee4edff61469234dcc797ee590, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!54 &755891738
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 755891734}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!1 &981336145
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 981336147}
+  - 212: {fileID: 981336146}
+  m_Layer: 0
+  m_Name: base
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &981336146
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 981336145}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 08cfb698eeca6f44bb546a26ea5b6b98, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &981336147
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 981336145}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 6.67000008}
+  m_LocalScale: {x: 12.3846083, y: 10.7516193, z: 10.7516193}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
 --- !u!1 &1082681949
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,6 +975,7 @@ GameObject:
   - 4: {fileID: 1082681950}
   - 212: {fileID: 1082681952}
   - 65: {fileID: 1082681951}
+  - 54: {fileID: 1082681953}
   m_Layer: 0
   m_Name: CARD drop3
   m_TagString: Untagged
@@ -719,7 +1002,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1082681949}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.68000007, y: 5.0999999, z: 0}
@@ -750,6 +1033,21 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: af7f78ee4edff61469234dcc797ee590, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!54 &1082681953
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1082681949}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1198405946
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,6 +1058,7 @@ GameObject:
   - 4: {fileID: 1198405947}
   - 212: {fileID: 1198405949}
   - 65: {fileID: 1198405948}
+  - 54: {fileID: 1198405950}
   m_Layer: 0
   m_Name: CARD drop2
   m_TagString: Untagged
@@ -786,7 +1085,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1198405946}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.68000007, y: 5.0999999, z: 0}
@@ -817,6 +1116,21 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: af7f78ee4edff61469234dcc797ee590, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!54 &1198405950
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1198405946}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1232641366
 GameObject:
   m_ObjectHideFlags: 0
@@ -827,6 +1141,8 @@ GameObject:
   - 4: {fileID: 1232641367}
   - 212: {fileID: 1232641369}
   - 65: {fileID: 1232641368}
+  - 114: {fileID: 1232641370}
+  - 54: {fileID: 1232641371}
   m_Layer: 0
   m_Name: CARD drop3
   m_TagString: Untagged
@@ -853,7 +1169,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1232641366}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.68000007, y: 5.0999999, z: 0}
@@ -884,6 +1200,100 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: af7f78ee4edff61469234dcc797ee590, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1232641370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1232641366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1216799589cb47c4dacdaef990554914, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &1232641371
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1232641366}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!1 &1247061368
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1247061369}
+  - 212: {fileID: 1247061370}
+  - 65: {fileID: 1247061371}
+  m_Layer: 0
+  m_Name: EXIT
+  m_TagString: waitroom_exit
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1247061369
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1247061368}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.15999985, y: 4.21899986, z: 7.09000015}
+  m_LocalScale: {x: 1.07689428, y: 1, z: 1}
+  m_Children:
+  - {fileID: 664504232}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+--- !u!212 &1247061370
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1247061368}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 6264e6118b2ba4c4ca5a75af9be7e34e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!65 &1247061371
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1247061368}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.11999989, y: 1.15999997, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1278257737
 GameObject:
   m_ObjectHideFlags: 0
@@ -894,6 +1304,7 @@ GameObject:
   - 4: {fileID: 1278257738}
   - 212: {fileID: 1278257740}
   - 65: {fileID: 1278257739}
+  - 54: {fileID: 1278257741}
   m_Layer: 0
   m_Name: CARD drop3
   m_TagString: Untagged
@@ -920,7 +1331,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1278257737}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.68000007, y: 5.0999999, z: 0}
@@ -951,6 +1362,21 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: af7f78ee4edff61469234dcc797ee590, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!54 &1278257741
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1278257737}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1353791113
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,7 +1386,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1353791114}
   m_Layer: 0
-  m_Name: CARD_DROP 3
+  m_Name: CARD_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -973,7 +1399,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1353791113}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.74000001, y: -5.28000021, z: .0900000036}
+  m_LocalPosition: {x: -.739990234, y: -5.27999878, z: .0900000036}
   m_LocalScale: {x: .538042724, y: .538042724, z: .538042724}
   m_Children:
   - {fileID: 1717312941}
@@ -983,6 +1409,74 @@ Transform:
   - {fileID: 1198405947}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!1 &1372640218
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1372640220}
+  - 212: {fileID: 1372640219}
+  - 65: {fileID: 1372640221}
+  m_Layer: 0
+  m_Name: START
+  m_TagString: waitroom_start
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1372640219
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1372640218}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 6264e6118b2ba4c4ca5a75af9be7e34e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &1372640220
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1372640218}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.15999985, y: 5.32999992, z: 7.09000015}
+  m_LocalScale: {x: 1.07689428, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1413594089}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+--- !u!65 &1372640221
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1372640218}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.11999989, y: 1.15999997, z: .200000003}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1372908042
 GameObject:
   m_ObjectHideFlags: 0
@@ -993,6 +1487,8 @@ GameObject:
   - 4: {fileID: 1372908043}
   - 212: {fileID: 1372908045}
   - 65: {fileID: 1372908044}
+  - 114: {fileID: 1372908046}
+  - 54: {fileID: 1372908047}
   m_Layer: 0
   m_Name: CARD drop4
   m_TagString: Untagged
@@ -1019,7 +1515,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1372908042}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.68000007, y: 5.0999999, z: 0}
@@ -1050,6 +1546,32 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: af7f78ee4edff61469234dcc797ee590, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1372908046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1372908042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1216799589cb47c4dacdaef990554914, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &1372908047
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1372908042}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1376899601
 GameObject:
   m_ObjectHideFlags: 0
@@ -1060,6 +1582,8 @@ GameObject:
   - 4: {fileID: 1376899602}
   - 212: {fileID: 1376899604}
   - 65: {fileID: 1376899603}
+  - 114: {fileID: 1376899605}
+  - 54: {fileID: 1376899606}
   m_Layer: 0
   m_Name: CARD drop5
   m_TagString: Untagged
@@ -1086,7 +1610,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1376899601}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.68000007, y: 5.0999999, z: 0}
@@ -1117,6 +1641,106 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: af7f78ee4edff61469234dcc797ee590, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1376899605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1376899601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1216799589cb47c4dacdaef990554914, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &1376899606
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1376899601}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!1 &1413594086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1413594089}
+  - 23: {fileID: 1413594088}
+  - 102: {fileID: 1413594087}
+  m_Layer: 0
+  m_Name: FONT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!102 &1413594087
+TextMesh:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1413594086}
+  m_Text: START
+  m_OffsetZ: 0
+  m_CharacterSize: 1
+  m_LineSpacing: 1
+  m_Anchor: 4
+  m_Alignment: 1
+  m_TabSize: 4
+  m_FontSize: 54
+  m_FontStyle: 1
+  m_RichText: 1
+  m_Font: {fileID: 0}
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+--- !u!23 &1413594088
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1413594086}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!4 &1413594089
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1413594086}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -.100000001}
+  m_LocalScale: {x: .0900952369, y: .0900952369, z: .0900952369}
+  m_Children: []
+  m_Father: {fileID: 1372640220}
+  m_RootOrder: 0
 --- !u!1 &1443291214
 GameObject:
   m_ObjectHideFlags: 0
@@ -1126,7 +1750,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1443291215}
   m_Layer: 0
-  m_Name: CARD_DROP 1
+  m_Name: CARD_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1139,7 +1763,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1443291214}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.74000001, y: .720000029, z: .0900000036}
+  m_LocalPosition: {x: -.739990234, y: .720001221, z: .0900000036}
   m_LocalScale: {x: .538042724, y: .538042724, z: .538042724}
   m_Children:
   - {fileID: 88340064}
@@ -1159,8 +1783,10 @@ GameObject:
   - 4: {fileID: 1545573932}
   - 212: {fileID: 1545573934}
   - 65: {fileID: 1545573933}
+  - 114: {fileID: 1545573935}
+  - 54: {fileID: 1545573936}
   m_Layer: 0
-  m_Name: CARD drop3
+  m_Name: sword_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1185,7 +1811,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1545573931}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.68000007, y: 5.0999999, z: 0}
@@ -1214,8 +1840,38 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: af7f78ee4edff61469234dcc797ee590, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9bad8e0473cb16345ac339166cea30ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1545573935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1545573931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5f7a402c52216c44a9ee837e057c84e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  original_pos: {x: 0, y: 0, z: 0}
+  move_bool: 0
+  card_number: 3
+  select: 0
+--- !u!54 &1545573936
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1545573931}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1553905725
 GameObject:
   m_ObjectHideFlags: 0
@@ -1238,7 +1894,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1553905725}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.74000001, y: 3.94000006, z: .0900000036}
+  m_LocalPosition: {x: -.74000001, y: 4.05000019, z: .0900000036}
   m_LocalScale: {x: .538042724, y: .538042724, z: .538042724}
   m_Children:
   - {fileID: 1376899602}
@@ -1258,8 +1914,10 @@ GameObject:
   - 4: {fileID: 1688629802}
   - 212: {fileID: 1688629804}
   - 65: {fileID: 1688629803}
+  - 114: {fileID: 1688629805}
+  - 54: {fileID: 1688629806}
   m_Layer: 0
-  m_Name: CARD drop4
+  m_Name: ma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1284,7 +1942,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1688629801}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.68000007, y: 5.0999999, z: 0}
@@ -1313,8 +1971,38 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: af7f78ee4edff61469234dcc797ee590, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1e2d869d09485e74185c4d79588728e3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1688629805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1688629801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5f7a402c52216c44a9ee837e057c84e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  original_pos: {x: 0, y: 0, z: 0}
+  move_bool: 0
+  card_number: 4
+  select: 0
+--- !u!54 &1688629806
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1688629801}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1717312940
 GameObject:
   m_ObjectHideFlags: 0
@@ -1325,8 +2013,10 @@ GameObject:
   - 4: {fileID: 1717312941}
   - 212: {fileID: 1717312943}
   - 65: {fileID: 1717312942}
+  - 114: {fileID: 1717312944}
+  - 54: {fileID: 1717312945}
   m_Layer: 0
-  m_Name: CARD drop5
+  m_Name: mama
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1351,7 +2041,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1717312940}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.68000007, y: 5.0999999, z: 0}
@@ -1380,8 +2070,38 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: af7f78ee4edff61469234dcc797ee590, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4a52fda6273ebf541990f869454fc0e1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1717312944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1717312940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5f7a402c52216c44a9ee837e057c84e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  original_pos: {x: 0, y: 0, z: 0}
+  move_bool: 0
+  card_number: 5
+  select: 0
+--- !u!54 &1717312945
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1717312940}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1837968641
 GameObject:
   m_ObjectHideFlags: 0
@@ -1392,8 +2112,10 @@ GameObject:
   - 4: {fileID: 1837968644}
   - 212: {fileID: 1837968643}
   - 65: {fileID: 1837968642}
+  - 114: {fileID: 1837968645}
+  - 54: {fileID: 1837968646}
   m_Layer: 0
-  m_Name: CARD drop4
+  m_Name: Wizard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1406,7 +2128,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1837968641}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.68000007, y: 5.0999999, z: 0}
@@ -1435,7 +2157,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: af7f78ee4edff61469234dcc797ee590, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f88c9d43641a83e4c93343de4c0f41a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1837968644
 Transform:
@@ -1449,6 +2171,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1443291215}
   m_RootOrder: 1
+--- !u!114 &1837968645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1837968641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5f7a402c52216c44a9ee837e057c84e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  original_pos: {x: 0, y: 0, z: 0}
+  move_bool: 0
+  card_number: 1
+  select: 0
+--- !u!54 &1837968646
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1837968641}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1938629691
 GameObject:
   m_ObjectHideFlags: 0
@@ -1459,8 +2211,10 @@ GameObject:
   - 4: {fileID: 1938629694}
   - 212: {fileID: 1938629693}
   - 65: {fileID: 1938629692}
+  - 114: {fileID: 1938629695}
+  - 54: {fileID: 1938629696}
   m_Layer: 0
-  m_Name: CARD drop1
+  m_Name: sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1473,7 +2227,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1938629691}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.68000007, y: 5.0999999, z: 0}
@@ -1502,7 +2256,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: af7f78ee4edff61469234dcc797ee590, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 174cf6888b4ebfd4a8d286ed0a56d7da, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1938629694
 Transform:
@@ -1516,6 +2270,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2003630703}
   m_RootOrder: 3
+--- !u!114 &1938629695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1938629691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5f7a402c52216c44a9ee837e057c84e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  original_pos: {x: 0, y: 0, z: 0}
+  move_bool: 0
+  card_number: 2
+  select: 0
+--- !u!54 &1938629696
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1938629691}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1960046059
 GameObject:
   m_ObjectHideFlags: 0
@@ -1528,6 +2312,7 @@ GameObject:
   - 92: {fileID: 1960046062}
   - 124: {fileID: 1960046061}
   - 81: {fileID: 1960046060}
+  - 114: {fileID: 1960046065}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1600,6 +2385,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!114 &1960046065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1960046059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1216799589cb47c4dacdaef990554914, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2003630702
 GameObject:
   m_ObjectHideFlags: 0
@@ -1609,7 +2405,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2003630703}
   m_Layer: 0
-  m_Name: CARD_DROP 2
+  m_Name: CARD_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1622,7 +2418,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2003630702}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.74000001, y: -2.27999997, z: .0900000036}
+  m_LocalPosition: {x: -.739990234, y: -2.27999878, z: .0900000036}
   m_LocalScale: {x: .538042724, y: .538042724, z: .538042724}
   m_Children:
   - {fileID: 401106356}
@@ -1642,6 +2438,7 @@ GameObject:
   - 4: {fileID: 2117810213}
   - 212: {fileID: 2117810212}
   - 65: {fileID: 2117810211}
+  - 54: {fileID: 2117810214}
   m_Layer: 0
   m_Name: CARD drop1
   m_TagString: Untagged
@@ -1656,7 +2453,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2117810210}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.68000007, y: 5.0999999, z: 0}
@@ -1699,3 +2496,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1353791114}
   m_RootOrder: 3
+--- !u!54 &2117810214
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2117810210}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
