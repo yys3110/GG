@@ -2,7 +2,8 @@
 using System.Collections;
 
 public class UI : MonoBehaviour {
-	GameObject hit_collider;
+	GameObject hit_collider_left;
+	GameObject hit_collider_right;
 	public GameObject [] ui_;
 	public GameObject [] ui_pos;
 	public int ui_num =0;
@@ -10,10 +11,12 @@ public class UI : MonoBehaviour {
 	public float speed;
 	GameObject color_object;
 	GameObject mouse_OverObject;
-	
+	public Texture [] left_right_ui;
+	public Texture2D cursor;
 	// Use this for initialization
 	void Start () {
 		//Screen.SetResolution(800,600,false);
+		Cursor.SetCursor(cursor,Vector2.zero,CursorMode.Auto);
 	}
 	
 	// Update is called once per frame
@@ -27,9 +30,13 @@ public class UI : MonoBehaviour {
 			color_object = color_hit.transform.gameObject;
 			color_object.GetComponent<Renderer>().material.color = new Color(1,1,1,1);
 		}
-		if(hit_collider != null)
+		if(hit_collider_left != null)
 		{
-			hit_collider.GetComponent<Renderer>().material.color = Color.white;
+			hit_collider_left.GetComponent<Renderer>().material.mainTexture = left_right_ui[0];
+		}
+		if(hit_collider_right != null)
+		{
+			hit_collider_right.GetComponent<Renderer>().material.mainTexture = left_right_ui[2];
 		}
 		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 		RaycastHit hit;
@@ -37,8 +44,9 @@ public class UI : MonoBehaviour {
 		{
 			if(hit.collider.gameObject.tag == "UI_left")
 			{	
-				hit_collider = hit.collider.gameObject;
-				hit_collider.GetComponent<Renderer>().material.color = Color.black;
+				hit_collider_left = hit.collider.gameObject;
+				//hit_collider.GetComponent<Renderer>().material.color = Color.black;
+				hit_collider_left.GetComponent<Renderer>().material.mainTexture = left_right_ui[1];
 				if(Input.GetKeyDown(KeyCode.Mouse0))
 				{
 					ui_move = true;
@@ -49,8 +57,9 @@ public class UI : MonoBehaviour {
 			}
 			if(hit.collider.gameObject.tag == "UI_right")
 			{
-				hit_collider = hit.collider.gameObject;
-				hit_collider.GetComponent<Renderer>().material.color = Color.black;
+				hit_collider_right = hit.collider.gameObject;
+				//hit_collider.GetComponent<Renderer>().material.color = Color.black;
+				hit_collider_right.GetComponent<Renderer>().material.mainTexture = left_right_ui[3];
 				if(Input.GetKeyDown(KeyCode.Mouse0))
 				{
 					ui_move = true;

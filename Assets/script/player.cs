@@ -375,6 +375,8 @@ public class player : MonoBehaviour {
 		camera_num = 2;
 	}
 	public void HP_system(int damage_number , bool critical, GameObject hit_uint){
+		if(hp_ >= hp_max)
+			hp_ = hp_max;
 		int temp_damage =0;
 		Me_hit_unit = hit_uint;
 		if(defense >= damage_number){
@@ -396,5 +398,6 @@ public class player : MonoBehaviour {
 		if(critical == true){
 			dis.transform.localScale += new Vector3(1,1,1);
 		}
+		transform.GetComponentInChildren<HP_BAR>().HP_HUD(hp_);
 	}	
 }

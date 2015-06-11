@@ -41,6 +41,8 @@ public class play_system : MonoBehaviour {
 	public List<bool> mon_bool;
 	// UI 시스템 관련 
 	public GameObject UI_field;
+	//치트
+	public GameObject cheat;
 	// Use this for initialization
 	void Start () {
 		turn = 1;
@@ -107,6 +109,15 @@ public class play_system : MonoBehaviour {
 		if(active_dice_bool == true && GameObject.FindWithTag("dice") == null){
 			dice_();
 		}
+
+		if(Input.GetKeyDown(KeyCode.Q)){
+			GOD_SWORD.god_bool = true;
+			Instantiate(cheat);
+		}
+		if(Input.GetKeyUp(KeyCode.Q)){
+			GOD_SWORD.god_bool = false;
+		}
+
 	}
 
 	void dice_(){

@@ -273,6 +273,8 @@ public class monster : MonoBehaviour {
 		Instantiate(collider,new Vector3 (transform.position.x,0,transform.position.z),collider.transform.rotation);
 	}
 	public void HP_system(int damage_number , bool critical,GameObject hit_uint){
+		if(hp_ >= hp_max)
+			hp_ = hp_max;
 		Me_hit_unit = hit_uint;
 		int temp_damage =0;
 		if(defense >= damage_number){
@@ -294,5 +296,6 @@ public class monster : MonoBehaviour {
 		if(critical == true){
 			dis.transform.localScale += new Vector3(1,1,1);
 		}
+		transform.GetComponentInChildren<HP_BAR>().HP_HUD(hp_);
 	}	
 }

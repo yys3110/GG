@@ -1,10 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\TEST_1\Assets\HUD\make.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\monster.cs">
     <Files>
-      <File FileName="..\TEST_1\Assets\HUD\HP.cs" Line="17" Column="14" />
-      <File FileName="..\TEST_1\Assets\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" Line="146" Column="112" />
-      <File FileName="..\TEST_1\Assets\HUD\make.cs" Line="24" Column="1" />
+      <File FileName="Assets\UI\MAIN_UI_LEFT_RIGHT.cs" Line="1" Column="1" />
+      <File FileName="Assets\script\UI.cs" Line="7" Column="27" />
+      <File FileName="Assets\UI HUD\HP_BAR.cs" Line="17" Column="50" />
+      <File FileName="Assets\script\player.cs" Line="401" Column="58" />
+      <File FileName="Assets\TEST_GAME\GOD_SWORD.cs" Line="36" Column="50" />
+      <File FileName="Assets\script\play_system.cs" Line="93" Column="22" />
+      <File FileName="Assets\script\monster.cs" Line="295" Column="20" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
