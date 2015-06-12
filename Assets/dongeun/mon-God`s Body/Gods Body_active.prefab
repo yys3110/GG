@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 452438}
-  - 114: {fileID: 11422520}
+  - 114: {fileID: 11475392}
   m_Layer: 0
   m_Name: Gods Body_active
   m_TagString: Untagged
@@ -28,7 +28,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11422520
+--- !u!114 &11475392
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -36,9 +36,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 177662}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2440d1fb0833ff04c8407221b5029866, type: 3}
+  m_Script: {fileID: 11500000, guid: 6bfc3a870f10af041969337fc290c9e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  passive_turn: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
