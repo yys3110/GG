@@ -58,6 +58,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 18
   effects: {fileID: 130796, guid: a6ee3ce1fc87ee3448da6e9f9220539c, type: 2}
+  caster: {fileID: 0}
+  dis_font: {fileID: 142118, guid: 51dcdefdc901aa14683fd36d70b41204, type: 2}
 --- !u!135 &13529696
 SphereCollider:
   m_ObjectHideFlags: 1

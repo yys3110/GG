@@ -28,6 +28,8 @@ public class HP_BAR : MonoBehaviour {
 		hp_ = hp;
 		if(hp_>= max_hp)
 			hp_ = max_hp;
+		if(hp_ <=0)
+			hp_ =0;
 
 		move_bar = hp_ / (max_hp * 1);
 		hp_bar.transform.localPosition = new Vector3((move_bar * 2.4f)-2.4f,hp_bar.transform.localPosition.y,hp_bar.transform.localPosition.z);

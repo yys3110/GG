@@ -7,6 +7,7 @@ public class Authority_active : MonoBehaviour {
 	public Camera maincamera;
 	public GameObject collider;
 	public int range_collider;
+	public GameObject dis_font;
 	GameObject coll;
 
 
@@ -33,7 +34,7 @@ public class Authority_active : MonoBehaviour {
 						transform.parent.GetComponent<player>().wait_();
 						hexagon.move_end = true;
 						player.skill_cast = false;
-						Debug.Log(hit.collider.gameObject.name + "unit active skill");
+						Instantiate(dis_font,new Vector3(hit.collider.transform.position.x,20,hit.collider.transform.position.z),dis_font.transform.rotation);
 						Destroy(gameObject);
 					}
 				}

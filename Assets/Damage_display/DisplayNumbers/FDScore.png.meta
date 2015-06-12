@@ -1,0 +1,176 @@
+fileFormatVersion: 2
+guid: 2185fcd889cc4af429efd6f050895684
+timeCreated: 1434028770
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: FDScore_0
+    21300002: FDScore_1
+    21300004: FDScore_2
+    21300006: FDScore_3
+    21300008: FDScore_4
+    21300010: FDScore_5
+    21300012: FDScore_6
+    21300014: FDScore_7
+    21300016: FDScore_8
+    21300018: FDScore_9
+    21300020: FDScore_10
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: FDScore_0
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 21
+        width: 27
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FDScore_1
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 10
+        width: 38
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FDScore_2
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 4
+        width: 33
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FDScore_3
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 6
+        width: 39
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FDScore_4
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 5
+        width: 38
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FDScore_5
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 0
+        width: 40
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FDScore_6
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 7
+        width: 39
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FDScore_7
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 7
+        width: 38
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FDScore_8
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 5
+        width: 37
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FDScore_9
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 9
+        width: 37
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FDScore_10
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 6
+        width: 39
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

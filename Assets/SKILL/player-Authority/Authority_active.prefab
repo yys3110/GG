@@ -59,6 +59,7 @@ MonoBehaviour:
   maincamera: {fileID: 0}
   collider: {fileID: 116050, guid: 9e754ebe46054b04a8f07a0bfa269262, type: 2}
   range_collider: 5
+  dis_font: {fileID: 150852, guid: 1c19fd7dcf35feb4c8d78f0dfa7200dc, type: 2}
 --- !u!135 &13532848
 SphereCollider:
   m_ObjectHideFlags: 1
