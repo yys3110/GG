@@ -43229,7 +43229,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 476088, guid: 596bca19eb6f2354089b65e66797d9d7, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 111894, guid: 596bca19eb6f2354089b65e66797d9d7, type: 2}
       propertyPath: m_IsActive
