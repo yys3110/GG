@@ -13,7 +13,7 @@ public class divinesword_active : MonoBehaviour {
 	void Update () {
 		target = transform.parent.GetComponent<monster>().target;
 		if(play_system.turn == 2){
-			target.GetComponent<player>().HP_system(target.GetComponent<player>().hp_max/2,false,transform.parent.gameObject);
+			target.GetComponent<player>().HP_system(target.GetComponent<player>().hp_max/2,false,transform.parent.gameObject,1);
 			Destroy(gameObject);
 			transform.parent.gameObject.GetComponent<monster>().wait_();
 		}

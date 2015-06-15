@@ -19,7 +19,7 @@ public class endmagic_active : MonoBehaviour {
 				foreach(var endmagic in play_system.monster_target)
 				{
 					Debug.Log("죽어라!");
-					endmagic.GetComponent<player>().HP_system(active_damage,false,transform.parent.gameObject);
+					endmagic.GetComponent<player>().HP_system(active_damage,false,transform.parent.gameObject,1);
 				}
 				Destroy(gameObject);
 				one = false;

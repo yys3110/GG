@@ -45,7 +45,7 @@ public class player : MonoBehaviour {
 	int camera_num =0; // 카메라의 구도;
 	// 오브젝트 관련
 	public float speed = 10;
-	public GameObject Damage_display;
+	public GameObject [] Damage_display;
 	[HideInInspector]
 	public int array_display;
 	//캐릭터 정보//
@@ -320,7 +320,7 @@ public class player : MonoBehaviour {
 		if(play_system.dice_active_num == 6){
 			GameObject ui_des = Instantiate(attack_ui,new Vector3(monster_unit.transform.position.x,20,
 			monster_unit.transform.position.z),attack_ui.transform.rotation) as GameObject;
-			monster_unit.GetComponent<monster>().HP_system(damage,criticalHit_bool,transform.gameObject);
+			monster_unit.GetComponent<monster>().HP_system(damage,criticalHit_bool,transform.gameObject,0);
 			Destroy(ui_des,0.5f);
 			one_monster_click = true;
 			hexagon.move_end = true;
@@ -374,7 +374,7 @@ public class player : MonoBehaviour {
 		camera_move_bool = true;
 		camera_num = 2;
 	}
-	public void HP_system(int damage_number , bool critical, GameObject hit_uint){
+	public void HP_system(int damage_number , bool critical, GameObject hit_uint,int kind){
 		if(hp_ >= hp_max)
 			hp_ = hp_max;
 		int temp_damage =0;
@@ -390,7 +390,7 @@ public class player : MonoBehaviour {
 		}
 		hp_ -= temp_damage;
 
-		GameObject dis = Instantiate(Damage_display,transform.position,Damage_display.transform.rotation) as GameObject;
+		GameObject dis = Instantiate(Damage_display[kind],transform.position,Damage_display[kind].transform.rotation) as GameObject;
 		dis.GetComponent<damage_dis>().damage = temp_damage;
 		dis.GetComponent<damage_dis>().array_display = array_display;
 		dis.GetComponent<damage_dis>().unit_info = transform.gameObject;

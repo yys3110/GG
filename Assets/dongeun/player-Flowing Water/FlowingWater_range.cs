@@ -20,7 +20,7 @@ public class Flowingwater_range : MonoBehaviour {
 			//water_wave wave = transform.parent.GetComponent<water_wave>();
 			if(water.one_bool == false){
 				coll.GetComponent<monster>().HP_system(water.damage,false,
-				                                       water.transform.parent.gameObject);
+				                                       water.transform.parent.gameObject,0);
 				Destroy(transform.parent.gameObject);
 			}
 		}

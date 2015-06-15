@@ -25,7 +25,7 @@ public class darkFire_passive_debuff : MonoBehaviour {
 			dot_damage_bool = true;
 		}
 		if(dot_damage_bool == true){
-			transform.parent.GetComponent<monster>().HP_system(damage,false,caster);
+			transform.parent.GetComponent<monster>().HP_system(damage,false,caster,2);
 			dot_damage_bool = false;
 		}
 		distance = Vector3.Distance(transform.position,taget.transform.position);

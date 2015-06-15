@@ -27,7 +27,7 @@ public class BlackWind_active_debuff : MonoBehaviour {
 		else{
 			rotation_bool = true;
 		}
-		transform.parent.transform.gameObject.GetComponent<monster>().HP_system(damage,false,caster);
+		transform.parent.transform.gameObject.GetComponent<monster>().HP_system(damage,false,caster,0);
 		Destroy(gameObject,0.3f);
 	}
 	

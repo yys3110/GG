@@ -29,7 +29,7 @@ public class splash : MonoBehaviour {
 		if(player_number == 2){
 			if(coll.gameObject.tag == "player"){
 				Debug.Log("shlash damage hit " + damage);
-				coll.GetComponent<player>().HP_system(damage,false,caster);
+				coll.GetComponent<player>().HP_system(damage,false,caster,0);
 			}
 		}
 	}

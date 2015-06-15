@@ -42,7 +42,7 @@ public class SharpClaws_passive_debuff : MonoBehaviour {
 			if(count == MAX_count){
 				Destroy(gameObject);
 			}
-			transform.parent.transform.gameObject.GetComponent<player>().HP_system(bleeding,false,transform.parent.gameObject);
+			transform.parent.transform.gameObject.GetComponent<player>().HP_system(bleeding,false,transform.parent.gameObject,1);
 		}
 
 	}

@@ -19,7 +19,7 @@ public class red_arrow_range : MonoBehaviour {
 			//water_wave wave = transform.parent.GetComponent<water_wave>();
 			if(arrow.one_bool == false){
 				coll.GetComponent<monster>().HP_system(arrow.damage,false,
-				                                       arrow.transform.parent.gameObject);
+				                                       arrow.transform.parent.gameObject,0);
 				Destroy(transform.parent.gameObject);
 			}
 		}

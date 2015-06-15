@@ -21514,6 +21514,48 @@ MonoBehaviour:
   mouse_over_bool: 0
   range_collider: 0
   hexagon_unit_bool: 0
+--- !u!1001 &951858011
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 425756, guid: fcaa06f6123b8004c9cf2855e97a879b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 425756, guid: fcaa06f6123b8004c9cf2855e97a879b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 425756, guid: fcaa06f6123b8004c9cf2855e97a879b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -82.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 425756, guid: fcaa06f6123b8004c9cf2855e97a879b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 425756, guid: fcaa06f6123b8004c9cf2855e97a879b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 425756, guid: fcaa06f6123b8004c9cf2855e97a879b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 425756, guid: fcaa06f6123b8004c9cf2855e97a879b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 425756, guid: fcaa06f6123b8004c9cf2855e97a879b, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: fcaa06f6123b8004c9cf2855e97a879b, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &952590631
 GameObject:
   m_ObjectHideFlags: 0
@@ -22106,7 +22148,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 453378, guid: 3558a4254d8af0d489010b7774327530, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 11486220, guid: 3558a4254d8af0d489010b7774327530, type: 2}
       propertyPath: hp_max
@@ -43229,7 +43271,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 476088, guid: 596bca19eb6f2354089b65e66797d9d7, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 111894, guid: 596bca19eb6f2354089b65e66797d9d7, type: 2}
       propertyPath: m_IsActive

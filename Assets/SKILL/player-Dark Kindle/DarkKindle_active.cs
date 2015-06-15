@@ -25,7 +25,7 @@ public class DarkKindle_active : MonoBehaviour {
 		if(Physics.Raycast(ray, out hit , Mathf.Infinity)){
 			if(hit.collider.gameObject.tag == "monster" && hit.collider.GetComponent<monster>().range_collider == true){
 				if(Input.GetKeyDown(KeyCode.Mouse0)){
-					hit.collider.GetComponent<monster>().HP_system(10,false,caster);
+					hit.collider.GetComponent<monster>().HP_system(10,false,caster,0);
 					Vector3 hit_pos = hit.collider.transform.position;
 					GameObject mon_child = Instantiate(debuff,hit_pos,transform.rotation) as GameObject;
 					mon_child.transform.parent = hit.collider.transform;

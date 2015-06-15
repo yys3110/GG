@@ -19,7 +19,7 @@ public class DarkFire_active_debuff : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(trun_count <= play_system.game_turn){
-			transform.parent.GetComponent<monster>().HP_system(damage,false,caster);
+			transform.parent.GetComponent<monster>().HP_system(damage,false,caster,2);
 			trun_count ++;
 			if(max_turn == trun_count)
 			{

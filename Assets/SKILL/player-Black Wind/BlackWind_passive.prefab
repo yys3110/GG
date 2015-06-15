@@ -41,6 +41,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp_max: 0
   hp: 0
+  caster: {fileID: 0}
+  display: {fileID: 114574, guid: 9f599c90939c43e4eba7832680cd91c0, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

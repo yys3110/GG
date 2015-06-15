@@ -23,7 +23,7 @@ public class ExplosionBody_active : MonoBehaviour {
 			GameObject skill_effects = Instantiate(effects,transform.localPosition,transform.rotation) as GameObject;
 			skill_effects.transform.position = transform.parent.transform.position;
 			Destroy(skill_effects,1f);
-			transform.parent.GetComponent<monster>().HP_system(999,false,null);
+			transform.parent.GetComponent<monster>().HP_system(999,false,null,0);
 			Instantiate (dis_font,new Vector3(transform.position.x,20,transform.position.z),dis_font.transform.rotation);
 			one_skill = false;
 
@@ -31,7 +31,7 @@ public class ExplosionBody_active : MonoBehaviour {
 	}
 	void OnTriggerEnter(Collider coll){
 		if(coll.gameObject.tag == "player"){
-			coll.GetComponent<player>().HP_system(1,false,caster);
+			coll.GetComponent<player>().HP_system(1,false,caster,0);
 
 		}
 

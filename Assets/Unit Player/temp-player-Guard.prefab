@@ -465,7 +465,12 @@ MonoBehaviour:
   defense: 0
   criticalHit_bool: 0
   speed: 100
-  Damage_display: {fileID: 108890, guid: 961a8b5e16ceb4248a2d5d1a07576957, type: 2}
+  Damage_display:
+  - {fileID: 108890, guid: 961a8b5e16ceb4248a2d5d1a07576957, type: 2}
+  - {fileID: 108890, guid: 6b4678a6a1d3efc45be23275e3970489, type: 2}
+  - {fileID: 108890, guid: f29a28f2bc7151740ab7fe84355008ff, type: 2}
+  - {fileID: 108890, guid: 6513f5aa4c2cf1d4c9fa3ca3dbd98d7b, type: 2}
+  - {fileID: 108890, guid: af647d1fa770b0848b9f3e876bc40f66, type: 2}
   array_display: 0
   ______________: 0
   code_number: 0

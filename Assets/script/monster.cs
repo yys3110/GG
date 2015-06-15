@@ -18,7 +18,8 @@ public class monster : MonoBehaviour {
 	public float move_speed;
 	public bool range_collider = false;
 	//오브젝트 관련
-	public GameObject Damage_display;
+	public GameObject [] Damage_display;
+
 	//스킬 관련
 	public GameObject skill;
 	public float skill_range;
@@ -208,7 +209,7 @@ public class monster : MonoBehaviour {
 		if(play_system.dice_active_num == 6){
 			GameObject ui_object = Instantiate(attack_ui,new Vector3(target.transform.position.x,20,
 			                                                         target.transform.position.z),attack_ui.transform.rotation) as GameObject;
-			target.GetComponent<player>().HP_system(damage,criticalHit_bool,transform.gameObject);
+			target.GetComponent<player>().HP_system(damage,criticalHit_bool,transform.gameObject,1);
 			Destroy(ui_object,0.5f);
 			pattern_num = 4;
 			Debug.Log("attack dice - attack - HIT / name : " + transform.name);
@@ -272,7 +273,7 @@ public class monster : MonoBehaviour {
 		collider.GetComponent<range_collider>().range_ = range;
 		Instantiate(collider,new Vector3 (transform.position.x,0,transform.position.z),collider.transform.rotation);
 	}
-	public void HP_system(int damage_number , bool critical,GameObject hit_uint){
+	public void HP_system(int damage_number , bool critical,GameObject hit_uint,int kind){
 		if(hp_ >= hp_max)
 			hp_ = hp_max;
 		Me_hit_unit = hit_uint;
@@ -286,9 +287,10 @@ public class monster : MonoBehaviour {
 			if(critical == false)
 				temp_damage = damage_number - defense;
 		}
-		Damage_display.GetComponent<damage_dis>().damage = damage_number;
+
+		Damage_display[kind].GetComponent<damage_dis>().damage = damage_number;
 		hp_ -= temp_damage;
-		GameObject dis = Instantiate(Damage_display,transform.position,Damage_display.transform.rotation) as GameObject;
+		GameObject dis = Instantiate(Damage_display[kind],transform.position,Damage_display[kind].transform.rotation) as GameObject;
 		dis.GetComponent<damage_dis>().damage = temp_damage;
 		dis.GetComponent<damage_dis>().array_display = array_display;
 		dis.GetComponent<damage_dis>().unit_info = transform.gameObject;
