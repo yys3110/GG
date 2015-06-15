@@ -32,7 +32,7 @@ public class player : MonoBehaviour {
 	public GameObject Me_hit_unit;
 	//스킬 관련
 	bool one_skill_bool = true;
-	public static bool skill_cast = false;
+
 	GameObject child;
 	public bool temp_skill_bool = false;
 	// 추가 데미지 및 방어 관련
@@ -90,7 +90,7 @@ public class player : MonoBehaviour {
 				cancel_();
 			}
 		}
-		if(skill_cast == true){
+		if(play_system.skill_cast == true){
 			Ray ray = new Ray (transform.position,-transform.up);
 			RaycastHit hit;
 			if(Physics.Raycast(ray ,out hit ,10f)&& hit.collider.gameObject.tag == "hexagon" && die_bool == false){

@@ -1,13 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\dongeun\mon-Soul body\soulbody_passive_debuff.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\dongeun\mon-Ice Fist\icefist_active_debuff.cs">
     <Files>
-      <File FileName="Assets\script\play_system.cs" Line="102" Column="33" />
-      <File FileName="Assets\script\monster.cs" Line="203" Column="57" />
-      <File FileName="Assets\dongeun\mon-Soul body\soulbody_passive.cs" Line="33" Column="3" />
-      <File FileName="Assets\dongeun\mon-Soul body\soulbody_passive_debuff.cs" Line="25" Column="1" />
-      <File FileName="Assets\dongeun\mon-Soul balls\soulballs_passive.cs" Line="33" Column="3" />
-      <File FileName="Assets\dongeun\mon-Soul balls\soulballs_passive_debuff.cs" Line="23" Column="3" />
+      <File FileName="Assets\script\monster.cs" Line="236" Column="6" />
+      <File FileName="Assets\script\player.cs" Line="1" Column="1" />
+      <File FileName="Assets\dongeun\mon-God`s Body\Godsbody_active.cs" Line="17" Column="79" />
+      <File FileName="Assets\script\play_system.cs" Line="1" Column="1" />
+      <File FileName="Assets\SKILL\player-Authority\Authority_buff.cs" Line="45" Column="1" />
+      <File FileName="Assets\dongeun\mon-Ice Fist\icefist_passive.cs" Line="23" Column="97" />
+      <File FileName="Assets\dongeun\mon-Ice Fist\icefist_passive_debuff.cs" Line="29" Column="4" />
+      <File FileName="Assets\dongeun\mon-Ice Fist\icefist_active.cs" Line="19" Column="101" />
+      <File FileName="Assets\dongeun\mon-End Magic\endmagic_active.cs" Line="16" Column="19" />
+      <File FileName="Assets\dongeun\mon-Ice Fist\icefist_active_debuff.cs" Line="4" Column="52" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

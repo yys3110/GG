@@ -9,9 +9,11 @@ public class HolyGhost_active : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//collider프리팹 소환
-
+		play_system.skill_cast = true;
+		transform.position = new Vector3(transform.position.x,0,transform.position.z);
 		heal_range.GetComponent<range_collider>().range_ = range_collider;
 		Instantiate(heal_range,transform.position,heal_range.transform.rotation);
+		transform.parent.gameObject.GetComponent<monster>().HP_system(1,false,null,4);
 
 	}
 
@@ -19,18 +21,20 @@ public class HolyGhost_active : MonoBehaviour {
 	void Update () {
 		transform.GetComponent<SphereCollider>().radius += 0.5F;
 
-		if(transform.GetComponent<SphereCollider>().radius >=3)
+		if(transform.GetComponent<SphereCollider>().radius >=30)
 		{
 			transform.GetComponent<SphereCollider>().radius = 0;
-			Destroy(gameObject);
 			hexagon.move_end = true;
+			transform.parent.gameObject.GetComponent<monster>().wait_();
+			play_system.skill_cast = false;
+			Destroy(gameObject);
 		}
 	}
 	void OnTriggerEnter(Collider coll){
 		monster heal = coll.GetComponent<monster>();
 
 		if(coll.gameObject.tag == "monster"&& coll.gameObject.GetComponent<monster>().range_collider == true){
-				heal.hp_ ++;
+			heal.HP_system(1,false,null,4);
 		}
 	}
 }

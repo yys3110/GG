@@ -111,7 +111,15 @@ public class monster : MonoBehaviour {
 					
 
 		}
-			
+
+		if(play_system.skill_cast == true){
+			Ray ray = new Ray (transform.position,-transform.up);
+			RaycastHit hit;
+			if(Physics.Raycast(ray ,out hit ,10f)&& hit.collider.gameObject.tag == "hexagon" && die_bool == false){
+				range_collider = hit.collider.gameObject.GetComponent<hexagon>().range_collider;
+			}
+		}
+
 		if(play_system.turn == 1){
 			Ray ray = new Ray (transform.position,-transform.up);
 			RaycastHit hit;
@@ -228,14 +236,17 @@ public class monster : MonoBehaviour {
 				}
 			}
 			if(target_distance <= skill_range){
-				if(one_skill_bool == true){
+				if(one_skill_bool == true && now_skill == false){
 					Debug.Log("skill cast " + transform.name);
 					GameObject child = Instantiate(skill,transform.position,transform.rotation) as GameObject;
 					child.transform.parent = transform;
 					one_skill_bool = false;
 				}
 				
-				if(now_skill == true){
+				if(now_skill == true && one_skill_bool == true){
+					GameObject child = Instantiate(skill,transform.position,transform.rotation) as GameObject;
+					child.transform.parent = transform;
+					one_skill_bool = false;
 					pattern_num = 4;
 					Debug.Log ("Skill " +transform.name);
 				}

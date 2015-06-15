@@ -13,7 +13,7 @@ public class Authority_active : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		player.skill_cast = true;
+		play_system.skill_cast = true;
 		hexagon.move_end = false;
 		collider.GetComponent<range_collider>().range_ = range_collider;
 		coll = Instantiate(collider,new Vector3(transform.parent.position.x,0,transform.parent.position.z),collider.transform.rotation) as GameObject;
@@ -33,7 +33,7 @@ public class Authority_active : MonoBehaviour {
 						hit.collider.GetComponent<player>().chance_turn = true;
 						transform.parent.GetComponent<player>().wait_();
 						hexagon.move_end = true;
-						player.skill_cast = false;
+						play_system.skill_cast = false;
 						Instantiate(dis_font,new Vector3(hit.collider.transform.position.x,20,hit.collider.transform.position.z),dis_font.transform.rotation);
 						Destroy(gameObject);
 					}

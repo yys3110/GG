@@ -8,7 +8,7 @@ public class Guard_active : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		player.skill_cast = true;
+		play_system.skill_cast = true;
 		hexagon.move_end = false;
 		transform.position = new Vector3(transform.position.x,0,transform.position.z);
 		range_collider.GetComponent<range_collider>().range_ = range;
@@ -27,7 +27,7 @@ public class Guard_active : MonoBehaviour {
 					player_child.transform.parent = hit.collider.transform;
 					//mon_child.transform.localScale += new Vector3(0.25f,0.25f,0.25f);
 					transform.parent.GetComponent<player>().wait_();
-					player.skill_cast = false;
+					play_system.skill_cast = false;
 					Destroy(gameObject);
 				}
 			}

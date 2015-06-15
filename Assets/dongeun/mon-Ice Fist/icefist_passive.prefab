@@ -39,10 +39,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5db3da91eb5f8f540ace09792cad7334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  on_skill: 0
-  passive_turn: 0
+  debuff: {fileID: 192880, guid: 2b922120362cd3e4abfa04e226b8f1bc, type: 2}
   target_unit: {fileID: 0}
-  turn: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
