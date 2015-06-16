@@ -1,8 +1,15 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\CUBE_GAME\New Unity Project\Temp\Compiled-DecalShaderDiffuseNormals.shader">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\SKILL\player-Guard_\Guard_passive_buff.cs">
     <Files>
-      <File FileName="..\..\CUBE_GAME\New Unity Project\Temp\Compiled-DecalShaderDiffuseNormals.shader" Line="1" Column="1" />
+      <File FileName="Assets\script\player.cs" Line="393" Column="1" />
+      <File FileName="Assets\script\monster.cs" Line="208" Column="4" />
+      <File FileName="Assets\SKILL\mon-Explosion Body\ExplosionBody_active.cs" Line="1" Column="1" />
+      <File FileName="Assets\SKILL\palyer-DarkFire\DarkFire_active_debuff.cs" Line="29" Column="3" />
+      <File FileName="Assets\SKILL\player-Black Wind\BlackWind_active_debuff.cs" Line="30" Column="68" />
+      <File FileName="Assets\SKILL\player-Black Wind\BlackWind_passive.cs" Line="15" Column="36" />
+      <File FileName="Assets\SKILL\player-Dark Kindle\DarkKindle_active.cs" Line="30" Column="90" />
+      <File FileName="Assets\SKILL\player-Guard_\Guard_passive_buff.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
