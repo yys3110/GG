@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class hawkeyes_active : MonoBehaviour {
+public class HawkEyes_active : MonoBehaviour {
 	public int turn_cooltime; //스킬 쿨타임
 	public int HawkEyes_attack_range; // 스킬
 	int count = 0;
@@ -17,7 +17,7 @@ public class hawkeyes_active : MonoBehaviour {
 	}	
 	// Update is called once per frame
 	void Update () {
-
+		
 		if(count == play_system.game_turn){
 			count ++;
 			if(count == MAX_count){

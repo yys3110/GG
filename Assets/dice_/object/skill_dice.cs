@@ -38,9 +38,9 @@ public class skill_dice : MonoBehaviour {
 					dice_camera.transform.localPosition = new Vector3(0,8.92f,-9.18f);
 					transform.localPosition = new Vector3(0.06001282f,1,-4.0f);
 					go_rect = new Rect (0,0,0,0);
-					skill_caster.transform.parent.GetComponent<monster>().add_damage = dice_num;
+					skill_caster.transform.GetComponent<monster>().temp_skill_dice_num = dice_num;
 					monster.skill_active++;
-					Destroy(gameObject);
+					//Destroy(gameObject);
 				}
 				del =0;
 				dice_roll = false;
@@ -60,14 +60,14 @@ public class skill_dice : MonoBehaviour {
 			}
 		}
 		
-		if(play_system.turn == 2 && play_system.monster_one_dice_bool == true){
+		/*if(play_system.turn == 2 && play_system.monster_one_dice_bool == true){
 			OnMouseDown();
 			play_system.monster_one_dice_bool = false;
 			Debug.Log("monster dice roll");
-		}
+		}*/
 		
 	}
-	void OnMouseDown(){
+	public void OnMouseDown(){
 		if(dice_roll == false){
 			this.GetComponent<Rigidbody>().velocity += new Vector3 (0,10,5);
 			int random_y = Random.Range(-100,100);

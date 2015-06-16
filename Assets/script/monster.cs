@@ -29,6 +29,7 @@ public class monster : MonoBehaviour {
 	//public int add_damage;
 	static public int skill_active =0;
 	public bool one_skill_bool = true;
+	public int temp_skill_dice_num = 0;
 	// 추가 데미지 및 방어 관련
 	public int add_damage =0;
 	public int defense = 0;

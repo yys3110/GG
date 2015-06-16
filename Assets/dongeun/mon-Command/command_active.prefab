@@ -39,8 +39,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4e5e0a89b9b88545a5b3eaf75276985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turn_cooltime: 4
   del: 0
-  one: 1
+  skill1: 0
+  skill2: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
