@@ -52,7 +52,7 @@ public class monster : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//hp_ = hp_max;
+		hp_ = hp_max;
 		monster_number = play_system.monster_max_num;
 		play_system.monster_unit_num ++;
 		play_system.monster_max_num ++;
