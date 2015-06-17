@@ -25,8 +25,8 @@ public class HolyGhost_active : MonoBehaviour {
 		{
 			transform.GetComponent<SphereCollider>().radius = 0;
 			hexagon.move_end = true;
-			transform.parent.gameObject.GetComponent<monster>().wait_();
 			play_system.skill_cast = false;
+			transform.parent.gameObject.GetComponent<monster>().wait_();
 			Destroy(gameObject);
 		}
 	}

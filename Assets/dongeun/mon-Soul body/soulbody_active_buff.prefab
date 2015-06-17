@@ -39,7 +39,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58921c660c559304aa71c40607f66c38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp_max: 0
+  hp: 0
   caster: {fileID: 0}
+  display: {fileID: 114574, guid: 9f599c90939c43e4eba7832680cd91c0, type: 2}
+  skill_ON: 0
+  passive_turn: 3
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

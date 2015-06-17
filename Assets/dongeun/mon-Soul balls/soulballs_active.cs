@@ -23,9 +23,10 @@ public class soulballs_active : MonoBehaviour {
 		if(transform.GetComponent<SphereCollider>().radius >=30)
 		{
 			transform.GetComponent<SphereCollider>().radius = 0;
-			Destroy(gameObject);
+
 			hexagon.move_end = true;
 			transform.parent.gameObject.GetComponent<monster>().wait_();
+			Destroy(gameObject);
 		}
 	}
 	void OnTriggerEnter(Collider coll){

@@ -11,7 +11,7 @@ GameObject:
   - 54: {fileID: 5446052}
   - 135: {fileID: 13518390}
   - 114: {fileID: 11424104}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ContinuousFire_passive
   m_TagString: Untagged
   m_Icon: {fileID: 0}

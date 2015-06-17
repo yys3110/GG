@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+//아군 전체에게 2턴간 기본 공격 피해 50%반사 버프(4턴)
 public class soulbody_active : MonoBehaviour {
 	public int turn_cooltime;
 	public GameObject buff;
@@ -24,6 +24,7 @@ public class soulbody_active : MonoBehaviour {
 					child.transform.parent = soulbody.transform;
 				}
 				one = false;
+				Destroy(gameObject);
 			}
 		}
 	}
