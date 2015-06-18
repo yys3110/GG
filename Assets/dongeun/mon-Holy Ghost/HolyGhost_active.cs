@@ -10,9 +10,10 @@ public class HolyGhost_active : MonoBehaviour {
 	void Start () {
 		//collider프리팹 소환
 		play_system.skill_cast = true;
-		transform.position = new Vector3(transform.position.x,0,transform.position.z);
 		heal_range.GetComponent<range_collider>().range_ = range_collider;
-		Instantiate(heal_range,transform.position,heal_range.transform.rotation);
+		Instantiate(heal_range,new Vector3(transform.position.x,0,transform.position.z),heal_range.transform.rotation);
+		transform.position = new Vector3(transform.position.x,0,transform.position.z);
+
 		transform.parent.gameObject.GetComponent<monster>().HP_system(1,false,null,4);
 
 	}

@@ -1,41 +1,41 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &122460
+--- !u!1 &167788
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 406352}
-  - 54: {fileID: 5477198}
-  - 135: {fileID: 13513280}
-  - 114: {fileID: 11418938}
-  m_Layer: 2
-  m_Name: Holy Ghost
+  - 4: {fileID: 462420}
+  - 54: {fileID: 5488670}
+  - 135: {fileID: 13536870}
+  - 114: {fileID: 11466408}
+  m_Layer: 0
+  m_Name: magicpower_active
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &406352
+--- !u!4 &462420
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 122460}
+  m_GameObject: {fileID: 167788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!54 &5477198
+--- !u!54 &5488670
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 122460}
+  m_GameObject: {fileID: 167788}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -45,27 +45,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &11418938
+--- !u!114 &11466408
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 122460}
+  m_GameObject: {fileID: 167788}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce914f704343cbc4cb23c0dc8cfad5ff, type: 3}
+  m_Script: {fileID: 11500000, guid: d4ac578cc1e56c14fa9a163fdbe0c2ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turn_cooltime: 1
-  heal_range: {fileID: 116050, guid: 9e754ebe46054b04a8f07a0bfa269262, type: 2}
-  range_collider: 3
-  coll: 0
---- !u!135 &13513280
+  turn_cooltime: 3
+  magic_range: {fileID: 116050, guid: 9e754ebe46054b04a8f07a0bfa269262, type: 2}
+  range_collider: 4
+  magic_damage: 1
+--- !u!135 &13536870
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 122460}
+  m_GameObject: {fileID: 167788}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
@@ -81,5 +81,5 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 122460}
+  m_RootGameObject: {fileID: 167788}
   m_IsPrefabParent: 1

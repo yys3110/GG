@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 449076}
   - 65: {fileID: 6531884}
   - 54: {fileID: 5427722}
-  - 114: {fileID: 11413738}
+  - 114: {fileID: 11417150}
   m_Layer: 0
   m_Name: Flowingwater_range
   m_TagString: hex_collider
@@ -86,7 +86,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 15, z: 1.5}
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &11413738
+--- !u!114 &11417150
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

@@ -59,8 +59,13 @@ MonoBehaviour:
   turn_cooltime: 2
   Continuous_range: {fileID: 116050, guid: 9e754ebe46054b04a8f07a0bfa269262, type: 2}
   range_collider: 4
-  dice_: []
-  dice_num: 0
+  dice_:
+  - {fileID: 132416, guid: 8ce4554b6c242ee44ac099a710a87464, type: 2}
+  - {fileID: 134304, guid: 40bbd2badf620b548ae10441395becdb, type: 2}
+  - {fileID: 131436, guid: 81eed02819ee11745abaf08ea1f1d2c7, type: 2}
+  - {fileID: 174994, guid: 39791a81e2f79824f8f578df76690b3a, type: 2}
+  - {fileID: 171694, guid: 9da5f6e4d05ad9643afe1612c297735c, type: 2}
+  dice_num: 1
 --- !u!135 &13547994
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -91,7 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   one_range: 1
   collider: {fileID: 120464, guid: 2d993a7f56733bb498a0f1b310dd58b7, type: 2}
-  range_: 1
+  range_: 3
   rotation_:
   - 34
   - 90
@@ -99,9 +99,6 @@ MonoBehaviour:
   - 214
   - 270
   - 326
-  skill_splash_collider: 0
-  skill_damage: 0
-  collider_radius: 0
 --- !u!135 &13557328
 SphereCollider:
   m_ObjectHideFlags: 1
