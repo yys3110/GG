@@ -8,13 +8,7 @@ public class command_active : MonoBehaviour {
 	public bool skill2 = false;
 	// Use this for initialization
 	void Start () {
-		//transform.parent.transform.gameObject.GetComponent<monster>().wait_();
-		/*for(int i = 0;i<= play_system.monster_info_list.Count; i++)
-		{
-			play_system.monster_info_list[i]
-			.GetComponent<monster>().move_range += 1;
-			play_system.monster_info_list[i].GetComponent<monster>().attack_range += 1;
-		}*/
+
 	}
 	
 	// Update is called once per frame
