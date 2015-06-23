@@ -17,6 +17,7 @@ public class UI : MonoBehaviour {
 	void Start () {
 		//Screen.SetResolution(800,600,false);
 		Cursor.SetCursor(cursor,Vector2.zero,CursorMode.Auto);
+		//Screen.SetResolution(1280,720,false);
 	}
 	
 	// Update is called once per frame
