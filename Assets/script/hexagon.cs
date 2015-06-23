@@ -9,6 +9,7 @@ public class hexagon : MonoBehaviour {
 	public bool range_collider = false;  // range_collider 가 필드에 펼쳐졌을때 그 위에 유닛이 있는가
 	public bool hexagon_unit_bool = false; // hexagon 위에 유닛이 있는가를 판별, 가이드가 판별을 하여 지나갈지 말지를 판단
 	public static bool move_end = false; // move_end 가 true 일 경우 hexagon의 색갈과 정보값 초기화 
+	public int hexagon_type;
 
 
 	//public bool move_ = true;

@@ -20,7 +20,7 @@ public class WaitRoom : MonoBehaviour {
 		if(Physics.Raycast(ray, out hit , Mathf.Infinity)){
 			if(hit.collider.gameObject.CompareTag("waitroom_start")&& select_count == 5){
 				if(Input.GetKeyDown(KeyCode.Mouse0))
-				Application.LoadLevel("temp_stage");
+				Application.LoadLevel("stage_select");
 
 			}
 			if(hit.collider.gameObject.CompareTag("waitroom_exit")){

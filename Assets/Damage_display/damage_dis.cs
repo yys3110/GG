@@ -14,7 +14,7 @@ public class damage_dis : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		transform.position += new Vector3(0,5+array_display*5,2);
+		transform.position += new Vector3(0,5+array_display*5,-0.2f);
 		if(damage !=0){
 			for(int i =0; i < number_object.Length; i++){
 				number_object[i].GetComponent<SpriteRenderer>().sprite = sprite_[damage/(int)(Mathf.Pow(10,(float)(i)))%10];
