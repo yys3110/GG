@@ -28,6 +28,7 @@ TagManager:
   - continue
   - waitroom_start
   - waitroom_exit
+  - skill_dice
   layers:
   - Default
   - TransparentFX

@@ -1,12 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\monster.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\dongeun\mon-Sword Emperor\swordemperor_passive.cs">
     <Files>
-      <File FileName="Assets\dongeun\player-Iron wall\Ironwall_passive.cs" Line="26" Column="2" />
-      <File FileName="Assets\script\play_system.cs" Line="35" Column="35" />
-      <File FileName="Assets\dongeun\mon-Sword Emperor\swordemperor_passive.cs" Line="26" Column="35" />
-      <File FileName="Assets\script\monster.cs" Line="223" Column="21" />
-      <File FileName="Assets\script\monster_AI.cs" Line="55" Column="39" />
+      <File FileName="Assets\script\monster.cs" Line="12" Column="25" />
+      <File FileName="Assets\script\play_system.cs" Line="165" Column="29" />
+      <File FileName="Assets\dongeun\mon-Sword Emperor\swordemperor_passive.cs" Line="72" Column="5" />
+      <File FileName="Assets\script\monster_AI.cs" Line="21" Column="39" />
+      <File FileName="Assets\dongeun\mon-Pirate\pirate_active.cs" Line="17" Column="71" />
+      <File FileName="Assets\dice_\object\skill_dice.cs" Line="41" Column="23" />
+      <File FileName="Assets\dongeun\mon-Strong health\StrongHealth_active.cs" Line="17" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
