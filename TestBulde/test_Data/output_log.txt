@@ -1,0 +1,50 @@
+Initialize engine version: 5.0.2f1 (0b02744d4013)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GT 720  (ID=0x1286)
+    Vendor:   NVIDIA
+    VRAM:     974 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\UNITY\UNITY\Slave revolution\TestBulde\test_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\UNITY\UNITY\Slave revolution\TestBulde\test_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\UNITY\UNITY\Slave revolution\TestBulde\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\UNITY\UNITY\Slave revolution\TestBulde\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\UNITY\UNITY\Slave revolution\TestBulde\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\UNITY\UNITY\Slave revolution\TestBulde\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.032 seconds
+desktop: 1280x1024 60Hz; virtual: 3840x1024 at -1280,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: D:\UNITY\UNITY\Slave revolution\TestBulde\test_Data\Managed\System.dll (this message is harmless)
+The file 'D:/UNITY/UNITY/Slave revolution/TestBulde/test_Data/mainData' is corrupted! Remove it and launch unity again!
+[Position out of bounds!]
+ 
+(Filename:  Line: 240)
+
+The file 'D:/UNITY/UNITY/Slave revolution/TestBulde/test_Data/mainData' is corrupted! Remove it and launch unity again!
+[Position out of bounds!]
+ 
+(Filename:  Line: 240)
+
+The file 'D:/UNITY/UNITY/Slave revolution/TestBulde/test_Data/mainData' is corrupted! Remove it and launch unity again!
+[Position out of bounds!]
+ 
+(Filename:  Line: 240)
+
+The file 'D:/UNITY/UNITY/Slave revolution/TestBulde/test_Data/mainData' is corrupted! Remove it and launch unity again!
+[Position out of bounds!]
+ 
+(Filename:  Line: 240)
+
+The file 'D:/UNITY/UNITY/Slave revolution/TestBulde/test_Data/mainData' is corrupted! Remove it and launch unity again!
+[Position out of bounds!]
+ 
+(Filename:  Line: 240)
+
+The file 'D:/UNITY/UNITY/Slave revolution/TestBulde/test_Data/mainData' is corrupted! Remove it and launch unity again!
+[Position out of bounds!]
+ 
+(Filename:  Line: 240)
+

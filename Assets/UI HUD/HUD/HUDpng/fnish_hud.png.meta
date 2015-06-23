@@ -1,9 +1,11 @@
 fileFormatVersion: 2
 guid: c08a72eea04ea6d478d47ae872072b7c
-timeCreated: 1435019301
+timeCreated: 1435038188
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: fnish_hud_0
+    21300002: fnish_hud_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -48,7 +50,27 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: fnish_hud_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 823
+        height: 370
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fnish_hud_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 788
+        width: 1920
+        height: 292
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 
