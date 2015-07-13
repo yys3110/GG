@@ -14,6 +14,7 @@ public class skill_dice : MonoBehaviour {
 	//스킬 관련
 	public GameObject skill_caster;
 	Rect go_rect;
+	public int type = 0; // type 0 일 경우 누가 던지는가를 판단을 play_system.turn 에서 하고 type 1 이상 일 경우 지정 한 대로 판단
 	// Use this for initialization
 	void Start () {
 		
@@ -29,18 +30,22 @@ public class skill_dice : MonoBehaviour {
 			//if((velocity_dice.x ==0 && velocity_dice.y ==0 && velocity_dice.z ==0)|| del>=5){
 			if(velocityd <= 0.0f){
 				play_system.play_dice_num = dice_num;
-				
-				if(play_system.turn == 1){
-					camera_move_bool = true;
+				if(type == 0){
+					if(play_system.turn == 1){
+						camera_move_bool = true;
+					}
+					if(play_system.turn == 2){
+						dice_camera = GameObject.FindWithTag ("ui_camera");
+						dice_camera.transform.localPosition = new Vector3(0,8.92f,-9.18f);
+						transform.localPosition = new Vector3(0.06001282f,1,-4.0f);
+						go_rect = new Rect (0,0,0,0);
+						skill_caster.transform.GetComponent<monster>().temp_skill_dice_num = dice_num;
+						monster.skill_active++;
+						//Destroy(gameObject);
+					}
 				}
-				if(play_system.turn == 2){
-					dice_camera = GameObject.FindWithTag ("ui_camera");
-					dice_camera.transform.localPosition = new Vector3(0,8.92f,-9.18f);
-					transform.localPosition = new Vector3(0.06001282f,1,-4.0f);
-					go_rect = new Rect (0,0,0,0);
-					skill_caster.transform.GetComponent<monster>().temp_skill_dice_num = dice_num;
-					monster.skill_active++;
-					//Destroy(gameObject);
+				if(type == 1){
+					monster.skill_active ++;
 				}
 				del =0;
 				dice_roll = false;

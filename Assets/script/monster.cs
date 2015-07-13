@@ -17,6 +17,7 @@ public class monster : MonoBehaviour {
 	public GameObject target; // 플레이어 유닛
 	public float move_speed;
 	public bool range_collider = false;
+	public bool target_check = true;
 	//오브젝트 관련
 	public GameObject [] Damage_display;
 
@@ -39,11 +40,14 @@ public class monster : MonoBehaviour {
 	public int monster_number; // 몇번째로 움직이는가를 판단;
 	public int code_number;
 	public int hp_max,hp_,damage,miss,attack_range,move_range;
+	int temp_move_range;
 	public int monster_class; // 0 : 근접 , 1: 원거리 , 2: 능력
 	public int monster_level =0; 
 	public int pattern_num =0; //number 0 = 중립 ,1 = 이동 , 2 = 공격  (패턴 넘버, 움직일지 공격할지를 정함)
 	public int dice_code_number =0; // 0 : 4면체 , 1 : 6면 , 2 : 8면 ,3 : 10면 , 4 : 12면체 , 5 : 20면체 (명중굴림)
 	public bool die_bool = false; // 살았는지 죽었는지를 판단;
+	public bool TerrainPenalty_bool = true;
+	int terrain_type = 0;
 	////////////////////////
 	[HideInInspector]
 	public int array_display = 0; 
@@ -60,6 +64,16 @@ public class monster : MonoBehaviour {
 		play_system.monster_info_list.Add(gameObject);
 		damage =0;
 
+		Ray ray = new Ray(transform.position,-transform.up);
+		RaycastHit hit;
+		if(Physics.Raycast(ray , out hit , Mathf.Infinity)){
+			if(hit.collider.gameObject.CompareTag("hexagon")){
+				terrain_type = hit.collider.GetComponent<hexagon>().hexagon_type;
+				temp_move_range = move_range;
+				TerrainPenalty_system(terrain_type,true);
+			}
+		}
+
 	}
 	
 	// Update is called once per frame
@@ -69,7 +83,9 @@ public class monster : MonoBehaviour {
 			play_system.monster_num ++;
 		}
 		if(play_system.turn == 2 && play_system.monster_num == monster_number && die_bool == false && GameObject.FindWithTag("dice") == null){ //패턴 판단 
-			target = play_system.monster_target[0].transform.gameObject;
+			if(target_check == true){
+				target = play_system.monster_target[0].transform.gameObject;
+			}
 			target_distance = Vector3.Distance (transform.position , target.transform.position);
 			if(pattern_bool == true){
 				pattern_num = 0;
@@ -185,6 +201,18 @@ public class monster : MonoBehaviour {
 		if(move_count == 0){
 			pattern_num = 0;
 			active_count ++;
+	
+			Ray under_ray = new Ray(transform.position,-transform.up);
+			RaycastHit under_hit;
+			if(Physics.Raycast(under_ray, out under_hit , Mathf.Infinity)){
+				if(under_hit.collider.gameObject.CompareTag("hexagon")){
+					TerrainPenalty_system(terrain_type,false);
+					terrain_type = under_hit.collider.GetComponent<hexagon>().hexagon_type;
+					temp_move_range = move_range;
+					TerrainPenalty_system(terrain_type,true);
+				}
+			}
+
 			pattern_bool = true;
 		}
 	}
@@ -311,5 +339,75 @@ public class monster : MonoBehaviour {
 			dis.transform.localScale += new Vector3(1,1,1);
 		}
 		transform.GetComponentInChildren<HP_BAR>().HP_HUD(hp_);
-	}	
+	}
+	public void TerrainPenalty_system(int terrain_number, bool penalty){
+		if(TerrainPenalty_bool == true){
+			if(penalty == true){
+				if(terrain_number == 0 || terrain_number == 1){
+					Debug.Log("TerrainPenalty_system : Forest_ ");
+					miss +=2;
+				}
+				else if(terrain_number == 2){
+					Debug.Log("TerrainPenalty_system : Grass ");
+				}
+				else if(terrain_number == 3){
+					Debug.Log("TerrainPenalty_system : Ice ");
+				}
+				else if(terrain_number == 4 || terrain_number == 5){
+					Debug.Log("TerrainPenalty_system : Mountain_ ");
+				}
+				else if(terrain_number == 6){
+					Debug.Log("TerrainPenalty_system : Water ");
+					if(temp_move_range >= 3)
+						move_range -= 2;
+					if(temp_move_range == 2)
+						move_range = 1;
+				}
+				else if(terrain_number == 7){
+					Debug.Log("TerrainPenalty_system : Sea ");
+					if(temp_move_range >= 3)
+						move_range -= 2;
+					if(temp_move_range == 2)
+						move_range = 1;
+				}
+				else if(terrain_number == 8 || terrain_number == 9){
+					Debug.Log("TerrainPenalty_system : Snow1 ");
+					move_range -= 1;
+				}
+			}
+			else if(penalty == false){
+				if(terrain_number == 0 || terrain_number == 1){
+					Debug.Log(" Forest_ ");
+					miss -=2;
+				}
+				else if(terrain_number == 2){
+					Debug.Log(" Grass ");
+				}
+				else if(terrain_number == 3){
+					Debug.Log(" Ice ");
+				}
+				else if(terrain_number == 4 || terrain_number == 5){
+					Debug.Log(" Mountain_ ");
+				}
+				else if(terrain_number == 6){
+					Debug.Log(" Water ");
+					if(temp_move_range >= 3)
+						move_range += 2;
+					if(temp_move_range == 2)
+						move_range = 2;
+				}
+				else if(terrain_number == 7){
+					Debug.Log(" Sea ");
+					if(temp_move_range >= 3)
+						move_range += 2;
+					if(temp_move_range == 2)
+						move_range = 2;
+				}
+				else if(terrain_number == 8 || terrain_number == 9){
+					Debug.Log(" Snow1 ");
+					move_range += 1;
+				}
+			}
+		}
+	}
 }
