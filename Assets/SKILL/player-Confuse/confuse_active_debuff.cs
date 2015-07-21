@@ -42,7 +42,8 @@ public class confuse_active_debuff : MonoBehaviour {
 	void Update () {
 		transform.Rotate(0,1,0);
 		monster mons = transform.parent.GetComponent<monster>();
-		if(play_system.monster_num == transform.parent.GetComponent<monster>().monster_number){
+		float distance = Vector3.Distance(transform.parent.position,list_uint[target_num].transform.position);
+		if(play_system.monster_num == transform.parent.GetComponent<monster>().monster_number && distance <= mons.attack_range*10){
 			if(monster.skill_active == 0){
 				Camera.main.GetComponent<play_system>().dice_system.SetActive(true);
 				dice_object = Instantiate(dice_[5],new Vector3(182.4f,0.5f,-2.75f),new Quaternion(0,0,0,0)) as GameObject;
