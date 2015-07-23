@@ -45397,8 +45397,6 @@ MonoBehaviour:
   random_map: 1
   one_random: 1
   stage: 0
-<<<<<<< HEAD
-=======
 --- !u!1001 &2111567860
 Prefab:
   m_ObjectHideFlags: 0
@@ -45441,7 +45439,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9c21726069be75b43b13e3195cd3a785, type: 2}
   m_IsPrefabParent: 0
->>>>>>> ba0ba12f55c43c0a8a65b2499e449b9b3aa9c99c
 --- !u!1 &2116392984
 GameObject:
   m_ObjectHideFlags: 0
