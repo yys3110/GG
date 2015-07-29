@@ -101,5 +101,10 @@ public class confuse_active_debuff : MonoBehaviour {
 				Destroy(gameObject);
 			}
 		}
+		else if(play_system.monster_num == transform.parent.GetComponent<monster>().monster_number && distance >= (mons.attack_range*10)+5){
+			mons.wait_();
+			monster.skill_active =0;
+			Destroy(gameObject);
+		}
 	}
 }
