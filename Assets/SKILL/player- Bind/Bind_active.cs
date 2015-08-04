@@ -13,6 +13,7 @@ public class Bind_active : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		hexagon.move_end = false;
 		monster_list = GameObject.FindGameObjectsWithTag("monster");
 
 	}
