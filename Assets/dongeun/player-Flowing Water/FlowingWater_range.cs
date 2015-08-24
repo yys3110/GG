@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 // 유수 범위
-public class Flowingwater_range : MonoBehaviour {
-	
+public class FlowingWater_range : MonoBehaviour {
+	public GameObject FlowingWaterActive;
 	// Use this for initialization
 	void Start () {
-		
+		FlowingWaterActive = transform.parent.gameObject;
 	}
 	
 	// Update is called once per frame

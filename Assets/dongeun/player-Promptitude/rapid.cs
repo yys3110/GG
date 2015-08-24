@@ -9,6 +9,7 @@ public class rapid : MonoBehaviour {
 	void Start () {
 		turn = play_system.game_turn;
 		transform.parent.GetComponent<player>().move_range += move_range;
+		transform.parent.GetComponent<player>().wait_();
 
 
 

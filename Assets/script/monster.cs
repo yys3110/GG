@@ -27,7 +27,6 @@ public class monster : MonoBehaviour {
 	public bool skill_bool = false; // 스킬이 있는가 없는가;
 	public bool now_skill = false;
 	public GameObject Me_hit_unit;
-	//public int add_damage;
 	static public int skill_active =0;
 	public bool one_skill_bool = true;
 	public int temp_skill_dice_num = 0;
@@ -47,7 +46,9 @@ public class monster : MonoBehaviour {
 	public int dice_code_number =0; // 0 : 4면체 , 1 : 6면 , 2 : 8면 ,3 : 10면 , 4 : 12면체 , 5 : 20면체 (명중굴림)
 	public bool die_bool = false; // 살았는지 죽었는지를 판단;
 	public bool TerrainPenalty_bool = true;
-	int terrain_type = 0;
+	public int terrain_type = 0;
+	public int skill_CollTime;
+	public int temp_skill_CollTime;
 	////////////////////////
 	[HideInInspector]
 	public int array_display = 0; 
@@ -63,16 +64,8 @@ public class monster : MonoBehaviour {
 		play_system.monster_max_num ++;
 		play_system.monster_info_list.Add(gameObject);
 		damage =0;
-
-		Ray ray = new Ray(transform.position,-transform.up);
-		RaycastHit hit;
-		if(Physics.Raycast(ray , out hit , Mathf.Infinity)){
-			if(hit.collider.gameObject.CompareTag("hexagon")){
-				terrain_type = hit.collider.GetComponent<hexagon>().hexagon_type;
-				temp_move_range = move_range;
-				TerrainPenalty_system(terrain_type,true);
-			}
-		}
+		temp_skill_CollTime = skill_CollTime;
+		StartCoroutine("StartTerrainCoroutine");
 
 	}
 	
@@ -201,18 +194,7 @@ public class monster : MonoBehaviour {
 		if(move_count == 0){
 			pattern_num = 0;
 			active_count ++;
-	
-			Ray under_ray = new Ray(transform.position,-transform.up);
-			RaycastHit under_hit;
-			if(Physics.Raycast(under_ray, out under_hit , Mathf.Infinity)){
-				if(under_hit.collider.gameObject.CompareTag("hexagon")){
-					TerrainPenalty_system(terrain_type,false);
-					terrain_type = under_hit.collider.GetComponent<hexagon>().hexagon_type;
-					temp_move_range = move_range;
-					TerrainPenalty_system(terrain_type,true);
-				}
-			}
-
+			TerrainPenalty_system();
 			pattern_bool = true;
 		}
 	}
@@ -246,7 +228,7 @@ public class monster : MonoBehaviour {
 		if(play_system.dice_active_num == 6){
 			GameObject ui_object = Instantiate(attack_ui,new Vector3(target.transform.position.x,20,
 			                                                         target.transform.position.z),attack_ui.transform.rotation) as GameObject;
-			target.GetComponent<player>().HP_system(damage,criticalHit_bool,transform.gameObject,1);
+			target.GetComponent<player>().HP_system(damage+add_damage,criticalHit_bool,transform.gameObject,1);
 			Destroy(ui_object,0.5f);
 			pattern_num = 4;
 			Debug.Log("attack dice - attack - HIT / name : " + transform.name);
@@ -255,8 +237,7 @@ public class monster : MonoBehaviour {
 	}
 	void skill_(){
 		if(skill_bool == true){
-			if(target_distance > skill_range){
-				Debug.Log("skill range no " + transform.name);
+			if(temp_skill_CollTime < skill_CollTime){
 				if(active_count >=1)
 					wait_();
 				if(active_count <=0){
@@ -264,20 +245,34 @@ public class monster : MonoBehaviour {
 					collider_range_(attack_range);
 				}
 			}
-			if(target_distance <= skill_range){
-				if(one_skill_bool == true && now_skill == false){
-					Debug.Log("skill cast " + transform.name);
-					GameObject child = Instantiate(skill,transform.position,transform.rotation) as GameObject;
-					child.transform.parent = transform;
-					one_skill_bool = false;
+			if(temp_skill_CollTime >= skill_CollTime){
+				if(target_distance > skill_range){
+					Debug.Log("skill range no " + transform.name);
+					if(active_count >=1)
+						wait_();
+					if(active_count <=0){
+						pattern_num = 1;
+						collider_range_(attack_range);
+					}
 				}
-				
-				if(now_skill == true && one_skill_bool == true){
-					GameObject child = Instantiate(skill,transform.position,transform.rotation) as GameObject;
-					child.transform.parent = transform;
-					one_skill_bool = false;
-					pattern_num = 4;
-					Debug.Log ("Skill " +transform.name);
+				if(target_distance <= skill_range){
+					if(one_skill_bool == true && now_skill == false){
+						Debug.Log("skill cast " + transform.name);
+						GameObject child = Instantiate(skill,transform.position,transform.rotation) as GameObject;
+						child.transform.parent = transform;
+						one_skill_bool = false;
+						pattern_num = 0;
+						temp_skill_CollTime = 0;
+					}
+					
+					if(now_skill == true && one_skill_bool == true){
+						GameObject child = Instantiate(skill,transform.position,transform.rotation) as GameObject;
+						child.transform.parent = transform;
+						one_skill_bool = false;
+						pattern_num = 4;
+						temp_skill_CollTime = 0;
+						Debug.Log ("Skill " +transform.name);
+					}
 				}
 			}
 		}
@@ -306,7 +301,7 @@ public class monster : MonoBehaviour {
 		one_skill_bool = true;
 		criticalHit_bool = false;
 		Debug.Log("wait / name : " + transform.name);
-
+		temp_skill_CollTime ++;
 	}
 	public void collider_range_(int range)
 	{
@@ -340,74 +335,134 @@ public class monster : MonoBehaviour {
 		}
 		transform.GetComponentInChildren<HP_BAR>().HP_HUD(hp_);
 	}
-	public void TerrainPenalty_system(int terrain_number, bool penalty){
-		if(TerrainPenalty_bool == true){
-			if(penalty == true){
-				if(terrain_number == 0 || terrain_number == 1){
-					Debug.Log("TerrainPenalty_system : Forest_ ");
-					miss +=2;
-				}
-				else if(terrain_number == 2){
-					Debug.Log("TerrainPenalty_system : Grass ");
-				}
-				else if(terrain_number == 3){
-					Debug.Log("TerrainPenalty_system : Ice ");
-				}
-				else if(terrain_number == 4 || terrain_number == 5){
-					Debug.Log("TerrainPenalty_system : Mountain_ ");
-				}
-				else if(terrain_number == 6){
-					Debug.Log("TerrainPenalty_system : Water ");
-					if(temp_move_range >= 3)
-						move_range -= 2;
-					if(temp_move_range == 2)
-						move_range = 1;
-				}
-				else if(terrain_number == 7){
-					Debug.Log("TerrainPenalty_system : Sea ");
-					if(temp_move_range >= 3)
-						move_range -= 2;
-					if(temp_move_range == 2)
-						move_range = 1;
-				}
-				else if(terrain_number == 8 || terrain_number == 9){
-					Debug.Log("TerrainPenalty_system : Snow1 ");
-					move_range -= 1;
-				}
+	public void TerrainPenalty_system(){
+		int count = 0;
+		int temp_TerrainNum = terrain_type;
+		Ray ray = new Ray(transform.position,-transform.up);
+		RaycastHit hit;
+		if(Physics.Raycast(ray , out hit , Mathf.Infinity)){
+			if(hit.collider.gameObject.CompareTag("hexagon")){
+				terrain_type = hit.collider.GetComponent<hexagon>().hexagon_type;
+				temp_move_range = move_range;
 			}
-			else if(penalty == false){
-				if(terrain_number == 0 || terrain_number == 1){
+		}
+		
+		if(TerrainPenalty_bool == true){
+			temp_move_range = move_range;
+			
+			if(count == 0){
+				temp_TerrainNum = terrain_type;
+				if(temp_TerrainNum == 0 || temp_TerrainNum == 1){
 					Debug.Log(" Forest_ ");
 					miss -=2;
 				}
-				else if(terrain_number == 2){
+				else if(temp_TerrainNum == 2){
 					Debug.Log(" Grass ");
 				}
-				else if(terrain_number == 3){
+				else if(temp_TerrainNum == 3){
 					Debug.Log(" Ice ");
 				}
-				else if(terrain_number == 4 || terrain_number == 5){
+				else if(temp_TerrainNum == 4 || temp_TerrainNum == 5){
 					Debug.Log(" Mountain_ ");
 				}
-				else if(terrain_number == 6){
+				else if(temp_TerrainNum == 6){
 					Debug.Log(" Water ");
 					if(temp_move_range >= 3)
 						move_range += 2;
 					if(temp_move_range == 2)
 						move_range = 2;
 				}
-				else if(terrain_number == 7){
+				else if(temp_TerrainNum == 7){
 					Debug.Log(" Sea ");
 					if(temp_move_range >= 3)
 						move_range += 2;
 					if(temp_move_range == 2)
 						move_range = 2;
 				}
-				else if(terrain_number == 8 || terrain_number == 9){
+				else if(temp_TerrainNum == 8 || temp_TerrainNum == 9){
 					Debug.Log(" Snow1 ");
 					move_range += 1;
 				}
+				count ++;
+			}
+			if(count == 1){
+				if(terrain_type == 0 || terrain_type == 1){
+					Debug.Log("TerrainPenalty_system : Forest_ ");
+					miss +=2;
+				}
+				else if(terrain_type == 2){
+					Debug.Log("TerrainPenalty_system : Grass ");
+				}
+				else if(terrain_type == 3){
+					Debug.Log("TerrainPenalty_system : Ice ");
+				}
+				else if(terrain_type == 4 || terrain_type == 5){
+					Debug.Log("TerrainPenalty_system : Mountain_ ");
+				}
+				else if(terrain_type == 6){
+					Debug.Log("TerrainPenalty_system : Water ");
+					if(temp_move_range >= 3)
+						move_range -= 2;
+					if(temp_move_range == 2)
+						move_range = 1;
+				}
+				else if(terrain_type == 7){
+					Debug.Log("TerrainPenalty_system : Sea ");
+					if(temp_move_range >= 3)
+						move_range -= 2;
+					if(temp_move_range == 2)
+						move_range = 1;
+				}
+				else if(terrain_type == 8 || terrain_type == 9){
+					Debug.Log("TerrainPenalty_system : Snow1 ");
+					move_range -= 1;
+				}
 			}
 		}
+	}
+	void Start_TerrainPenalty_system(){
+		Ray ray = new Ray(transform.position,-transform.up);
+		RaycastHit hit;
+		if(Physics.Raycast(ray , out hit , Mathf.Infinity)){
+			if(hit.collider.gameObject.CompareTag("hexagon")){
+				terrain_type = hit.collider.GetComponent<hexagon>().hexagon_type;
+				temp_move_range = move_range;
+			}
+		}
+		if(terrain_type == 0 || terrain_type == 1){
+			Debug.Log("TerrainPenalty_system : Forest_ ");
+			miss +=2;
+		}
+		else if(terrain_type == 2){
+			Debug.Log("TerrainPenalty_system : Grass ");
+		}
+		else if(terrain_type == 3){
+			Debug.Log("TerrainPenalty_system : Ice ");
+		}
+		else if(terrain_type == 4 || terrain_type == 5){
+			Debug.Log("TerrainPenalty_system : Mountain_ ");
+		}
+		else if(terrain_type == 6){
+			Debug.Log("TerrainPenalty_system : Water ");
+			if(temp_move_range >= 3)
+				move_range -= 2;
+			if(temp_move_range == 2)
+				move_range = 1;
+		}
+		else if(terrain_type == 7){
+			Debug.Log("TerrainPenalty_system : Sea ");
+			if(temp_move_range >= 3)
+				move_range -= 2;
+			if(temp_move_range == 2)
+				move_range = 1;
+		}
+		else if(terrain_type == 8 || terrain_type == 9){
+			Debug.Log("TerrainPenalty_system : Snow1 ");
+			move_range -= 1;
+		}
+	}
+	IEnumerator StartTerrainCoroutine(){
+		yield return new WaitForSeconds (0.1f);
+		Start_TerrainPenalty_system();
 	}
 }

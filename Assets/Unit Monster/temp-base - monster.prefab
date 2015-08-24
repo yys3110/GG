@@ -12,7 +12,7 @@ GameObject:
   - 65: {fileID: 6529786}
   - 114: {fileID: 11497382}
   m_Layer: 0
-  m_Name: base - monster
+  m_Name: temp-base - monster
   m_TagString: monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -500,6 +500,9 @@ MonoBehaviour:
   dice_code_number: 0
   die_bool: 0
   TerrainPenalty_bool: 1
+  terrain_type: 0
+  skill_CollTime: 0
+  temp_skill_CollTime: 0
   array_display: 0
   target_distance: 0
   attack_ui: {fileID: 179804, guid: 2450cb70194cae44296eb44ffcd78333, type: 2}

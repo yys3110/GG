@@ -11,13 +11,14 @@ public class skill_dice : MonoBehaviour {
 	public bool camera_move_bool = false;
 	public GameObject dice_camera;
 	public float del;
+	public bool skill_caster_reg_bool = true;
 	//스킬 관련
 	public GameObject skill_caster;
 	Rect go_rect;
 	public int type = 0; // type 0 일 경우 누가 던지는가를 판단을 play_system.turn 에서 하고 type 1 이상 일 경우 지정 한 대로 판단
 	// Use this for initialization
 	void Start () {
-		
+		skill_caster_reg_bool = true;
 	}
 	
 	// Update is called once per frame
@@ -39,6 +40,7 @@ public class skill_dice : MonoBehaviour {
 						dice_camera.transform.localPosition = new Vector3(0,8.92f,-9.18f);
 						transform.localPosition = new Vector3(0.06001282f,1,-4.0f);
 						go_rect = new Rect (0,0,0,0);
+						if(skill_caster_reg_bool == true)
 						skill_caster.transform.GetComponent<monster>().temp_skill_dice_num = dice_num;
 						monster.skill_active++;
 						//Destroy(gameObject);

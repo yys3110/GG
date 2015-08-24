@@ -56,7 +56,10 @@ public class ui_field_system : MonoBehaviour {
 				over_mouse_g.GetComponent<Renderer>().material.color = new Color(1,1,1,0.5f);
 				if(Input.GetKeyDown(KeyCode.Mouse0)){
 					unit_info.GetComponent<player>().active_num = 3;
-					transform.gameObject.active = false;
+					player play_info = unit_info.GetComponent<player>();
+					if(play_info.temp_skillCollTime >= play_info.skill_CollTime)
+						transform.gameObject.active = false;
+					unit_info.GetComponent<player>().one_skill_font_bool = true;	
 				}
 			}
 			if(hit.collider.gameObject.tag == "ui_wait"){

@@ -30,7 +30,7 @@ public class Flowingwater_actve : MonoBehaviour {
 				transform.LookAt(hit.collider.gameObject.transform.position);
 				transform.rotation = new Quaternion(0,transform.rotation.y,0,transform.rotation.w);
 				//transform.eulerAngles = new Vector3(0,transform.rotation.y,0);
-				range.active = false;
+				range.SetActive(false);
 				rotateY = transform.eulerAngles.y;
 				if((rotateY >= 30 && rotateY <= 34) ||
 				   (rotateY >= 88 && rotateY <= 91) ||
@@ -40,7 +40,7 @@ public class Flowingwater_actve : MonoBehaviour {
 				   (rotateY >= 325 && rotateY <= 328))
 				{
 					skill_on = true;
-					range.active = true;
+					range.SetActive(true);
 					hexagon.move_end = false;
 					
 				}
@@ -53,10 +53,10 @@ public class Flowingwater_actve : MonoBehaviour {
 		}
 		if(Input.GetKeyDown(KeyCode.Mouse0)&&one_bool == true && skill_on == true)
 		{
-			range.active = false;
+			range.SetActive(false);
 			hexagon.move_end = true;
 			one_bool = false;
-			transform.parent.transform.gameObject.GetComponent<player>().wait_(); // 이거없으면 스킬 시전후 멈춤 그래서 시전하면 바로 wait() 실행
+			transform.parent.GetComponent<player>().wait_();
 		}
 		// 액티브스킬 끝
 	}

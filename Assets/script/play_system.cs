@@ -43,8 +43,11 @@ public class play_system : MonoBehaviour {
 	public List<bool> mon_bool;
 	// UI 시스템 관련 
 	public GameObject UI_field;
+	// FONT 관련 
+	public GameObject [] Skill_CollTime_FONT; // 스킬 쿨타임중 스킬을 사용하면 생성
 	//치트
 	public GameObject cheat;
+
 	// Use this for initialization
 	void Start () {
 		turn = 1;
@@ -171,5 +174,10 @@ public class play_system : MonoBehaviour {
 	}
 	public void dice_systemOff(){
 		dice_system.SetActive(false);
+	}
+	public void Font_System(int Font_number,int Pos_number){ // 유형 0 : 플레이어 position 위로 생성, 1 : 카메라 
+		if(Pos_number == 0){
+			Instantiate(Skill_CollTime_FONT[Font_number],playing_uint.transform.position,Skill_CollTime_FONT[Font_number].transform.rotation);
+		}
 	}
 }

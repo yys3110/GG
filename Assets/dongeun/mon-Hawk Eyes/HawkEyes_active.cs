@@ -11,7 +11,6 @@ public class HawkEyes_active : MonoBehaviour {
 	void Start () {
 		count = play_system.game_turn+1;
 		MAX_count = count + active_turn;
-		transform.parent.transform.gameObject.GetComponent<monster>().wait_();
 		transform.parent.GetComponent<monster>().attack_range += HawkEyes_attack_range;
 		transform.parent.GetComponent<monster>().skill_bool = false;
 	}	
