@@ -2,21 +2,24 @@
 using System.Collections;
 
 public class SharpClaws_passive : MonoBehaviour {
+	public int turn = 3;
+	public int damage = 3;
 	public GameObject debuff;
-	public GameObject target_unit;
+	int hp_max = 0;
 	// Use this for initialization
 	void Start () {
-
+		hp_max = transform.parent.GetComponent<monster>().hp_max;
 	}
 	// Update is called once per frame
 	void Update () {
-		target_unit = transform.parent.GetComponent<monster>().target;
-		if(play_system.turn == 2){
-			if(play_system.dice_active_num == 6){
-				GameObject child = Instantiate(debuff,transform.position,debuff.transform.rotation) as GameObject;
-				child.transform.parent = target_unit.transform;
-				child.GetComponent<SharpClaws_passive_debuff>().caster = transform.parent.transform.gameObject;
-			}
+		if(hp_max != transform.parent.GetComponent<monster>().hp_){
+			GameObject hit_unit = transform.parent.GetComponent<monster>().Me_hit_unit;
+			GameObject debuff_ = Instantiate(debuff,hit_unit.transform.position,hit_unit.transform.rotation) as GameObject;
+			debuff_.GetComponent<SharpClaws_passive_debuff>().caster = transform.parent.transform.gameObject;
+			debuff_.transform.parent = hit_unit.transform;
+			hp_max = transform.parent.GetComponent<monster>().hp_;
 		}
+
+
 	}
 }

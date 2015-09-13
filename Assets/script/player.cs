@@ -53,6 +53,8 @@ public class player : MonoBehaviour {
 	public int code_number;
 	public int hp_max,hp_,damage,miss,attack_range,move_range;
 	int temp_move_range;
+	[HideInInspector]
+	public int temp_move_range_Mountain=0;
 	public int skill_CollTime; // 스킬 쿨타임
 	public int temp_skillCollTime; // 임시 저장 스킬 쿨타임 
 	public bool skill_now = true; // true 시 즉시시전 false 시 스킬 시전을 위한 행동;
@@ -71,7 +73,7 @@ public class player : MonoBehaviour {
 		play_system.target_on_bool.Add(gameObject);
 		field_UI = Camera.main.GetComponent<play_system>().UI_field;
 		hp_ = hp_max;
-		temp_skillCollTime = skill_CollTime;
+		temp_skillCollTime = skill_CollTime*2;
 		StartCoroutine("StartTerrainCoroutine");
 
 	}
@@ -79,6 +81,7 @@ public class player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(die_bool == true){
+
 		}
 		if(play_system.turn == 1 && character_select == true && die_bool == false){
 			play_system.playing_uint = transform.gameObject;
@@ -161,6 +164,7 @@ public class player : MonoBehaviour {
 			if(hp_ >= hp_max){
 				hp_ = hp_max;
 			}
+			transform.position = new Vector3(transform.position.x,-10f,transform.position.z);
 		}
 		if(play_system.turn == 1 && die_bool == true){
 			if(one_die_check == true){
@@ -344,11 +348,11 @@ public class player : MonoBehaviour {
 		}
 	}
 	void skill_(){
-		if(temp_skillCollTime < skill_CollTime && one_skill_font_bool == true){
+		if(temp_skillCollTime < skill_CollTime*2 && one_skill_font_bool == true){
 			Camera.main.GetComponent<play_system>().Font_System(0,0);
 			one_skill_font_bool = false;
 		}
-		if(temp_skillCollTime >= skill_CollTime){
+		if(temp_skillCollTime >= skill_CollTime*2){
 			if(one_skill_bool == true){
 				child = Instantiate (skill, transform.position,skill.transform.rotation) as GameObject;
 				child.transform.parent = transform.transform;
@@ -396,22 +400,28 @@ public class player : MonoBehaviour {
 		camera_move_bool = true;
 		camera_num = 2;
 	}
-	public void HP_system(int damage_number , bool critical, GameObject hit_uint,int kind){
-		if(hp_ >= hp_max)
-			hp_ = hp_max;
-		int temp_damage =0;
+	public void HP_system(int damage_number , bool critical,GameObject hit_uint,int kind){
+		if(kind !=4)
+			if(hp_ >= hp_max)
+				hp_ = hp_max;
 		Me_hit_unit = hit_uint;
-		if(defense >= damage_number){
+		int temp_damage =0;
+		if(defense >= damage_number && kind !=4){
 			temp_damage = 0;
 		}
 		else{
 			if(critical == true)
 				temp_damage = (damage_number*2) - defense;
-			if(critical == false)
+			if(critical == false && kind != 4)
 				temp_damage = damage_number - defense;
+			if(kind == 4)
+				temp_damage = damage_number;
 		}
-		hp_ -= temp_damage;
-
+		Damage_display[kind].GetComponent<damage_dis>().damage = damage_number;
+		if(kind !=4)
+			hp_ -= temp_damage;
+		if(kind == 4)
+			hp_ += temp_damage;
 		GameObject dis = Instantiate(Damage_display[kind],transform.position,Damage_display[kind].transform.rotation) as GameObject;
 		dis.GetComponent<damage_dis>().damage = temp_damage;
 		dis.GetComponent<damage_dis>().array_display = array_display;
@@ -432,15 +442,15 @@ public class player : MonoBehaviour {
 		if(Physics.Raycast(ray , out hit , Mathf.Infinity)){
 			if(hit.collider.gameObject.CompareTag("hexagon")){
 				terrain_type = hit.collider.GetComponent<hexagon>().hexagon_type;
-				temp_move_range = move_range;
+				//temp_move_range = move_range;
 			}
 		}
 
 		if(TerrainPenalty_bool == true){
-			temp_move_range = move_range;
+			//temp_move_range = move_range;
 
 			if(count == 0){
-				temp_TerrainNum = terrain_type;
+				//temp_TerrainNum = terrain_type;
 				if(temp_TerrainNum == 0 || temp_TerrainNum == 1){
 					Debug.Log(" Forest_ ");
 					miss -=2;
@@ -453,6 +463,7 @@ public class player : MonoBehaviour {
 				}
 				else if(temp_TerrainNum == 4 || temp_TerrainNum == 5){
 					Debug.Log(" Mountain_ ");
+					move_range = temp_move_range_Mountain + move_range;
 				}
 				else if(temp_TerrainNum == 6){
 					Debug.Log(" Water ");
@@ -475,6 +486,7 @@ public class player : MonoBehaviour {
 				count ++;
 			}
 			if(count == 1){
+				temp_move_range = move_range;
 				if(terrain_type == 0 || terrain_type == 1){
 					Debug.Log("TerrainPenalty_system : Forest_ ");
 					miss +=2;
@@ -487,6 +499,8 @@ public class player : MonoBehaviour {
 				}
 				else if(terrain_type == 4 || terrain_type == 5){
 					Debug.Log("TerrainPenalty_system : Mountain_ ");
+					temp_move_range_Mountain = move_range-1;
+					move_range = 1;
 				}
 				else if(terrain_type == 6){
 					Debug.Log("TerrainPenalty_system : Water ");
@@ -530,6 +544,8 @@ public class player : MonoBehaviour {
 		}
 		else if(terrain_type == 4 || terrain_type == 5){
 			Debug.Log("TerrainPenalty_system : Mountain_ ");
+			temp_move_range_Mountain = move_range-1;
+			move_range = 1;
 		}
 		else if(terrain_type == 6){
 			Debug.Log("TerrainPenalty_system : Water ");

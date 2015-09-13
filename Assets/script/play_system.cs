@@ -82,12 +82,12 @@ public class play_system : MonoBehaviour {
 		if(player_unit_num ==0){ // 플레이어 유닛수가 0이면 패배
 			text_.text = "ENEMY VICTORY !!";
 			turn = 0;
-			dice_system.active = false;
+			dice_system.SetActive(false);;
 		}
 		if( monster_unit_num ==0){ // 몬스터 유닛수가 0이면 패배
 			text_.text = "PLAYER VICTORY !!";
 			turn = 0;
-			dice_system.active = false;
+			dice_system.SetActive(false);;
 		}
 
 		if(turn ==1)
@@ -128,12 +128,12 @@ public class play_system : MonoBehaviour {
 	void dice_(){
 		if(one_dice_bool == true){
 			if(dice_active_num == 1){
-				dice_system.active = true;
+				dice_system.SetActive(true);;
 				Instantiate(dice_object[5],new Vector3(182.4f,0.5f,-2.75f),new Quaternion(0,0,0,0));
 				one_dice_bool = false;
 			}
 			if(dice_active_num == 4){
-				dice_system.active = true;
+				dice_system.SetActive(true);;
 				if(turn ==1)
 				Instantiate(dice_object[selected_unit.GetComponent<player>().dice_code_number],new Vector3(182.4f,0.5f,-2.75f),new Quaternion(0,0,0,0));
 				if(turn ==2)
@@ -147,7 +147,7 @@ public class play_system : MonoBehaviour {
 			if(turn == 2)
 				selected_unit.GetComponent<monster>().damage += play_dice_num;
 			monster_one_dice_bool = true;
-			dice_system.active = false;
+			dice_system.SetActive(false);;
 			hexagon.move_end = true;
 			dice_active_num = 3;
 		}
@@ -162,7 +162,7 @@ public class play_system : MonoBehaviour {
 				selected_unit.GetComponent<monster>().damage += play_dice_num;
 			}
 
-			dice_system.active = false;
+			dice_system.SetActive(false);;
 			monster_one_dice_bool = true;
 			dice_active_num = 6;
 			active_dice_bool = false;

@@ -19,7 +19,6 @@ public class soulballs_passive : MonoBehaviour {
 			if(play_system.dice_active_num == 1){
 				if(passive_On == false){
 					GameObject child = Instantiate(debuff,transform.position,debuff.transform.rotation) as GameObject;
-					Debug.Log("죽어라!");
 					child.transform.parent = target_unit.transform;
 					child.GetComponent<soulballs_passive_debuff>().caster = transform.parent.transform.gameObject;
 					passive_On = true;

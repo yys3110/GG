@@ -1,16 +1,14 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &172502
+--- !u!1 &186550
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 494572}
-  - 54: {fileID: 5492980}
-  - 135: {fileID: 13523154}
-  - 114: {fileID: 11453048}
+  - 4: {fileID: 405620}
+  - 114: {fileID: 11475876}
   m_Layer: 0
   m_Name: Mountaineer_active
   m_TagString: Untagged
@@ -18,67 +16,42 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &494572
+--- !u!4 &405620
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 172502}
+  m_GameObject: {fileID: 186550}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15, y: 0, z: -67.5}
+  m_LocalPosition: {x: -20, y: 5, z: -75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!54 &5492980
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 172502}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
---- !u!114 &11453048
+--- !u!114 &11475876
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 172502}
+  m_GameObject: {fileID: 186550}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7f95801508390b47b2372383821654a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turn_cooltime: 3
-  Mountain_range: {fileID: 172112, guid: a7f6e40083adcf94a9a4febb2ce78d16, type: 2}
-  range_collider: 2
---- !u!135 &13523154
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 172502}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 9.99999975e-06
-  m_Center: {x: 0, y: 0, z: 0}
+  buff: {fileID: 147514, guid: ef7d416307b101d47bccc4a1f9ce71bc, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: buff
+      value: 
+      objectReference: {fileID: 147514, guid: ef7d416307b101d47bccc4a1f9ce71bc, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 172502}
+  m_RootGameObject: {fileID: 186550}
   m_IsPrefabParent: 1

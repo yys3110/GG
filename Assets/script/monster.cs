@@ -39,7 +39,9 @@ public class monster : MonoBehaviour {
 	public int monster_number; // 몇번째로 움직이는가를 판단;
 	public int code_number;
 	public int hp_max,hp_,damage,miss,attack_range,move_range;
-	int temp_move_range;
+	public int temp_move_range; // 임시 저장 
+	[HideInInspector]
+	public int temp_move_range_Mountain;
 	public int monster_class; // 0 : 근접 , 1: 원거리 , 2: 능력
 	public int monster_level =0; 
 	public int pattern_num =0; //number 0 = 중립 ,1 = 이동 , 2 = 공격  (패턴 넘버, 움직일지 공격할지를 정함)
@@ -54,6 +56,8 @@ public class monster : MonoBehaviour {
 	public int array_display = 0; 
 	public float target_distance; //플레이어와의 거리 
 	public GameObject attack_ui; // 임시
+	// Terrain : 지형관련
+
 	
 
 	// Use this for initialization
@@ -64,14 +68,13 @@ public class monster : MonoBehaviour {
 		play_system.monster_max_num ++;
 		play_system.monster_info_list.Add(gameObject);
 		damage =0;
-		temp_skill_CollTime = skill_CollTime;
+		//temp_skill_CollTime = skill_CollTime*2;
 		StartCoroutine("StartTerrainCoroutine");
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
 		if(play_system.turn == 2 && play_system.monster_num == monster_number && die_bool == true){// 죽은 몬스터
 			play_system.monster_num ++;
 		}
@@ -159,7 +162,6 @@ public class monster : MonoBehaviour {
 
 
 
-
 	void move_(){
 		if(one_move_pattern == true){
 			collider_range_(move_range);
@@ -237,19 +239,13 @@ public class monster : MonoBehaviour {
 	}
 	void skill_(){
 		if(skill_bool == true){
-			if(temp_skill_CollTime < skill_CollTime){
-				if(active_count >=1)
-					wait_();
-				if(active_count <=0){
-					pattern_num = 1;
-					collider_range_(attack_range);
-				}
-			}
 			if(temp_skill_CollTime >= skill_CollTime){
-				if(target_distance > skill_range){
+				if(target_distance > skill_range && one_skill_bool == true){
 					Debug.Log("skill range no " + transform.name);
-					if(active_count >=1)
+					if(active_count >=1){
 						wait_();
+						pattern_num = 0;
+					}
 					if(active_count <=0){
 						pattern_num = 1;
 						collider_range_(attack_range);
@@ -269,10 +265,20 @@ public class monster : MonoBehaviour {
 						GameObject child = Instantiate(skill,transform.position,transform.rotation) as GameObject;
 						child.transform.parent = transform;
 						one_skill_bool = false;
-						pattern_num = 4;
+						wait_();
+						pattern_num = 0;
 						temp_skill_CollTime = 0;
 						Debug.Log ("Skill " +transform.name);
 					}
+				}
+			}
+			if(temp_skill_CollTime < skill_CollTime*2 && one_skill_bool == true){
+				if(active_count >=1)
+					wait_();
+				pattern_num = 0;
+				if(active_count <=0){
+					pattern_num = 1;
+					collider_range_(attack_range);
 				}
 			}
 		}
@@ -309,22 +315,27 @@ public class monster : MonoBehaviour {
 		Instantiate(collider,new Vector3 (transform.position.x,0,transform.position.z),collider.transform.rotation);
 	}
 	public void HP_system(int damage_number , bool critical,GameObject hit_uint,int kind){
+		if(kind !=4)
 		if(hp_ >= hp_max)
 			hp_ = hp_max;
 		Me_hit_unit = hit_uint;
 		int temp_damage =0;
-		if(defense >= damage_number){
+		if(defense >= damage_number && kind !=4){
 			temp_damage = 0;
 		}
 		else{
 			if(critical == true)
 				temp_damage = (damage_number*2) - defense;
-			if(critical == false)
+			if(critical == false && kind != 4)
 				temp_damage = damage_number - defense;
+			if(kind == 4)
+				temp_damage = damage_number;
 		}
-
 		Damage_display[kind].GetComponent<damage_dis>().damage = damage_number;
+		if(kind !=4)
 		hp_ -= temp_damage;
+		if(kind == 4)
+		hp_ += temp_damage;
 		GameObject dis = Instantiate(Damage_display[kind],transform.position,Damage_display[kind].transform.rotation) as GameObject;
 		dis.GetComponent<damage_dis>().damage = temp_damage;
 		dis.GetComponent<damage_dis>().array_display = array_display;
@@ -343,15 +354,13 @@ public class monster : MonoBehaviour {
 		if(Physics.Raycast(ray , out hit , Mathf.Infinity)){
 			if(hit.collider.gameObject.CompareTag("hexagon")){
 				terrain_type = hit.collider.GetComponent<hexagon>().hexagon_type;
-				temp_move_range = move_range;
+				//temp_move_range = move_range;
 			}
 		}
 		
 		if(TerrainPenalty_bool == true){
-			temp_move_range = move_range;
-			
 			if(count == 0){
-				temp_TerrainNum = terrain_type;
+				//temp_TerrainNum = terrain_type;
 				if(temp_TerrainNum == 0 || temp_TerrainNum == 1){
 					Debug.Log(" Forest_ ");
 					miss -=2;
@@ -364,6 +373,7 @@ public class monster : MonoBehaviour {
 				}
 				else if(temp_TerrainNum == 4 || temp_TerrainNum == 5){
 					Debug.Log(" Mountain_ ");
+					move_range = temp_move_range_Mountain + move_range;
 				}
 				else if(temp_TerrainNum == 6){
 					Debug.Log(" Water ");
@@ -386,6 +396,7 @@ public class monster : MonoBehaviour {
 				count ++;
 			}
 			if(count == 1){
+				temp_move_range = move_range;
 				if(terrain_type == 0 || terrain_type == 1){
 					Debug.Log("TerrainPenalty_system : Forest_ ");
 					miss +=2;
@@ -398,6 +409,8 @@ public class monster : MonoBehaviour {
 				}
 				else if(terrain_type == 4 || terrain_type == 5){
 					Debug.Log("TerrainPenalty_system : Mountain_ ");
+					temp_move_range_Mountain = move_range-1;
+					move_range = 1;
 				}
 				else if(terrain_type == 6){
 					Debug.Log("TerrainPenalty_system : Water ");
@@ -441,6 +454,8 @@ public class monster : MonoBehaviour {
 		}
 		else if(terrain_type == 4 || terrain_type == 5){
 			Debug.Log("TerrainPenalty_system : Mountain_ ");
+			temp_move_range_Mountain = move_range-1;
+			move_range = 1;
 		}
 		else if(terrain_type == 6){
 			Debug.Log("TerrainPenalty_system : Water ");
