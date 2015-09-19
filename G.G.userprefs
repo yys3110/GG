@@ -1,8 +1,18 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\omg\Assets\player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\dongeun\player-red_arrow\red_arrow_range.cs">
     <Files>
-      <File FileName="..\omg\Assets\player.cs" Line="29" Column="1" />
+      <File FileName="Assets\script\monster_AI.cs" Line="11" Column="100" />
+      <File FileName="Assets\dongeun\player-rage\rage_active.cs" Line="20" Column="33" />
+      <File FileName="Assets\SKILL\player-Authority\Authority_active.cs" Line="23" Column="2" />
+      <File FileName="Assets\dongeun\player-rage\rage_passive.cs" Line="8" Column="1" />
+      <File FileName="Assets\SKILL\player-Black Wind\BlackWind_passive.cs" Line="27" Column="79" />
+      <File FileName="Assets\SKILL\player-Flight\Flight_active.cs" Line="16" Column="18" />
+      <File FileName="Assets\SKILL\player-Flight\Flight_active_debuff.cs" Line="46" Column="27" />
+      <File FileName="Assets\dongeun\player-red_arrow\red_arrow.cs" Line="64" Column="2" />
+      <File FileName="Assets\dongeun\player-Flowing Water\Flowingwater_actve.cs" Line="12" Column="31" />
+      <File FileName="Assets\dongeun\player-Flowing Water\FlowingWater_range.cs" Line="35" Column="3" />
+      <File FileName="Assets\dongeun\player-red_arrow\red_arrow_range.cs" Line="11" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

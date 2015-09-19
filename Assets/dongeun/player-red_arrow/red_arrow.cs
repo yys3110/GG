@@ -11,7 +11,6 @@ public class red_arrow : MonoBehaviour {
 	public int turn_cooltime;
 	public bool skill_on = false;
 	public bool one_bool = true;
-	public bool range_on = false;
 	// Use this for initialization
 	void Start () {
 		camera_object = GameObject.FindWithTag("MainCamera");
@@ -33,24 +32,21 @@ public class red_arrow : MonoBehaviour {
 				//transform.eulerAngles = new Vector3(0,transform.rotation.y,0);
 				range.SetActive(false);
 				rotateY = transform.eulerAngles.y;
-				if((rotateY >= 31 && rotateY <= 34) ||
+				if((rotateY >= 30 && rotateY <= 34) ||
 				   (rotateY >= 88 && rotateY <= 91) ||
 				   (rotateY >= 145 && rotateY <= 148) ||
 				   (rotateY >= 210 && rotateY <= 214) || 
 				   (rotateY >= 267 && rotateY <= 271) ||
 				   (rotateY >= 325 && rotateY <= 328))
 				{
-					if(range_on == false){
 					skill_on = true;
 					range.SetActive(true);
 					hexagon.move_end = false;
-					range_on = true;
-					}
+					
 				}
 				else{
 					skill_on = false;
 					hexagon.move_end = true;
-					range_on = false;
 					
 				}
 			}
@@ -60,7 +56,7 @@ public class red_arrow : MonoBehaviour {
 			range.SetActive(false);
 			hexagon.move_end = true;
 			one_bool = false;
-			transform.parent.transform.gameObject.GetComponent<player>().wait_(); // 이거없으면 스킬 시전후 멈춤 그래서 시전하면 바로 wait() 실행
+			transform.parent.GetComponent<player>().wait_();
 		}
 		// 액티브스킬 끝
 	}
