@@ -47,7 +47,7 @@ GameObject:
   - 114: {fileID: 11446824}
   - 65: {fileID: 6570822}
   m_Layer: 0
-  m_Name: temp-player-Poison Tooth
+  m_Name: player-Poison Tooth-Gluttony-A
   m_TagString: player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,6 +114,22 @@ GameObject:
   - 114: {fileID: 11452786}
   m_Layer: 0
   m_Name: HPbar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &160922
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 420974}
+  - 114: {fileID: 11403482}
+  m_Layer: 0
+  m_Name: PoisonTooth_passive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -194,6 +210,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 439754}
   m_RootOrder: 1
+--- !u!4 &420974
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 160922}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 49.1611328, y: 7.54695129, z: -70.1093597}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 482694}
+  m_RootOrder: 3
 --- !u!4 &422762
 Transform:
   m_ObjectHideFlags: 1
@@ -279,12 +307,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 122208}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalPosition: {x: 0, y: 5, z: -75}
   m_LocalScale: {x: 4, y: 10, z: 4}
   m_Children:
   - {fileID: 475398}
   - {fileID: 478148}
   - {fileID: 439754}
+  - {fileID: 420974}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &491132
@@ -562,6 +591,20 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
+--- !u!114 &11403482
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 160922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb619ddadff1f2b4993aaa97a6fa551b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  debuff_object: {fileID: 142204, guid: 8a71e1615d43cbb41834fe3ad55aa5ce, type: 2}
+  caster: {fileID: 0}
 --- !u!114 &11446824
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -614,7 +657,9 @@ MonoBehaviour:
   field_UI: {fileID: 0}
   monster_unit: {fileID: 0}
   Me_hit_unit: {fileID: 0}
-  temp_skill_bool: 0
+  one_skill_bool: 1
+  one_skill_font_bool: 1
+  temp_skill_bool: 1
   add_damage: 0
   defense: 0
   criticalHit_bool: 0
@@ -628,19 +673,23 @@ MonoBehaviour:
   array_display: 0
   ______________: 0
   code_number: 0
-  hp_max: 10
-  hp_: 10
+  hp_max: 24
+  hp_: 24
   damage: 0
-  miss: 5
+  miss: 3
   attack_range: 1
-  move_range: 4
+  move_range: 3
+  temp_move_range_Mountain: 0
+  skill_CollTime: 0
+  temp_skillCollTime: 0
   skill_now: 0
-  skill: {fileID: 0}
+  skill: {fileID: 166476, guid: c3cc6f1de4ea7884fb31308ca7226af0, type: 2}
   character_class: 0
   dice_code_number: 0
   die_bool: 0
   turn_cooltime: 0
   TerrainPenalty_bool: 1
+  terrain_type: 0
 --- !u!114 &11452786
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -704,7 +753,23 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: hp_max
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: hp_
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: miss
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: move_range
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 122208}
