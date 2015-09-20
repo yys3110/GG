@@ -366,6 +366,14 @@ public class hexagon_group : MonoBehaviour {
 					}
 				}
 			}
+			if(stage == 8) // 테스트 스테이지 마운틴
+			{
+				for(int i = 0 ; i<3 ; i++)
+				{
+					hex_[i].GetComponent<Renderer>().material.mainTexture = hex_tex[4];
+					hex_[i].GetComponent<hexagon>().hexagon_type = 4;
+				}
+			}
 			random_map = false;
 		}
 

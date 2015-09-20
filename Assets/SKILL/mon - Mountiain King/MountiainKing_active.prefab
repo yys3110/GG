@@ -1,49 +1,48 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &174236
+--- !u!1 &161328
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 406344}
-  - 114: {fileID: 11416726}
+  - 4: {fileID: 464134}
+  - 114: {fileID: 11423738}
   m_Layer: 0
-  m_Name: command_active
+  m_Name: MountiainKing_active
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &406344
+--- !u!4 &464134
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 174236}
+  m_GameObject: {fileID: 161328}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -11.4002934, y: -5.08654785, z: -92.8672714}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11416726
+--- !u!114 &11423738
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 174236}
+  m_GameObject: {fileID: 161328}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4e5e0a89b9b88545a5b3eaf75276985, type: 3}
+  m_Script: {fileID: 11500000, guid: 4164c496d3f3d404a9a717ba2e30c6f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turn_cooltime: 4
-  del: 0
-  skill1: 0
-  skill2: 0
-  buff: {fileID: 174236, guid: 6a1e8b1ab1a82d447b58c3a8ce6171dc, type: 2}
+  Range: 3
+  move_hold_turn: 2
+  range_collider: {fileID: 116050, guid: 9e754ebe46054b04a8f07a0bfa269262, type: 2}
+  debuff: {fileID: 119948, guid: 3b0af32ae2a13924e819e35fd9d5d7e3, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -52,10 +51,14 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
-      propertyPath: buff
+      propertyPath: range_collider
       value: 
-      objectReference: {fileID: 174236, guid: 6a1e8b1ab1a82d447b58c3a8ce6171dc, type: 2}
+      objectReference: {fileID: 116050, guid: 9e754ebe46054b04a8f07a0bfa269262, type: 2}
+    - target: {fileID: 0}
+      propertyPath: debuff
+      value: 
+      objectReference: {fileID: 119948, guid: 3b0af32ae2a13924e819e35fd9d5d7e3, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 174236}
+  m_RootGameObject: {fileID: 161328}
   m_IsPrefabParent: 1

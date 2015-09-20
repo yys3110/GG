@@ -387,6 +387,7 @@ public class player : MonoBehaviour {
 		play_system.player_num ++;
 		temp_skillCollTime ++;
 		criticalHit_bool = false;
+		character_select = false; // 2015- 9-19일 추가
 
 		//field_UI.SendMessage("reset_bool","1");
 		field_UI.GetComponent<ui_field_system>().ui_move_bool = true;

@@ -39,17 +39,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab558fe5d224d3a4889771815646f6d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target_unit: {fileID: 0}
   debuff: {fileID: 196902, guid: e50aa237f91d80545a73162237012d9f, type: 2}
   turn_cooltime: 3
   ice: 1
+  range_collider: {fileID: 116050, guid: 9e754ebe46054b04a8f07a0bfa269262, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: range_collider
+      value: 
+      objectReference: {fileID: 116050, guid: 9e754ebe46054b04a8f07a0bfa269262, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 191044}

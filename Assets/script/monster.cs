@@ -46,6 +46,7 @@ public class monster : MonoBehaviour {
 	public int monster_level =0; 
 	public int pattern_num =0; //number 0 = 중립 ,1 = 이동 , 2 = 공격  (패턴 넘버, 움직일지 공격할지를 정함)
 	public int dice_code_number =0; // 0 : 4면체 , 1 : 6면 , 2 : 8면 ,3 : 10면 , 4 : 12면체 , 5 : 20면체 (명중굴림)
+	public int terrain_NotPenalty_Num =0; //  0 : 중립 1: Forest 2:Grass 3:ice 4:Mountain 5:Water 6: Sea 7:Snow	
 	public bool die_bool = false; // 살았는지 죽었는지를 판단;
 	public bool TerrainPenalty_bool = true;
 	public int terrain_type = 0;
@@ -68,7 +69,7 @@ public class monster : MonoBehaviour {
 		play_system.monster_max_num ++;
 		play_system.monster_info_list.Add(gameObject);
 		damage =0;
-		//temp_skill_CollTime = skill_CollTime*2;
+		temp_skill_CollTime = skill_CollTime;
 		StartCoroutine("StartTerrainCoroutine");
 
 	}
@@ -373,6 +374,7 @@ public class monster : MonoBehaviour {
 				}
 				else if(temp_TerrainNum == 4 || temp_TerrainNum == 5){
 					Debug.Log(" Mountain_ ");
+					if(terrain_NotPenalty_Num != 4)
 					move_range = temp_move_range_Mountain + move_range;
 				}
 				else if(temp_TerrainNum == 6){
@@ -409,8 +411,10 @@ public class monster : MonoBehaviour {
 				}
 				else if(terrain_type == 4 || terrain_type == 5){
 					Debug.Log("TerrainPenalty_system : Mountain_ ");
+					if(terrain_NotPenalty_Num != 4){
 					temp_move_range_Mountain = move_range-1;
 					move_range = 1;
+					}
 				}
 				else if(terrain_type == 6){
 					Debug.Log("TerrainPenalty_system : Water ");
@@ -454,8 +458,10 @@ public class monster : MonoBehaviour {
 		}
 		else if(terrain_type == 4 || terrain_type == 5){
 			Debug.Log("TerrainPenalty_system : Mountain_ ");
+			if(terrain_NotPenalty_Num != 4){
 			temp_move_range_Mountain = move_range-1;
 			move_range = 1;
+			}
 		}
 		else if(terrain_type == 6){
 			Debug.Log("TerrainPenalty_system : Water ");

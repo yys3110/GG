@@ -50,5 +50,10 @@ public class stage_select : MonoBehaviour {
 			PlayerPrefs.SetInt("stage",7);
 			Application.LoadLevel("inGame");
 		}
+		if(GUI.Button(new Rect(10,300,100,40),"Test STAGE - MOUNT"))
+		{
+			PlayerPrefs.SetInt("stage", 8);
+			Application.LoadLevel("inGame");
+		}
 	}
 }

@@ -8,9 +8,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 406344}
-  - 114: {fileID: 11416726}
+  - 114: {fileID: 11479144}
   m_Layer: 0
-  m_Name: command_active
+  m_Name: command_active_buff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11416726
+--- !u!114 &11479144
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -36,25 +36,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 174236}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4e5e0a89b9b88545a5b3eaf75276985, type: 3}
+  m_Script: {fileID: 11500000, guid: 54b90d59b5a6663479db7656a9a6eca2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turn_cooltime: 4
-  del: 0
-  skill1: 0
-  skill2: 0
-  buff: {fileID: 174236, guid: 6a1e8b1ab1a82d447b58c3a8ce6171dc, type: 2}
+  move_range: 1
+  attack_range: 1
+  turn_buff: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: buff
-      value: 
-      objectReference: {fileID: 174236, guid: 6a1e8b1ab1a82d447b58c3a8ce6171dc, type: 2}
+    m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 174236}

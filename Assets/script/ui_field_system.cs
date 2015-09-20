@@ -81,7 +81,7 @@ public class ui_field_system : MonoBehaviour {
 		}
 	}
 
-	void reset_bool(){
+	public void reset_bool(){
 		ui_cancel_bool = true;
 		ui_move_bool = true;
 	}
